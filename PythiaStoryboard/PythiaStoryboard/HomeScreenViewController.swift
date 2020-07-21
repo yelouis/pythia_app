@@ -1,6 +1,4 @@
-
-//
-//  homeViewController.swift
+//  HomeScreenViewController.swift
 //  PythiaStoryboard
 //
 //  Created by Nathaniel Veimau (old comp) on 7/18/20.
@@ -11,13 +9,18 @@ import UIKit
 
 class HomeScreenViewController: UIViewController {
 
-    
 
+    @IBOutlet weak var portfolioLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let portfolioValue = 10235.25
+        let portfolioValueString: String = String(format: "%.2f", portfolioValue)
+        portfolioLabel.text = "Portfolio Value: "
+            + portfolioValueString
     }
-
 }
 
 

@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */; };
 		D8F2A07C24C3C86400CFBB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */; };
 		D8F2A07E24C3C86400CFBB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */; };
 		D8F2A08024C3C86400CFBB14 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07F24C3C86400CFBB14 /* ViewController.swift */; };
 		D8F2A08324C3C86400CFBB14 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F2A08124C3C86400CFBB14 /* Main.storyboard */; };
 		D8F2A08524C3C86600CFBB14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F2A08424C3C86600CFBB14 /* Assets.xcassets */; };
 		D8F2A08824C3C86600CFBB14 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F2A08624C3C86600CFBB14 /* LaunchScreen.storyboard */; };
-		D8F2A09224C52F7300CFBB14 /* HomeScreenViewController.swift in Resources */ = {isa = PBXBuildFile; fileRef = D8F2A09124C52F7300CFBB14 /* HomeScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		D8F2A07824C3C86400CFBB14 /* PythiaStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PythiaStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		D8F2A08424C3C86600CFBB14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F2A08724C3C86600CFBB14 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8F2A08924C3C86600CFBB14 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8F2A09124C52F7300CFBB14 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,10 +58,10 @@
 		D8F2A07A24C3C86400CFBB14 /* PythiaStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */,
 				D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */,
 				D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */,
 				D8F2A07F24C3C86400CFBB14 /* ViewController.swift */,
-				D8F2A09124C52F7300CFBB14 /* HomeScreenViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D8F2A08424C3C86600CFBB14 /* Assets.xcassets */,
 				D8F2A08624C3C86600CFBB14 /* LaunchScreen.storyboard */,
@@ -130,7 +130,6 @@
 			files = (
 				D8F2A08824C3C86600CFBB14 /* LaunchScreen.storyboard in Resources */,
 				D8F2A08524C3C86600CFBB14 /* Assets.xcassets in Resources */,
-				D8F2A09224C52F7300CFBB14 /* HomeScreenViewController.swift in Resources */,
 				D8F2A08324C3C86400CFBB14 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -143,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8F2A08024C3C86400CFBB14 /* ViewController.swift in Sources */,
+				D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */,
 				D8F2A07C24C3C86400CFBB14 /* AppDelegate.swift in Sources */,
 				D8F2A07E24C3C86400CFBB14 /* SceneDelegate.swift in Sources */,
 			);
