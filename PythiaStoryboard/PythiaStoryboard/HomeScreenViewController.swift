@@ -14,9 +14,9 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var buyingPowerLabel: UILabel!
     @IBOutlet weak var portfolioPerformance: UILabel!
     
-    // tickShareList is a list of all the tickers a user has investments in
-    var tickShareList = [TickerShareCombo]()
-    var buyingPower = 0
+    // portfolioList is a list of all the tickers a user has investments in
+    var portfolioList = [TickerShareCombo]()
+    var buyingPower : Double = 0
     var portfolioValue : Double = 0
     
     override func viewDidLoad() {
@@ -27,13 +27,13 @@ class HomeScreenViewController: UIViewController {
         let portfolioValueString: String = String(format: "%.2f", portfolioValue)
         portfolioLabel.text = "Portfolio Value: $"
             + portfolioValueString
-        buyingPower = 1500
+        buyingPower = 1500.00
         let buyingPowerString: String = String(format: "%.2f", buyingPower)
         buyingPowerLabel.text = "Buying Power: $" + buyingPowerString
     }
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
     func computePortfolioValue(){
-        tickShareList.forEach { tickShare in
+        portfolioList.forEach { tickShare in
             tickShare.updatePrice()
             if (tickShare.difference != 0){
                 portfolioValue += tickShare.difference

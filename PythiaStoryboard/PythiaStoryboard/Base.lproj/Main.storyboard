@@ -60,15 +60,15 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Buying Power: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-7n-AE8">
-                                <rect key="frame" x="152.5" y="96" width="109.5" height="19"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buying Power: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6T-7n-AE8">
+                                <rect key="frame" x="156" y="95" width="102.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="15"/>
+                                <color key="textColor" red="0.87511471114628059" green="0.87511471114628059" blue="0.87511471114628059" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$xxxx (x.xx%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-wO-jEU">
-                                <rect key="frame" x="47" y="152" width="94" height="17"/>
-                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$xxxx (x.xx%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-wO-jEU">
+                                <rect key="frame" x="45" y="159" width="80" height="14"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -76,9 +76,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="E6T-7n-AE8" firstAttribute="centerX" secondItem="N7M-x8-cYz" secondAttribute="centerX" id="AYj-M7-UWu"/>
+                            <constraint firstItem="xhB-wO-jEU" firstAttribute="leading" secondItem="s6n-HJ-w3x" secondAttribute="leading" constant="45" id="FNH-Dy-cnh"/>
+                            <constraint firstItem="E6T-7n-AE8" firstAttribute="top" secondItem="FYq-0l-649" secondAttribute="bottom" constant="7" id="RXP-4O-zJw"/>
                             <constraint firstItem="FYq-0l-649" firstAttribute="centerX" secondItem="N7M-x8-cYz" secondAttribute="centerX" id="USc-BX-urj"/>
                             <constraint firstItem="FYq-0l-649" firstAttribute="top" secondItem="s6n-HJ-w3x" secondAttribute="top" constant="20" id="Xtc-Nw-r7j"/>
-                            <constraint firstItem="xhB-wO-jEU" firstAttribute="top" secondItem="FYq-0l-649" secondAttribute="bottom" constant="30" id="bT9-ed-Q5j"/>
+                            <constraint firstItem="xhB-wO-jEU" firstAttribute="top" secondItem="s6n-HJ-w3x" secondAttribute="top" constant="115" id="ZqW-qP-QWJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s6n-HJ-w3x"/>
                     </view>
