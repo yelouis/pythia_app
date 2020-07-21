@@ -58,10 +58,10 @@
 		D8F2A07A24C3C86400CFBB14 /* PythiaStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */,
 				D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */,
 				D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */,
 				D8F2A07F24C3C86400CFBB14 /* ViewController.swift */,
+				D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D8F2A08424C3C86600CFBB14 /* Assets.xcassets */,
 				D8F2A08624C3C86600CFBB14 /* LaunchScreen.storyboard */,
