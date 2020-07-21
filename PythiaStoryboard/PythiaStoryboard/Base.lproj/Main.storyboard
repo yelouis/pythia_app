@@ -54,9 +54,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Portfolio Value: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYq-0l-649">
-                                <rect key="frame" x="134" y="64" width="253" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Portfolio Value: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FYq-0l-649">
+                                <rect key="frame" x="134" y="64" width="146" height="24"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$xxxx (x.xx%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-wO-jEU">
+                                <rect key="frame" x="48" y="118" width="94" height="17"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,12 +71,14 @@
                         <constraints>
                             <constraint firstItem="FYq-0l-649" firstAttribute="centerX" secondItem="N7M-x8-cYz" secondAttribute="centerX" id="USc-BX-urj"/>
                             <constraint firstItem="FYq-0l-649" firstAttribute="top" secondItem="s6n-HJ-w3x" secondAttribute="top" constant="20" id="Xtc-Nw-r7j"/>
+                            <constraint firstItem="xhB-wO-jEU" firstAttribute="top" secondItem="FYq-0l-649" secondAttribute="bottom" constant="30" id="bT9-ed-Q5j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s6n-HJ-w3x"/>
                     </view>
                     <navigationItem key="navigationItem" id="eat-OS-s2t"/>
                     <connections>
                         <outlet property="portfolioLabel" destination="FYq-0l-649" id="YNE-jG-DoW"/>
+                        <outlet property="portfolioPerformance" destination="xhB-wO-jEU" id="vBp-1x-K2Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAy-Wp-2zp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

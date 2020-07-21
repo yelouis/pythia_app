@@ -12,6 +12,7 @@ class HomeScreenViewController: UIViewController {
 
     @IBOutlet weak var portfolioLabel: UILabel!
     
+    @IBOutlet weak var portfolioPerformance: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
