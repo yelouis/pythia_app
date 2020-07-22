@@ -13,23 +13,48 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var portfolioLabel: UILabel!
     @IBOutlet weak var buyingPowerLabel: UILabel!
     @IBOutlet weak var portfolioPerformance: UILabel!
-    
+        
     // portfolioList is a list of all the tickers a user has investments in
     var portfolioList = [TickerShareCombo]()
     var buyingPower : Double = 0
     var portfolioValue : Double = 0
     
+    func createPerformanceString (startValue: Double, currValue : Double) -> String {
+        let performanceInWindow : Double = currValue - startValue
+        let pctPerformanceInWindow : Double = currValue/startValue - 1.0
+        let performanceString = "$" + String(format: "%.2f", performanceInWindow) + " (" + String(format: "%.2f", pctPerformanceInWindow) + ")"
+        return performanceString
+    }
+    
+    func setPerformanceColor (startValue: Double, currValue: Double) -> UIColor {
+        let performanceInWindow : Double = currValue - startValue
+        if performanceInWindow > 0 {
+            return .green
+        } else if performanceInWindow < 0 {
+            return .red
+        } else {
+            return .gray
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        //creating accurate portfolioLabel
         portfolioValue = 10235.25
-        let portfolioValueString: String = String(format: "%.2f", portfolioValue)
         portfolioLabel.text = "Portfolio Value: $"
-            + portfolioValueString
+            + String(format: "%.2f", portfolioValue)
+        
+        //creating accurate buyingPowerLabel
         buyingPower = 1500.00
-        let buyingPowerString: String = String(format: "%.2f", buyingPower)
-        buyingPowerLabel.text = "Buying Power: $" + buyingPowerString
+        buyingPowerLabel.text = "Buying Power: $" + String(format: "%.2f", buyingPower)
+        
+        //determine color & look of portfolio performance label
+        let startValue : Double = 10276.25
+        portfolioPerformance.text = createPerformanceString(startValue, portfolioValue)
+        portfolioPerformance.textColor = setPerformanceColor (startValue, portfolioValue)
+        
     }
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
     func computePortfolioValue(){

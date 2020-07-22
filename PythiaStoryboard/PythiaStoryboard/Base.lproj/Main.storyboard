@@ -15,18 +15,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pythia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkz-4l-bUq">
-                                <rect key="frame" x="120" y="190" width="174" height="70"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pythia" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkz-4l-bUq">
+                                <rect key="frame" x="120" y="189" width="174" height="70"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="60"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2f-P6-YMR">
-                                <rect key="frame" x="79" y="740" width="256" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2f-P6-YMR">
+                                <rect key="frame" x="67" y="746" width="280" height="32"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="contentEdgeInsets" minX="80" minY="5" maxX="80" maxY="5"/>
                                 <state key="normal" title="Unlock"/>
                                 <connections>
                                     <action selector="toHomeScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="79q-Rr-u5C"/>
@@ -34,6 +33,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E2f-P6-YMR" secondAttribute="bottom" constant="85" id="5Lw-un-vYe"/>
+                            <constraint firstItem="bkz-4l-bUq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="145" id="I3b-V6-y2n"/>
+                            <constraint firstItem="E2f-P6-YMR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Rbg-ah-QuH"/>
+                            <constraint firstItem="bkz-4l-bUq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cJP-Of-GEb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
