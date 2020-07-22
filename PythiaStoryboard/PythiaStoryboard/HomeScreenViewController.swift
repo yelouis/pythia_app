@@ -13,16 +13,19 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var portfolioLabel: UILabel!
     @IBOutlet weak var buyingPowerLabel: UILabel!
     @IBOutlet weak var portfolioPerformance: UILabel!
-        
+    
+    @IBOutlet weak var graphImage: UIImageView!
+    
     // portfolioList is a list of all the tickers a user has investments in
-    var portfolioList = [TickerShareCombo]()
+    var portfolioList = [Stock]()
+    var watchList = [Stock]()
     var buyingPower : Double = 0
     var portfolioValue : Double = 0
     
     func createPerformanceString (startValue: Double, currValue : Double) -> String {
         let performanceInWindow : Double = currValue - startValue
-        let pctPerformanceInWindow : Double = currValue/startValue - 1.0
-        let performanceString = "$" + String(format: "%.2f", performanceInWindow) + " (" + String(format: "%.2f", pctPerformanceInWindow) + ")"
+        let pctPerformanceInWindow : Double = (currValue/startValue - 1.00) * 100
+        let performanceString = "$" + String(format: "%.2f", performanceInWindow) + " (" + String(format: "%.2f", pctPerformanceInWindow) + "%)"
         return performanceString
     }
     
@@ -52,44 +55,44 @@ class HomeScreenViewController: UIViewController {
         
         //determine color & look of portfolio performance label
         let startValue : Double = 10276.25
-        portfolioPerformance.text = createPerformanceString(startValue, portfolioValue)
-        portfolioPerformance.textColor = setPerformanceColor (startValue, portfolioValue)
+        portfolioPerformance.text = createPerformanceString(startValue:startValue, currValue:portfolioValue)
+        portfolioPerformance.textColor = setPerformanceColor (startValue:startValue, currValue:portfolioValue)
         
     }
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
     func computePortfolioValue(){
-        portfolioList.forEach { tickShare in
-            tickShare.updatePrice()
-            if (tickShare.difference != 0){
-                portfolioValue += tickShare.difference
-                tickShare.difference = 0
-            }
+        var updatedPortfolioValue : Double = 0
+        portfolioList.forEach { stock in
+            stock.updatePrice()
+            updatedPortfolioValue +=  Double(stock.numSharesOwned) * stock.currentSharePrice
         }
+        portfolioValue = updatedPortfolioValue
     }
 }
 
-class TickerShareCombo {
+class Stock {
     var ticker : String
     var numSharesOwned : Int
     var currentSharePrice : Double
-    var historicalSharePrice : Double
-    var difference : Double = 0
     
-    init(ticker : String, numSharesOwned : Int, currentSharePrice : Double){
+    // Initalizer for stock user is watching
+    init(ticker : String) {
+        self.ticker = ticker
+        self.numSharesOwned = 0
+        self.currentSharePrice = 0
+        //TODO code to get current share price and set it
+    }
+    
+    // Initializer for stock user is invested in
+    init(ticker : String, numSharesOwned : Int){
         self.ticker = ticker
         self.numSharesOwned = numSharesOwned
-        self.currentSharePrice = currentSharePrice
-        self.historicalSharePrice = currentSharePrice
+        self.currentSharePrice = 0
+        //TODO code to get current share price and set it
     }
     
-    // checkPrice
     func updatePrice(){
-        //TODO set currentSharePrice here to be equal the tickers current share price
-        if (historicalSharePrice != currentSharePrice) {
-            difference = currentSharePrice - historicalSharePrice
-            historicalSharePrice = currentSharePrice
-        }
+        //TODO code to get current share price and set it
     }
 }
-
 

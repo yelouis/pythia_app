@@ -72,26 +72,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$xxxx (x.xx%)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-wO-jEU">
-                                <rect key="frame" x="45" y="159" width="80" height="14"/>
+                                <rect key="frame" x="30" y="159" width="80" height="14"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2020-07-22 at 3.42.23 PM" translatesAutoresizingMaskIntoConstraints="NO" id="nEO-Pn-JCO">
+                                <rect key="frame" x="0.0" y="188" width="414" height="145"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="145" id="Q41-8k-oGg"/>
+                                    <constraint firstAttribute="width" constant="414" id="mpx-F0-OeA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="s6n-HJ-w3x" firstAttribute="trailing" secondItem="nEO-Pn-JCO" secondAttribute="trailing" id="5oK-TQ-bU7"/>
                             <constraint firstItem="E6T-7n-AE8" firstAttribute="centerX" secondItem="N7M-x8-cYz" secondAttribute="centerX" id="AYj-M7-UWu"/>
-                            <constraint firstItem="xhB-wO-jEU" firstAttribute="leading" secondItem="s6n-HJ-w3x" secondAttribute="leading" constant="45" id="FNH-Dy-cnh"/>
+                            <constraint firstItem="xhB-wO-jEU" firstAttribute="leading" secondItem="s6n-HJ-w3x" secondAttribute="leading" constant="30" id="FNH-Dy-cnh"/>
                             <constraint firstItem="E6T-7n-AE8" firstAttribute="top" secondItem="FYq-0l-649" secondAttribute="bottom" constant="7" id="RXP-4O-zJw"/>
                             <constraint firstItem="FYq-0l-649" firstAttribute="centerX" secondItem="N7M-x8-cYz" secondAttribute="centerX" id="USc-BX-urj"/>
                             <constraint firstItem="FYq-0l-649" firstAttribute="top" secondItem="s6n-HJ-w3x" secondAttribute="top" constant="20" id="Xtc-Nw-r7j"/>
                             <constraint firstItem="xhB-wO-jEU" firstAttribute="top" secondItem="s6n-HJ-w3x" secondAttribute="top" constant="115" id="ZqW-qP-QWJ"/>
+                            <constraint firstItem="nEO-Pn-JCO" firstAttribute="top" secondItem="xhB-wO-jEU" secondAttribute="bottom" id="hII-l6-HsD"/>
+                            <constraint firstItem="nEO-Pn-JCO" firstAttribute="top" secondItem="xhB-wO-jEU" secondAttribute="bottom" constant="15" id="nDa-9H-S6P"/>
+                            <constraint firstItem="nEO-Pn-JCO" firstAttribute="leading" secondItem="s6n-HJ-w3x" secondAttribute="leading" id="tl6-Br-W3w"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="s6n-HJ-w3x"/>
                     </view>
                     <navigationItem key="navigationItem" id="eat-OS-s2t"/>
                     <connections>
                         <outlet property="buyingPowerLabel" destination="E6T-7n-AE8" id="lHp-7w-jgw"/>
+                        <outlet property="graphImage" destination="nEO-Pn-JCO" id="t7I-ft-fcZ"/>
                         <outlet property="portfolioLabel" destination="FYq-0l-649" id="YNE-jG-DoW"/>
                         <outlet property="portfolioPerformance" destination="xhB-wO-jEU" id="vBp-1x-K2Y"/>
                     </connections>
@@ -101,4 +113,7 @@
             <point key="canvasLocation" x="1008.6956521739131" y="137.94642857142856"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Screen Shot 2020-07-22 at 3.42.23 PM" width="1350" height="476"/>
+    </resources>
 </document>
