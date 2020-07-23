@@ -60,6 +60,10 @@ class HomeScreenViewController: UIViewController {
         
     }
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
+    
+    portfolioList.append(newElement: Stock(ticker: "TSLA", numSharesOwned: 10))
+    watchList.append(newElement: Stock(ticker: "AMD"))
+    
     func computePortfolioValue(){
         var updatedPortfolioValue : Double = 0
         portfolioList.forEach { stock in
@@ -67,6 +71,11 @@ class HomeScreenViewController: UIViewController {
             updatedPortfolioValue +=  Double(stock.numSharesOwned) * stock.currentSharePrice
         }
         portfolioValue = updatedPortfolioValue
+    }
+    func updateWatchlist(){
+        watchList.forEach { stock in
+            stock.updatePrice()
+        
     }
 }
 
