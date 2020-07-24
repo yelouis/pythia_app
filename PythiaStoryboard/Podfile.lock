@@ -2,17 +2,21 @@ PODS:
   - Charts (3.5.0):
     - Charts/Core (= 3.5.0)
   - Charts/Core (3.5.0)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
   - Charts
+  - TinyConstraints
 
 SPEC REPOS:
   trunk:
     - Charts
+    - TinyConstraints
 
 SPEC CHECKSUMS:
   Charts: 40a08591df1f8ad5c223ddedfb1a06da92f24f7c
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: 387688bdc43d7e2b557f4ddc08e5a1c38fe4b505
+PODFILE CHECKSUM: 24568211a39455ce1dba3901051af82e27a1f477
 
 COCOAPODS: 1.9.3

@@ -6,15 +6,30 @@
 //
 
 import UIKit
+import Charts
+import TinyConstraints
 
-class HomeScreenViewController: UIViewController {
+class HomeScreenViewController: UIViewController, ChartViewDelegate {
 
 
     @IBOutlet weak var portfolioLabel: UILabel!
     @IBOutlet weak var buyingPowerLabel: UILabel!
     @IBOutlet weak var portfolioPerformance: UILabel!
-    
     @IBOutlet weak var graphImage: UIImageView!
+    
+    lazy var lineChartView: LineChartView = {
+        let chartView = LineChartView()
+        chartView.backgroundColor = .systemBlue
+        return chartView
+    }()
+    
+    
+    let yValues: [ChartDataEntry] = [
+        ChartDataEntry(x: 0.0, y: 10.0),
+        ChartDataEntry(x: 1.0, y: 5.0),
+        ChartDataEntry(x: 2.0, y: 7.0),
+        ChartDataEntry(x: 3.0, y: 5.0)
+    ]
     
     // portfolioList is a list of all the tickers a user has investments in
     var portfolioList = [Stock]()
@@ -27,6 +42,10 @@ class HomeScreenViewController: UIViewController {
         let pctPerformanceInWindow : Double = (currValue/startValue - 1.00) * 100
         let performanceString = "$" + String(format: "%.2f", performanceInWindow) + " (" + String(format: "%.2f", pctPerformanceInWindow) + "%)"
         return performanceString
+    }
+    
+    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+        print(entry)
     }
     
     func setPerformanceColor (startValue: Double, currValue: Double) -> UIColor {
@@ -58,12 +77,20 @@ class HomeScreenViewController: UIViewController {
         portfolioPerformance.text = createPerformanceString(startValue:startValue, currValue:portfolioValue)
         portfolioPerformance.textColor = setPerformanceColor (startValue:startValue, currValue:portfolioValue)
         
+        
+        //TODO This initialization of lists may need to be moved later
+        portfolioList.append(Stock(ticker: "TSLA", numSharesOwned: 10))
+        watchList.append(Stock(ticker: "AMD"))
+        
+        //Line Chart Stuffs
+        view.addSubview(lineChartView)
+        lineChartView.centerInSuperview()
+        lineChartView.width(to: view)
+        lineChartView.heightToWidth(of: view)
+        
     }
+    
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
-    
-    portfolioList.append(newElement: Stock(ticker: "TSLA", numSharesOwned: 10))
-    watchList.append(newElement: Stock(ticker: "AMD"))
-    
     func computePortfolioValue(){
         var updatedPortfolioValue : Double = 0
         portfolioList.forEach { stock in
@@ -75,7 +102,7 @@ class HomeScreenViewController: UIViewController {
     func updateWatchlist(){
         watchList.forEach { stock in
             stock.updatePrice()
-        
+        }
     }
 }
 
