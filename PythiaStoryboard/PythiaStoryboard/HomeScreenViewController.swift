@@ -45,7 +45,9 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
         ChartDataEntry(x: 0.0, y: 10.0),
         ChartDataEntry(x: 1.0, y: 5.0),
         ChartDataEntry(x: 2.0, y: 7.0),
-        ChartDataEntry(x: 3.0, y: 5.0)
+        ChartDataEntry(x: 3.0, y: 11.0),
+        ChartDataEntry(x: 4.0, y: 15.0),
+        ChartDataEntry(x: 5.0, y: 25.0),
     ]
     
     // portfolioList is a list of all the tickers a user has investments in
@@ -126,10 +128,11 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
     func setData() {
         let set1 = LineChartDataSet(entries: yValues, label: "Portfolio Value")
         
-        // This shit takes away circles around datapoints
-        set1.drawCirclesEnabled = false
         // This shit rounds the graph
         set1.mode = .cubicBezier
+        // This shit takes away circles around datapoints
+        set1.drawCirclesEnabled = false
+       
         
         let data = LineChartData(dataSet: set1)
         // This shit takes away little value indicators at datapoints
