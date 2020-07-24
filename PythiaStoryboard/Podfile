@@ -7,5 +7,6 @@ target 'PythiaStoryboard' do
 
   # Pods for PythiaStoryboard
   pod 'Charts'
+  pod 'TinyConstraints'
 
 end
