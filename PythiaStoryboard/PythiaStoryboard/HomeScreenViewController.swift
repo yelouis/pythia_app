@@ -20,6 +20,23 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
         chartView.backgroundColor = .systemBlue
+        
+        chartView.rightAxis.enabled = false
+        
+        let yAxis = chartView.leftAxis
+        yAxis.labelFont = .boldSystemFont(ofSize: 12)
+        yAxis.setLabelCount(6, force: false)
+        yAxis.labelTextColor = .white
+        yAxis.axisLineColor = .white
+        yAxis.labelPosition = .outsideChart
+        
+        chartView.xAxis.labelPosition = .bottom
+        chartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
+        chartView.xAxis.labelTextColor = .white
+        chartView.xAxis.axisLineColor = .systemBlue
+        
+        chartView.animate(xAxisDuration: 2.5)
+        
         return chartView
     }()
     
@@ -88,6 +105,7 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
         lineChartView.width(to: view)
         lineChartView.heightToWidth(of: view)
         
+        setData()
     }
     
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
@@ -103,6 +121,20 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
         watchList.forEach { stock in
             stock.updatePrice()
         }
+    }
+    
+    func setData() {
+        let set1 = LineChartDataSet(entries: yValues, label: "Portfolio Value")
+        
+        // This shit takes away circles around datapoints
+        set1.drawCirclesEnabled = false
+        // This shit rounds the graph
+        set1.mode = .cubicBezier
+        
+        let data = LineChartData(dataSet: set1)
+        // This shit takes away little value indicators at datapoints
+        data.setDrawValues(false)
+        lineChartView.data = data
     }
 }
 
