@@ -54,7 +54,7 @@
         <!--Home Screen View Controller-->
         <scene sceneID="V7A-Ne-tmd">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="0Uc-aa-IgJ" customClass="HomeScreenViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="0Uc-aa-IgJ" customClass="HomeScreenViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N7M-x8-cYz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,6 +111,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAy-Wp-2zp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1008.6956521739131" y="137.94642857142856"/>
+        </scene>
+        <!--Share Info View Controller-->
+        <scene sceneID="n78-7J-pZ5">
+            <objects>
+                <viewController id="kl5-Xz-oUM" customClass="ShareInfoViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="00g-51-31l">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="bT9-Bt-bRW"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5EN-zv-DIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1978" y="138"/>
         </scene>
     </scenes>
     <resources>
