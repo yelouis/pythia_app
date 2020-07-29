@@ -19,10 +19,11 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
     
     lazy var lineChartView: LineChartView = {
         let chartView = LineChartView()
-        chartView.backgroundColor = .systemBlue
+        chartView.backgroundColor = UIColor.black
         
         chartView.rightAxis.enabled = false
         
+        /*
         let yAxis = chartView.leftAxis
         yAxis.labelFont = .boldSystemFont(ofSize: 12)
         yAxis.setLabelCount(6, force: false)
@@ -34,7 +35,15 @@ class HomeScreenViewController: UIViewController, ChartViewDelegate {
         chartView.xAxis.labelFont = .boldSystemFont(ofSize: 12)
         chartView.xAxis.labelTextColor = .white
         chartView.xAxis.axisLineColor = .systemBlue
+        */
+
+        chartView.leftAxis.drawGridLinesEnabled  = false
+        chartView.xAxis.drawGridLinesEnabled = false
+        //Gets rid of axis labels
+        chartView.leftAxis.drawLabelsEnabled = false
+        chartView.xAxis.drawLabelsEnabled = false
         
+        chartView.legend.enabled = false
         chartView.animate(xAxisDuration: 2.5)
         
         return chartView
