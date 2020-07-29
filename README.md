@@ -1,4 +1,4 @@
-# pythia_app
+##### Pythia
 
 ## Executive Summary
 Over the summer, I worked with my friends (and future co-founders) on developing a trading algorithm which implemented a complex machine learning technique. I was talking with my dad about the project and he mentioned some ideas of his own about small patterns he had recognized occurring for certain stocks. My dad is an experienced daytrader and strongly believes in his ability to beat the market. During that week, he found a pattern within the Tesla stock. If the current price was followed by 2 5-minute decreases in price but the volume of transactions increased during that time frame, the next 5-minutes was most likely going to see an increase in price. I was interested in the patterns he had seen and he asked me to build and test his algorithm since he could not code. 
