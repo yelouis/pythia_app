@@ -18,6 +18,8 @@ var testingStockList : [Stock] = [
     Stock(ticker: "CSCO", numSharesOwned: 20, currentSharePrice: 51.22)]
 
 class HomeScreenViewController: UIViewController {
+    
+    var cellTicker : String = ""
 
     @IBOutlet weak var investmentsTableView: UITableView!
     
@@ -63,6 +65,11 @@ class HomeScreenViewController: UIViewController {
     
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        var vc = segue.destination as! ShareInfoViewController
+        vc.ticker = self.cellTicker
+    }
+    
     func createPerformanceString (startValue: Double, currValue : Double) -> String {
         let performanceInWindow : Double = currValue - startValue
         let pctPerformanceInWindow : Double = (currValue/startValue - 1.00) * 100
@@ -100,7 +107,8 @@ class HomeScreenViewController: UIViewController {
 
 extension HomeScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print ("you tapped me!")
+        cellTicker = testingStockList[indexPath.row].ticker
+        performSegue(withIdentifier: "toShareInfo", sender: self)
     }
 }
 
@@ -119,18 +127,13 @@ extension HomeScreenViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)
-        
         let cellStock = testingStockList[indexPath.row]
         
-        let shares = " (" + String(cellStock.numSharesOwned) + " shares) "
-        
+        let sharesAsString = " (" + String(cellStock.numSharesOwned) + " shares) "
+        let coloredShares = NSAttributedString(string: sharesAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)])
         //Randomly makes the current share price either red or green (In actual implementation this will be decided relative to the close price of the previous day)
         let sharePriceAsString = String(cellStock.currentSharePrice)
-        
-        let range = (sharePriceAsString as NSString).range(of: sharePriceAsString)
-        
         var coloredSharePrice : NSAttributedString = NSAttributedString(string: sharePriceAsString)
-        
         let priceChange = Int.random(in: 0...1)
         
         if (priceChange == 0){
@@ -139,7 +142,7 @@ extension HomeScreenViewController: UITableViewDataSource {
             coloredSharePrice = NSAttributedString(string: sharePriceAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
         }
         //cell.textLabel?.text = cellStock.ticker + shares + String(coloredSharePrice.mutableString)
-        cell.textLabel?.attributedText = NSAttributedString(string: cellStock.ticker) + NSAttributedString(string: shares) + coloredSharePrice
+        cell.textLabel?.attributedText = NSAttributedString(string: cellStock.ticker) + coloredShares + coloredSharePrice
         return cell
     }
     

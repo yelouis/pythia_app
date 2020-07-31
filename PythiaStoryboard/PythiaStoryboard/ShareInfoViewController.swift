@@ -9,7 +9,7 @@
 import UIKit
 
 class ShareInfoViewController: UIViewController {
-    
+    var ticker = ""
     @IBOutlet weak var currentPriceLabel: UILabel!
     
     @IBOutlet weak var tickerLabel: UILabel!
@@ -45,7 +45,7 @@ class ShareInfoViewController: UIViewController {
         
         //in the future, we will get the string for the ticker from the previous view controller
         
-        let ticker : String = "WORK"
+        
         let currentPrice : Double = getCurrentPrice(ticker:ticker)
         
         currentPriceLabel.text = "Current Share Value: $"

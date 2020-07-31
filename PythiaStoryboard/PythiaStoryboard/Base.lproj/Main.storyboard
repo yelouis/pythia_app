@@ -237,24 +237,25 @@
                         <outlet property="investmentsTableView" destination="UBt-GJ-pdb" id="PSR-zf-zRX"/>
                         <outlet property="portfolioLabel" destination="FYq-0l-649" id="YNE-jG-DoW"/>
                         <outlet property="portfolioPerformance" destination="xhB-wO-jEU" id="vBp-1x-K2Y"/>
+                        <segue destination="kl5-Xz-oUM" kind="show" identifier="toShareInfo" id="sUx-fV-oXh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RAy-Wp-2zp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1008.6956521739131" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1010" y="138"/>
         </scene>
         <!--Share Info View Controller-->
         <scene sceneID="n78-7J-pZ5">
             <objects>
                 <viewController id="kl5-Xz-oUM" customClass="ShareInfoViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="00g-51-31l">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVT-tj-chR">
                                 <rect key="frame" x="0.0" y="124" width="414" height="843"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-bQ-Y9z">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-bQ-Y9z">
                                         <rect key="frame" x="-20" y="0.0" width="454" height="875"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiF-ho-0eT">
@@ -279,7 +280,7 @@
                                                 <rect key="frame" x="20" y="139" width="414" height="199"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="5OG-i1-84Q">
-                                                <rect key="frame" x="87" y="346" width="281" height="36"/>
+                                                <rect key="frame" x="86.5" y="346" width="281" height="36"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9AU-dj-utE">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="36"/>
@@ -401,6 +402,7 @@
                                             <constraint firstItem="YN1-cv-iRB" firstAttribute="top" secondItem="HP8-EK-X7f" secondAttribute="bottom" constant="20" id="7WX-es-bqc"/>
                                             <constraint firstItem="YN1-cv-iRB" firstAttribute="leading" secondItem="5nl-bQ-Y9z" secondAttribute="leading" constant="52" id="BgT-yA-1ZB"/>
                                             <constraint firstAttribute="trailing" secondItem="YN1-cv-iRB" secondAttribute="trailing" constant="52" id="EzH-ee-BIF"/>
+                                            <constraint firstAttribute="height" constant="875" id="F8e-am-zvJ"/>
                                             <constraint firstItem="b71-le-LRS" firstAttribute="top" secondItem="eYW-1s-mPx" secondAttribute="bottom" constant="20" id="Nzb-wx-dy7"/>
                                             <constraint firstItem="HP8-EK-X7f" firstAttribute="leading" secondItem="5nl-bQ-Y9z" secondAttribute="leading" constant="35" id="Q5U-51-eFX"/>
                                             <constraint firstItem="5OG-i1-84Q" firstAttribute="top" secondItem="b71-le-LRS" secondAttribute="bottom" constant="10" id="Y9W-gk-8Eq"/>
@@ -410,6 +412,13 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="5nl-bQ-Y9z" firstAttribute="centerX" secondItem="JVT-tj-chR" secondAttribute="centerX" id="8gA-fE-ckZ"/>
+                                    <constraint firstItem="5nl-bQ-Y9z" firstAttribute="leading" secondItem="JVT-tj-chR" secondAttribute="leading" constant="-20" id="E0Y-R1-ZK6"/>
+                                    <constraint firstItem="5nl-bQ-Y9z" firstAttribute="top" secondItem="0mQ-2L-4Au" secondAttribute="top" id="TtC-Qn-aif"/>
+                                    <constraint firstAttribute="bottom" secondItem="5nl-bQ-Y9z" secondAttribute="bottom" constant="-32" id="cvl-x8-LLk"/>
+                                    <constraint firstAttribute="trailing" secondItem="5nl-bQ-Y9z" secondAttribute="trailing" constant="-20" id="g58-c6-V1K"/>
+                                </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="0mQ-2L-4Au"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="P1x-E4-Pal"/>
                             </scrollView>
@@ -467,6 +476,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bT9-Bt-bRW"/>
                     </view>
+                    <navigationItem key="navigationItem" id="jzo-6j-YNA"/>
                     <connections>
                         <outlet property="currentPriceLabel" destination="Rjl-dN-f8g" id="jHZ-cd-vUi"/>
                         <outlet property="dynamicPriceLabel" destination="eYW-1s-mPx" id="QK6-VJ-oXi"/>
