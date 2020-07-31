@@ -121,17 +121,17 @@ extension HomeScreenViewController: UITableViewDataSource {
         
         let range = (sharePriceAsString as NSString).range(of: sharePriceAsString)
         
-        let coloredSharePrice = NSMutableAttributedString(string: sharePriceAsString)
+        var coloredSharePrice : NSAttributedString = NSAttributedString(string: sharePriceAsString)
         
         let priceChange = Int.random(in: 0...1)
         
         if (priceChange == 0){
-            coloredSharePrice.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], range: range)
+            coloredSharePrice = NSAttributedString(string: sharePriceAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         } else {
-            coloredSharePrice.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.green], range: range)
+            coloredSharePrice = NSAttributedString(string: sharePriceAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
         }
         //cell.textLabel?.text = cellStock.ticker + shares + String(coloredSharePrice.mutableString)
-        cell.textLabel?.attributedText = NSAttributedString(string: cellStock.ticker) + NSAttributedString(string: shares) + (coloredSharePrice as NSAttributedString)
+        cell.textLabel?.attributedText = NSAttributedString(string: cellStock.ticker) + NSAttributedString(string: shares) + coloredSharePrice
         return cell
     }
     
