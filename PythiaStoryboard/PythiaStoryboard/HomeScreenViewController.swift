@@ -104,7 +104,7 @@ extension HomeScreenViewController: UITableViewDelegate {
     }
 }
 
-extension HomeScreenViewController: UITableViewDataSource {
+extension HomeScreenViewController: UITableViewDataSource {    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testingStockList.count //This is the number of tickers we want to show at any given time
@@ -113,20 +113,25 @@ extension HomeScreenViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)
         
         let cellStock = testingStockList[indexPath.row]
-        let shares = " (x" + String(cellStock.numSharesOwned) + " shares) "
+        
+        let shares = " (" + String(cellStock.numSharesOwned) + " shares) "
         
         //Randomly makes the current share price either red or green (In actual implementation this will be decided relative to the close price of the previous day)
         let sharePriceAsString = String(cellStock.currentSharePrice)
+        
         let range = (sharePriceAsString as NSString).range(of: sharePriceAsString)
+        
         let coloredSharePrice = NSMutableAttributedString(string: sharePriceAsString)
+        
         let priceChange = Int.random(in: 0...1)
+        
         if (priceChange == 0){
             coloredSharePrice.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.red], range: range)
         } else {
             coloredSharePrice.addAttributes([NSAttributedString.Key.foregroundColor: UIColor.green], range: range)
         }
-        cell.textLabel?.text = cellStock.ticker + shares + (coloredSharePrice.mutableString as String)
-        
+        //cell.textLabel?.text = cellStock.ticker + shares + String(coloredSharePrice.mutableString)
+        cell.textLabel?.attributedText = NSAttributedString(string: cellStock.ticker) + NSAttributedString(string: shares) + (coloredSharePrice as NSAttributedString)
         return cell
     }
     
