@@ -29,12 +29,14 @@ class ShareInfoViewController: UIViewController {
         if ticker == "WORK" {
             return 28.75
         }
+        return 0.0; //Means the ticker wasn't "WORK"
     }
     
     func getShareName(ticker: String) -> String {
         if ticker == "WORK" {
             return "Slack"
         }
+        return "N/a" //Means the ticker wasn't "WORK"
     }
     
     override func viewDidLoad() {
