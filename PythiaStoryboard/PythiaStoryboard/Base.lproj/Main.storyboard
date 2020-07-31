@@ -25,7 +25,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2f-P6-YMR">
-                                        <rect key="frame" x="100.5" y="620" width="213" height="30"/>
+                                        <rect key="frame" x="100.5" y="638" width="213" height="30"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <inset key="contentEdgeInsets" minX="80" minY="5" maxX="80" maxY="5"/>
@@ -37,7 +37,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="E2f-P6-YMR" secondAttribute="bottom" constant="168" id="IlX-V3-a0B"/>
+                                    <constraint firstAttribute="bottom" secondItem="E2f-P6-YMR" secondAttribute="bottom" constant="150" id="IlX-V3-a0B"/>
                                     <constraint firstItem="bkz-4l-bUq" firstAttribute="centerX" secondItem="S5J-93-M33" secondAttribute="centerX" id="Itn-dQ-N8L"/>
                                     <constraint firstItem="E2f-P6-YMR" firstAttribute="centerX" secondItem="S5J-93-M33" secondAttribute="centerX" id="Pn6-HG-yJq"/>
                                     <constraint firstItem="bkz-4l-bUq" firstAttribute="top" secondItem="S5J-93-M33" secondAttribute="top" constant="200" id="dKK-N8-I7u"/>
@@ -252,10 +252,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVT-tj-chR">
-                                <rect key="frame" x="0.0" y="124" width="414" height="677"/>
+                                <rect key="frame" x="0.0" y="124" width="414" height="843"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5nl-bQ-Y9z">
-                                        <rect key="frame" x="-20" y="0.0" width="454" height="843"/>
+                                        <rect key="frame" x="-20" y="0.0" width="454" height="875"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UiF-ho-0eT">
                                                 <rect key="frame" x="30" y="20" width="34.5" height="18.5"/>
@@ -423,7 +423,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.2481402134242123" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="Rjl-dN-f8g" firstAttribute="centerX" secondItem="a56-CE-zF8" secondAttribute="centerX" id="bdb-be-bn0"/>
                                 </constraints>
@@ -484,6 +484,65 @@
             </objects>
             <point key="canvasLocation" x="1976.8115942028987" y="137.94642857142856"/>
         </scene>
+        <!--Algorithm Info View Controller-->
+        <scene sceneID="0LN-ZS-qRB">
+            <objects>
+                <viewController id="VoQ-ax-6Ws" customClass="AlgorithmInfoViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ow-2P-6tw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="abS-ck-pxM">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZtC-WY-mOG">
+                                        <rect key="frame" x="116" y="47" width="183" height="21"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-Fs-Zxd">
+                                        <rect key="frame" x="180" y="8" width="54" height="37"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.2481402134" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ZtC-WY-mOG" firstAttribute="centerX" secondItem="abS-ck-pxM" secondAttribute="centerX" id="dYg-sh-Bo6"/>
+                                    <constraint firstItem="h0g-Fs-Zxd" firstAttribute="centerX" secondItem="abS-ck-pxM" secondAttribute="centerX" id="jEx-JY-dgE"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Algo 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwK-V3-YlK">
+                                <rect key="frame" x="20" y="146" width="89.5" height="31"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="$xxxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2zK-Kx-dBU">
+                                <rect key="frame" x="20" y="182" width="60" height="25.5"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2zK-Kx-dBU" firstAttribute="top" secondItem="WwK-V3-YlK" secondAttribute="bottom" constant="5" id="UFT-hg-QA8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3Vx-gF-PHA"/>
+                    </view>
+                    <connections>
+                        <outlet property="algorithmName" destination="WwK-V3-YlK" id="qPV-9L-qDS"/>
+                        <outlet property="currentShareValueLabel" destination="ZtC-WY-mOG" id="n2N-sI-7QK"/>
+                        <outlet property="dynamicAlgorithmPrice" destination="2zK-Kx-dBU" id="jST-kk-5ji"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1rK-x3-Nn7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.8695652173915" y="1014.5089285714286"/>
+        </scene>
         <!--New Algorithm View Controller-->
         <scene sceneID="Bkx-Ge-Zeo">
             <objects>
@@ -502,20 +561,23 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                <color key="backgroundColor" white="0.25239428020503424" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="uEe-qs-niU" firstAttribute="centerX" secondItem="X9Z-11-OCK" secondAttribute="centerX" id="LBa-1A-gLg"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="New Algorithm for TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J51-KY-P7Y">
-                                <rect key="frame" x="33" y="132" width="185" height="20"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="New Algorithm for TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J51-KY-P7Y">
+                                <rect key="frame" x="20" y="138" width="185" height="20"/>
                                 <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="J51-KY-P7Y" firstAttribute="top" secondItem="X9Z-11-OCK" secondAttribute="bottom" constant="14" id="5Am-x1-yyO"/>
+                            <constraint firstItem="J51-KY-P7Y" firstAttribute="leading" secondItem="MDl-gI-kTB" secondAttribute="leading" constant="20" id="N8r-Ky-J4d"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MDl-gI-kTB"/>
                     </view>
                     <connections>

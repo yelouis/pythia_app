@@ -104,6 +104,14 @@ extension HomeScreenViewController: UITableViewDelegate {
     }
 }
 
+func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedString
+{
+    let result = NSMutableAttributedString()
+    result.append(left)
+    result.append(right)
+    return result
+}
+
 extension HomeScreenViewController: UITableViewDataSource {    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

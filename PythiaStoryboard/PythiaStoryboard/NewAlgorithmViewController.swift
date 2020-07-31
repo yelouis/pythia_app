@@ -18,9 +18,18 @@ class NewAlgorithmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let newAlgorithm : Bool = true
+        let algorithmName = "MyAlgo"
+        
         let ticker : String = "WORK"
         
-        algorithmForShareLabel.text = "New Algorithm for " + ticker
+        if newAlgorithm {
+           algorithmForShareLabel.text = "New Algorithm for " + ticker
+        } else {
+            algorithmForShareLabel.text = "Trading Conditions for " + algorithmName
+        }
+        
+        
         
     }
 
