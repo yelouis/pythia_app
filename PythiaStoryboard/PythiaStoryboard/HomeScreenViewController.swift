@@ -20,6 +20,7 @@ var testingStockList : [Stock] = [
 class HomeScreenViewController: UIViewController {
     
     var cellTicker : String = ""
+    var cellPrice : Double = 0.0
 
     @IBOutlet weak var investmentsTableView: UITableView!
     
@@ -68,6 +69,7 @@ class HomeScreenViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! ShareInfoViewController
         vc.ticker = self.cellTicker
+        vc.currentPrice = self.cellPrice
     }
     
     func createPerformanceString (startValue: Double, currValue : Double) -> String {
@@ -108,6 +110,7 @@ class HomeScreenViewController: UIViewController {
 extension HomeScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cellTicker = testingStockList[indexPath.row].ticker
+        cellPrice = testingStockList[indexPath.row].currentSharePrice
         performSegue(withIdentifier: "toShareInfo", sender: self)
     }
 }

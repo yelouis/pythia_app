@@ -10,6 +10,7 @@ import UIKit
 
 class ShareInfoViewController: UIViewController {
     var ticker = ""
+    var currentPrice = 0.0
     @IBOutlet weak var currentPriceLabel: UILabel!
     
     @IBOutlet weak var tickerLabel: UILabel!
@@ -25,16 +26,43 @@ class ShareInfoViewController: UIViewController {
     
     @IBOutlet weak var scroll: UIScrollView!
     
+    /*
     func getCurrentPrice(ticker: String) -> Double {
         if ticker == "WORK" {
             return 28.75
         }
+        
         return 0.0; //Means the ticker wasn't "WORK"
     }
+    */
     
     func getShareName(ticker: String) -> String {
         if ticker == "WORK" {
             return "Slack"
+        }
+        if ticker == "AAPL" {
+            return "Apple"
+        }
+        if ticker == "AMZN" {
+            return "Amazon"
+        }
+        if ticker == "TSLA" {
+            return "Tesla"
+        }
+        if ticker == "BA" {
+            return "Boeing"
+        }
+        if ticker == "MMM" {
+            return "3M"
+        }
+        if ticker == "NKE" {
+            return "Nike"
+        }
+        if ticker == "BP" {
+            return "British Petroleum"
+        }
+        if ticker == "CSCO" {
+            return "Cisco"
         }
         return "N/a" //Means the ticker wasn't "WORK"
     }
@@ -46,7 +74,8 @@ class ShareInfoViewController: UIViewController {
         //in the future, we will get the string for the ticker from the previous view controller
         
         
-        let currentPrice : Double = getCurrentPrice(ticker:ticker)
+        //let currentPrice : Double = getCurrentPrice(ticker:ticker)
+        
         
         currentPriceLabel.text = "Current Share Value: $"
             + String(format: "%.2f", currentPrice)
