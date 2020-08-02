@@ -21,10 +21,42 @@ class ShareInfoViewController: UIViewController {
     @IBOutlet weak var yourPositionLabel: UILabel!
     @IBOutlet weak var yourPositionView: UIView!
     @IBOutlet weak var sharesOwnedValueLabel: UILabel!
+    @IBOutlet weak var marketValueLabel: UILabel!
+    @IBOutlet weak var averageCostLabel: UILabel!
+    @IBOutlet weak var totalReturnLabel: UILabel!
     
     @IBOutlet weak var tradeButton: UIButton!
     
     @IBOutlet weak var scroll: UIScrollView!
+    
+    
+    let transparentView = UIView()
+    
+    func addTransparentView() {
+        let window = UIApplication.shared.keyWindow
+        transparentView.frame = window?.frame ?? self.view.frame
+        self.view.addSubview(transparentView)
+        
+        transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
+        
+        let tapgesture = UITapGestureRecognizer(target: self, action: #selector(removeTransparentView))
+        
+        transparentView.addGestureRecognizer(tapgesture)
+        transparentView.alpha = 0
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut,  animations: {self.transparentView.alpha = 0.7}, completion: nil)
+    }
+
+    @objc func removeTransparentView() {
+        UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut,  animations: {self.transparentView.alpha = 0.0}, completion: nil)
+    }
+    
+    
+    @IBAction func tradeButton(_ sender: Any) {
+        addTransparentView()
+    }
+    
+    
+    
     
     /*
     func getCurrentPrice(ticker: String) -> Double {
@@ -76,17 +108,22 @@ class ShareInfoViewController: UIViewController {
         
         //let currentPrice : Double = getCurrentPrice(ticker:ticker)
         
-        
+        let sharesOwned : Int = 10
+        let averageCost : Double = currentPrice - 1.52
         currentPriceLabel.text = "Current Share Value: $"
             + String(format: "%.2f", currentPrice)
         tickerLabel.text = ticker
         shareNameLabel.text = getShareName(ticker:ticker)
-        dynamicPriceLabel.text = String(format: "%.2f", currentPrice)
+        dynamicPriceLabel.text = "$" + String(format: "%.2f", currentPrice)
         
         //round edges of view
         yourPositionView.layer.cornerRadius = 10
         
-        sharesOwnedValueLabel.text = String(format: "%d", 10)
+        sharesOwnedValueLabel.text = String(format: "%d", sharesOwned)
+        marketValueLabel.text = "$" + String(format: "%.2f", Double(sharesOwned) * currentPrice)
+        averageCostLabel.text = "$" + String(format: "%.2f", averageCost)
+        totalReturnLabel.text = "$" + String(format: "%.2f", (currentPrice - averageCost) * Double(sharesOwned))
+        
         
         tradeButton.layer.cornerRadius = 18
     }

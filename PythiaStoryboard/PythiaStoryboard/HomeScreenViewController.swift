@@ -21,7 +21,9 @@ class HomeScreenViewController: UIViewController {
     
     var cellTicker : String = ""
     var cellPrice : Double = 0.0
-
+    
+    
+    
     @IBOutlet weak var investmentsTableView: UITableView!
     
     @IBOutlet weak var portfolioLabel: UILabel!
@@ -48,7 +50,7 @@ class HomeScreenViewController: UIViewController {
         portfolioValue = 10235.25
         portfolioLabel.text = "Portfolio Value: $"
             + String(format: "%.2f", portfolioValue)
-        
+
         //creating accurate buyingPowerLabel
         buyingPower = 1500.00
         buyingPowerLabel.text = "Buying Power: $"
@@ -67,7 +69,7 @@ class HomeScreenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var vc = segue.destination as! ShareInfoViewController
+        let vc = segue.destination as! ShareInfoViewController
         vc.ticker = self.cellTicker
         vc.currentPrice = self.cellPrice
     }
