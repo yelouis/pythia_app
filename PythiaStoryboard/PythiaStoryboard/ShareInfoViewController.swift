@@ -52,9 +52,14 @@ class ShareInfoViewController: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0.0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut,  animations: {self.transparentView.alpha = 0.0}, completion: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! NewAlgorithmViewController
+        vc.ticker = self.ticker
+    }
     
     @IBAction func tradeButton(_ sender: Any) {
         addTransparentView()
+        performSegue(withIdentifier: "toNewAlgo", sender: self)
     }
     
     

@@ -10,6 +10,8 @@ import UIKit
 
 class NewAlgorithmViewController: UIViewController {
     
+    var ticker : String = ""
+    @IBOutlet weak var algoTicLabel: UILabel!
     
     @IBOutlet weak var currentShareValueLabel: UILabel!
     

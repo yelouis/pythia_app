@@ -647,6 +647,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eSc-kw-Vy9"/>
                     <connections>
+                        <outlet property="algoTicLabel" destination="ctf-lO-O5G" id="WYA-KJ-HLg"/>
                         <outlet property="algorithmForShareLabel" destination="J51-KY-P7Y" id="svt-Ig-cqi"/>
                         <segue destination="LWy-So-46S" kind="show" identifier="toSubConditions" id="KX7-Bp-eLN"/>
                     </connections>
