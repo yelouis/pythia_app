@@ -67,9 +67,12 @@ class HomeScreenViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! ShareInfoViewController
-        vc.ticker = self.cellTicker
-        vc.currentPrice = self.cellPrice
+        //WILL REPLACE WITH A SWITCH CASE
+        if segue.identifier == "toShareInfo" {
+            let vc = segue.destination as! ShareInfoViewController
+            vc.ticker = self.cellTicker
+            vc.currentPrice = self.cellPrice
+        }
     }
     
     func createPerformanceString (startValue: Double, currValue : Double) -> String {
@@ -181,14 +184,16 @@ class StockTableViewCell : UITableViewCell{
     var ticker : String?
     var numSharesOwned : Int?
     var currentSharePrice : Double?
-
+    let indentAmount : Double = 10
+    
+    
     @IBOutlet weak var tickerLabel: UILabel!
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     
     //These lists make it easy for us to change initial attributes of different labels
-    var tickerAtts : [NSAttributedString.Key : Any] = [NSMutableAttributedString.Key.foregroundColor: UIColor.black]
-    var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
+    var tickerAtts : [NSAttributedString.Key : Any] = [NSMutableAttributedString.Key.foregroundColor: UIColor.white]
+    var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
     var priceAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.black]
     
     //The function name is pretty intuitive (In case it isn't: This function is called upon creation of any StockTableViewCell in order to make sure it has the right variables. Why isn't it just an init() function? I don't know but that didnt work when I tried this shit the first 3 hours of coding so we're sticking with this
@@ -209,6 +214,7 @@ class StockTableViewCell : UITableViewCell{
         tickerLabel.attributedText = nsTicker
         shareLabel.attributedText = nsShares
         priceLabel.attributedText = nsPrice
+        
         cellHorizontalStackView.addArrangedSubview(tickerLabel!)
         cellHorizontalStackView.addArrangedSubview(shareLabel!)
         cellHorizontalStackView.addArrangedSubview(priceLabel!)
