@@ -536,6 +536,7 @@
                         <outlet property="tradeButton" destination="LQE-AX-kjT" id="oZ9-Pn-5JH"/>
                         <outlet property="yourPositionLabel" destination="HP8-EK-X7f" id="TTX-HA-pLI"/>
                         <outlet property="yourPositionView" destination="YN1-cv-iRB" id="4aQ-Dn-zLz"/>
+                        <segue destination="ohA-j6-AFC" kind="show" identifier="toNewAlgo" id="eC5-Dr-7U2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EN-zv-DIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -545,7 +546,7 @@
         <!--New Algorithm View Controller-->
         <scene sceneID="Bkx-Ge-Zeo">
             <objects>
-                <viewController id="ohA-j6-AFC" customClass="NewAlgorithmViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="ohA-j6-AFC" customClass="NewAlgorithmViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Tk7-a8-Umd" customClass="NewAl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -644,8 +645,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MDl-gI-kTB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="eSc-kw-Vy9"/>
                     <connections>
                         <outlet property="algorithmForShareLabel" destination="J51-KY-P7Y" id="svt-Ig-cqi"/>
+                        <segue destination="LWy-So-46S" kind="show" identifier="toSubConditions" id="KX7-Bp-eLN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oco-15-Lt8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -655,7 +658,7 @@
         <!--Sub Conditions View Controller-->
         <scene sceneID="aHg-PC-yw1">
             <objects>
-                <viewController id="LWy-So-46S" customClass="SubConditionsViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="LWy-So-46S" customClass="SubConditionsViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K07-dd-fPu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -694,19 +697,32 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-lx-LpX" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
+                                <rect key="frame" x="130" y="228" width="30" height="30"/>
+                                <state key="normal" title="B"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPP-Gx-s89" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
+                                <rect key="frame" x="244" y="232" width="30" height="18"/>
+                                <state key="normal" title="B"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Fvs-yc-ebB" firstAttribute="trailing" secondItem="Vlr-z7-W4y" secondAttribute="trailing" constant="20" id="84t-ml-lc3"/>
                             <constraint firstItem="39D-jQ-IZx" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" constant="20" id="8Pk-CO-EJZ"/>
+                            <constraint firstItem="Fvs-yc-ebB" firstAttribute="trailing" secondItem="qPP-Gx-s89" secondAttribute="trailing" constant="140" id="AX4-Pj-9Pt"/>
+                            <constraint firstItem="BOC-lx-LpX" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" constant="130" id="ByM-ej-eG4"/>
                             <constraint firstItem="Vlr-z7-W4y" firstAttribute="leading" secondItem="39D-jQ-IZx" secondAttribute="trailing" constant="45" id="CJK-1H-I69"/>
+                            <constraint firstItem="qPP-Gx-s89" firstAttribute="top" secondItem="Vlr-z7-W4y" secondAttribute="bottom" constant="50" id="Sjq-D2-LRG"/>
                             <constraint firstItem="39D-jQ-IZx" firstAttribute="top" secondItem="O8q-0P-9eC" secondAttribute="bottom" constant="30" id="ax1-nh-i8u"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="trailing" secondItem="Fvs-yc-ebB" secondAttribute="trailing" id="dmx-8T-yXG"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" id="gn3-SV-dc6"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="top" secondItem="Fvs-yc-ebB" secondAttribute="top" id="hS1-Fd-MlY"/>
+                            <constraint firstItem="BOC-lx-LpX" firstAttribute="top" secondItem="39D-jQ-IZx" secondAttribute="bottom" constant="50" id="hYY-V0-Jdd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fvs-yc-ebB"/>
                     </view>
+                    <navigationItem key="navigationItem" id="DKi-o2-N8k"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oau-m5-bI0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
