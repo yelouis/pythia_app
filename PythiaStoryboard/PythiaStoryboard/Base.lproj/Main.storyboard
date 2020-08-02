@@ -256,24 +256,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a56-CE-zF8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjl-dN-f8g">
-                                        <rect key="frame" x="90" y="30" width="234.5" height="21"/>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="18"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="0.2481402134242123" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="L08-5c-Q0s"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rjl-dN-f8g" secondAttribute="bottom" constant="29" id="PR8-lb-5Sy"/>
-                                    <constraint firstItem="Rjl-dN-f8g" firstAttribute="centerX" secondItem="a56-CE-zF8" secondAttribute="centerX" id="bdb-be-bn0"/>
-                                    <constraint firstItem="Rjl-dN-f8g" firstAttribute="top" secondItem="a56-CE-zF8" secondAttribute="top" constant="30" id="stj-g5-1jd"/>
-                                </constraints>
-                            </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JVT-tj-chR">
                                 <rect key="frame" x="0.0" y="124" width="414" height="954"/>
                                 <subviews>
@@ -482,6 +464,24 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="0mQ-2L-4Au"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="P1x-E4-Pal"/>
                             </scrollView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a56-CE-zF8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjl-dN-f8g">
+                                        <rect key="frame" x="90" y="30" width="234.5" height="21"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.2481402134242123" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="L08-5c-Q0s"/>
+                                    <constraint firstAttribute="bottom" secondItem="Rjl-dN-f8g" secondAttribute="bottom" constant="29" id="PR8-lb-5Sy"/>
+                                    <constraint firstItem="Rjl-dN-f8g" firstAttribute="centerX" secondItem="a56-CE-zF8" secondAttribute="centerX" id="bdb-be-bn0"/>
+                                    <constraint firstItem="Rjl-dN-f8g" firstAttribute="top" secondItem="a56-CE-zF8" secondAttribute="top" constant="30" id="stj-g5-1jd"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCv-dG-9eT">
                                 <rect key="frame" x="0.0" y="1086" width="414" height="80"/>
                                 <subviews>
@@ -558,7 +558,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5EN-zv-DIv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1976.8115942028987" y="137.94642857142856"/>
+            <point key="canvasLocation" x="1881" y="239"/>
         </scene>
         <!--Algorithm Info View Controller-->
         <scene sceneID="0LN-ZS-qRB">
