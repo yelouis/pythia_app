@@ -905,6 +905,7 @@
                                                 </state>
                                                 <connections>
                                                     <action selector="showBuyConditions:" destination="pWc-Mk-Pxf" eventType="touchUpInside" id="cqi-1T-jUj"/>
+                                                    <action selector="showSellConditions:" destination="pWc-Mk-Pxf" eventType="touchUpInside" id="zRY-GN-8R7"/>
                                                 </connections>
                                             </button>
                                         </subviews>

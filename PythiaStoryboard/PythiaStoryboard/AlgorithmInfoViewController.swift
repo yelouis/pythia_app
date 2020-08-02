@@ -33,12 +33,8 @@ class AlgorithmInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        buyDropButton.imageView?.contentMode = .scaleAspectFit
-        buyDropButton.imageView?.frame = CGRect(
-            origin: buyDropButton.imageView!.center,
-            size: CGSize(
-                width: buyDropButton.frame.width / 2,
-                height: buyDropButton.frame.height / 2))
+        makeImageSmaller(button: buyDropButton)
+        makeImageSmaller(button: sellDropButton)
         
         //transfer in from previous view controller
         algorithmName.text = "myAlgo"
@@ -50,11 +46,28 @@ class AlgorithmInfoViewController: UIViewController {
         buyConditions.isHidden = true
     }
     
+    func makeImageSmaller(button : UIButton){
+        button.imageView?.contentMode = .scaleAspectFit
+        button.imageView?.frame = CGRect(
+            origin: button.imageView!.center,
+            size: CGSize(
+                width: button.frame.width / 2,
+                height: button.frame.height / 2))
+    }
+    
     @IBAction func showBuyConditions(_ sender: Any) {
         if buyConditions.isHidden {
             animate(toggle: true, conditions: buyConditions, buttonPressed: buyDropButton)
         } else {
             animate(toggle: false, conditions: buyConditions, buttonPressed: buyDropButton)
+        }
+    }
+    
+    @IBAction func showSellConditions(_ sender: Any) {
+        if sellConditions.isHidden {
+            animate(toggle: true, conditions: sellConditions, buttonPressed: sellDropButton)
+        } else {
+            animate(toggle: false, conditions: sellConditions, buttonPressed: sellDropButton)
         }
     }
     
@@ -123,9 +136,17 @@ class ConditionViewCell : UITableViewCell {
 }
 
 class Condition {
+    //subconditions and pattern are optionals because a user could make a subcondition that is either a list of subconditions or use a pattern they draw
+    var subconditions : [Subcondition]?
+    //var pattern : Pattern? (Need to make a class for this)
+    var amount : Double //Double will work for both percentage amounts and "number of shares" amounts
+    
     
 }
 
 class Subcondition {
+    var comparandOne : String
+    var comparandTwo : String
+    var comparator : String
     
 }
