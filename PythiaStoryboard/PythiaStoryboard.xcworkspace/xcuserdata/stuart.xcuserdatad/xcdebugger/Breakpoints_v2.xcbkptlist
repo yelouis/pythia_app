@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "FA17F08A-E664-4575-9653-8DC48986FEA1"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "238FA77C-55EE-431A-A568-8A2CC4F05D3C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PythiaStoryboard/AlgorithmInfoViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "238FA77C-55EE-431A-A568-8A2CC4F05D3C - 16c543249d638efa"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PythiaStoryboard.AlgorithmInfoViewController.__deallocating_deinit"
+                  moduleName = "PythiaStoryboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/AlgorithmInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  uuid = "238FA77C-55EE-431A-A568-8A2CC4F05D3C - c1cb17c8b358dc6e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PythiaStoryboard.AlgorithmInfoViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PythiaStoryboard.AlgorithmInfoViewController"
+                  moduleName = "PythiaStoryboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/AlgorithmInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "238FA77C-55EE-431A-A568-8A2CC4F05D3C - d19073d22aa2fa37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PythiaStoryboard.AlgorithmInfoViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PythiaStoryboard.AlgorithmInfoViewController"
+                  moduleName = "PythiaStoryboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/AlgorithmInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "280">
+               </Location>
+               <Location
+                  uuid = "238FA77C-55EE-431A-A568-8A2CC4F05D3C - 521b764e099abaf2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PythiaStoryboard.AlgorithmInfoViewController.__allocating_init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PythiaStoryboard.AlgorithmInfoViewController&gt;"
+                  moduleName = "PythiaStoryboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/AlgorithmInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  uuid = "238FA77C-55EE-431A-A568-8A2CC4F05D3C - 44f2575e9f74d88f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PythiaStoryboard.AlgorithmInfoViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PythiaStoryboard.AlgorithmInfoViewController&gt;"
+                  moduleName = "PythiaStoryboard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/AlgorithmInfoViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "13"
+                  endingLineNumber = "13"
+                  offsetFromSymbolStart = "221">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
