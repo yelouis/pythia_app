@@ -22,8 +22,6 @@ class HomeScreenViewController: UIViewController {
     var cellTicker : String = ""
     var cellPrice : Double = 0.0
     
-    
-    
     @IBOutlet weak var investmentsTableView: UITableView!
     
     @IBOutlet weak var portfolioLabel: UILabel!
@@ -92,7 +90,6 @@ class HomeScreenViewController: UIViewController {
         }
     }
     
-    
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
     func computePortfolioValue(){
         var updatedPortfolioValue : Double = 0
@@ -125,33 +122,11 @@ func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedStri
     return result
 }
 
-extension HomeScreenViewController: UITableViewDataSource {    
-    
+extension HomeScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return testingStockList.count //This is the number of tickers we want to show at any given time
     }
-    /*
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)
-        let cellStock = testingStockList[indexPath.row]
-        
-        let sharesAsString = " (" + String(cellStock.numSharesOwned) + " shares) "
-        let coloredShares = NSAttributedString(string: sharesAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)])
-        //Randomly makes the current share price either red or green (In actual implementation this will be decided relative to the close price of the previous day)
-        let sharePriceAsString = String(cellStock.currentSharePrice)
-        var coloredSharePrice : NSAttributedString = NSAttributedString(string: sharePriceAsString)
-        let priceChange = Int.random(in: 0...1)
-        
-        if (priceChange == 0){
-            coloredSharePrice = NSAttributedString(string: sharePriceAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
-        } else {
-            coloredSharePrice = NSAttributedString(string: sharePriceAsString, attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
-        }
-        //cell.textLabel?.text = cellStock.ticker + shares + String(coloredSharePrice.mutableString)
-        cell.textLabel?.attributedText = NSAttributedString(string: cellStock.ticker) + coloredShares + coloredSharePrice
-        return cell
-    }
-    */
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)as! StockTableViewCell
         let cellStock = testingStockList[indexPath.row]
@@ -159,12 +134,9 @@ extension HomeScreenViewController: UITableViewDataSource {
         cell.numSharesOwned = cellStock.numSharesOwned
         cell.currentSharePrice = cellStock.currentSharePrice
         cell.setShit()
-        
         return cell
     }
-    
 }
-
 
 class Stock {
     var ticker : String
@@ -207,11 +179,7 @@ class StockTableViewCell : UITableViewCell{
     var ticker : String?
     var numSharesOwned : Int?
     var currentSharePrice : Double?
-    
-    //var nsTicker : NSAttributedString?
-    //var nsShares : NSMutableAttributedString?
-    //var nsPrice : NSMutableAttributedString?
-    
+
     @IBOutlet weak var tickerLabel: UILabel!
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -232,8 +200,6 @@ class StockTableViewCell : UITableViewCell{
         } else {
             nsPrice = NSAttributedString(string: String(currentSharePrice!), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
         }
-        
-        
         
         //WILL NEED TO CALL UPDATEPRICE HERE ON NSPRICE WHEN REALLY IMPLEMENTED
         tickerLabel.attributedText = nsTicker
