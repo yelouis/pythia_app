@@ -10,6 +10,7 @@
 		D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */; };
 		D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */; };
 		D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861243824D1227400324D93 /* ShareInfoViewController.swift */; };
+		D87CC48024D75326000D775B /* SubConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CC47F24D75325000D775B /* SubConditionsViewController.swift */; };
 		D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */; };
 		D8F2A07C24C3C86400CFBB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */; };
 		D8F2A07E24C3C86400CFBB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */; };
@@ -25,6 +26,7 @@
 		D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlgorithmViewController.swift; sourceTree = "<group>"; };
 		D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmInfoViewController.swift; sourceTree = "<group>"; };
 		D861243824D1227400324D93 /* ShareInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareInfoViewController.swift; sourceTree = "<group>"; };
+		D87CC47F24D75325000D775B /* SubConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubConditionsViewController.swift; sourceTree = "<group>"; };
 		D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		D8F2A07824C3C86400CFBB14 /* PythiaStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PythiaStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				D8F2A07F24C3C86400CFBB14 /* ViewController.swift */,
 				D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */,
 				D861243824D1227400324D93 /* ShareInfoViewController.swift */,
+				D87CC47F24D75325000D775B /* SubConditionsViewController.swift */,
 				D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */,
@@ -223,6 +226,7 @@
 				D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */,
 				D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */,
 				D8F2A07C24C3C86400CFBB14 /* AppDelegate.swift in Sources */,
+				D87CC48024D75326000D775B /* SubConditionsViewController.swift in Sources */,
 				D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */,
 				D8F2A07E24C3C86400CFBB14 /* SceneDelegate.swift in Sources */,
 			);

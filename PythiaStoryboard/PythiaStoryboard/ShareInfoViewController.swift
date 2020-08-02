@@ -29,6 +29,8 @@ class ShareInfoViewController: UIViewController {
     
     @IBOutlet weak var scroll: UIScrollView!
     
+    @IBOutlet weak var algoTable: UITableView!
+    
     
     let transparentView = UIView()
     
