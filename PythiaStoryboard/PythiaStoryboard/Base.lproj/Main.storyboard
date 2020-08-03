@@ -718,27 +718,46 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPP-Gx-s89" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
-                                <rect key="frame" x="244" y="233" width="30" height="30"/>
-                                <state key="normal" title="B"/>
+                                <rect key="frame" x="244" y="233" width="30" height="39"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                <state key="normal" title="O"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-lx-LpX" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
-                                <rect key="frame" x="130" y="233" width="30" height="30"/>
-                                <state key="normal" title="B"/>
+                                <rect key="frame" x="107" y="233" width="30" height="39"/>
+                                <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
+                                <state key="normal" title="O"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqX-6l-etD">
+                                <rect key="frame" x="145" y="241" width="22" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# of shares" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zr-6Q-CF0">
+                                <rect key="frame" x="289" y="241" width="99" height="24"/>
+                                <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="9Zr-6Q-CF0" firstAttribute="leading" secondItem="qPP-Gx-s89" secondAttribute="trailing" constant="15" id="36Q-CT-00l"/>
                             <constraint firstItem="Fvs-yc-ebB" firstAttribute="trailing" secondItem="Vlr-z7-W4y" secondAttribute="trailing" constant="20" id="84t-ml-lc3"/>
                             <constraint firstItem="39D-jQ-IZx" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" constant="20" id="8Pk-CO-EJZ"/>
-                            <constraint firstItem="Fvs-yc-ebB" firstAttribute="trailing" secondItem="qPP-Gx-s89" secondAttribute="trailing" constant="140" id="AX4-Pj-9Pt"/>
-                            <constraint firstItem="BOC-lx-LpX" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" constant="130" id="ByM-ej-eG4"/>
                             <constraint firstItem="Vlr-z7-W4y" firstAttribute="leading" secondItem="39D-jQ-IZx" secondAttribute="trailing" constant="45" id="CJK-1H-I69"/>
+                            <constraint firstItem="mqX-6l-etD" firstAttribute="leading" secondItem="BOC-lx-LpX" secondAttribute="trailing" constant="8" id="JHb-4p-DB1"/>
+                            <constraint firstItem="qPP-Gx-s89" firstAttribute="leading" secondItem="mqX-6l-etD" secondAttribute="trailing" constant="77" id="P5M-Pv-T53"/>
                             <constraint firstItem="qPP-Gx-s89" firstAttribute="top" secondItem="Vlr-z7-W4y" secondAttribute="bottom" constant="50" id="Sjq-D2-LRG"/>
+                            <constraint firstItem="mqX-6l-etD" firstAttribute="top" secondItem="O8q-0P-9eC" secondAttribute="bottom" constant="117" id="Xei-yn-wM5"/>
                             <constraint firstItem="39D-jQ-IZx" firstAttribute="top" secondItem="O8q-0P-9eC" secondAttribute="bottom" constant="30" id="ax1-nh-i8u"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="trailing" secondItem="Fvs-yc-ebB" secondAttribute="trailing" id="dmx-8T-yXG"/>
+                            <constraint firstItem="BOC-lx-LpX" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" constant="107" id="gkd-Gu-4nA"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" id="gn3-SV-dc6"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="top" secondItem="Fvs-yc-ebB" secondAttribute="top" id="hS1-Fd-MlY"/>
                             <constraint firstItem="BOC-lx-LpX" firstAttribute="top" secondItem="39D-jQ-IZx" secondAttribute="bottom" constant="55" id="hYY-V0-Jdd"/>
+                            <constraint firstItem="9Zr-6Q-CF0" firstAttribute="top" secondItem="Vlr-z7-W4y" secondAttribute="bottom" constant="58" id="nPd-0a-60W"/>
+                            <constraint firstItem="Fvs-yc-ebB" firstAttribute="trailing" secondItem="9Zr-6Q-CF0" secondAttribute="trailing" constant="26" id="qxt-fp-vbg"/>
                             <constraint firstItem="Vlr-z7-W4y" firstAttribute="top" secondItem="O8q-0P-9eC" secondAttribute="bottom" constant="25" id="rQc-kU-lVs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fvs-yc-ebB"/>
