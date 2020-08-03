@@ -605,14 +605,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5yX-td-5G5">
                                 <rect key="frame" x="0.0" y="44" width="414" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-Df-bsJ">
-                                        <rect key="frame" x="115.5" y="47" width="183" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jSO-Df-bsJ">
+                                        <rect key="frame" x="115.5" y="46.5" width="183" height="16.5"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-lO-O5G">
-                                        <rect key="frame" x="183.5" y="8" width="47.5" height="37"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ctf-lO-O5G">
+                                        <rect key="frame" x="183.5" y="8" width="47.5" height="25.5"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -620,9 +620,14 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.2481402134" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="jSO-Df-bsJ" firstAttribute="top" secondItem="ctf-lO-O5G" secondAttribute="bottom" constant="13" id="3hD-70-0sZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="jSO-Df-bsJ" secondAttribute="bottom" constant="17" id="9bP-2q-6sa"/>
+                                    <constraint firstItem="ctf-lO-O5G" firstAttribute="top" secondItem="5yX-td-5G5" secondAttribute="top" constant="10" id="Mlh-GT-wkZ"/>
                                     <constraint firstItem="ctf-lO-O5G" firstAttribute="centerX" secondItem="5yX-td-5G5" secondAttribute="centerX" id="Xgn-7I-M1l"/>
                                     <constraint firstAttribute="height" constant="80" id="chj-HS-2Tv"/>
                                     <constraint firstItem="jSO-Df-bsJ" firstAttribute="centerX" secondItem="5yX-td-5G5" secondAttribute="centerX" id="eoF-Hf-Jsz"/>
+                                    <constraint firstItem="ctf-lO-O5G" firstAttribute="top" secondItem="5yX-td-5G5" secondAttribute="top" constant="8" id="ogA-xg-z2g"/>
+                                    <constraint firstItem="ctf-lO-O5G" firstAttribute="centerX" secondItem="5yX-td-5G5" secondAttribute="centerX" id="qyH-Eu-OXK"/>
                                 </constraints>
                             </view>
                         </subviews>

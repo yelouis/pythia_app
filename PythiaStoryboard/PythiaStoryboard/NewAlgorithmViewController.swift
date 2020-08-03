@@ -23,13 +23,14 @@ class NewAlgorithmViewController: UIViewController {
         let newAlgorithm : Bool = true
         let algorithmName = "MyAlgo"
         
-        let ticker : String = "WORK"
         
         if newAlgorithm {
            algorithmForShareLabel.text = "New Algorithm for " + ticker
         } else {
             algorithmForShareLabel.text = "Trading Conditions for " + algorithmName
         }
+        
+        algoTicLabel.text = ticker
         
         
         

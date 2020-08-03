@@ -135,6 +135,7 @@ class ConditionViewCell : UITableViewCell {
     
 }
 
+/*
 class Condition {
     //subconditions and pattern are optionals because a user could make a subcondition that is either a list of subconditions or use a pattern they draw
     var subconditions : [Subcondition]?
@@ -150,3 +151,4 @@ class Subcondition {
     var comparator : String
     
 }
+*/
