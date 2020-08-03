@@ -10,8 +10,28 @@ import UIKit
 
 class AlgorithmInfoViewController: UIViewController {
     
+    var buyGreen : UIColor = UIColor(red: CGFloat(62), green: CGFloat(79), blue: CGFloat(51), alpha: CGFloat(1))
+    var sellRed : UIColor = UIColor(red: CGFloat(79), green: CGFloat(51), blue: CGFloat(51), alpha: CGFloat(1))
     //The conditions will need to be fed in here from a data source depending on what algo is selected
-    let conditionList = ["Condition One", "Two", "Three"]
+    let conditionList : [Condition] = [Condition(
+    subconditions: [
+        Subcondition(
+        comparandOne: "Open",
+        periodOne: "5 day prev",
+        comparandTwo: "Open",
+        periodTwo: "today",
+        comparator: ">"),
+        
+        Subcondition(
+        comparandOne: "80% of Close",
+        periodOne: "30 day prev",
+        comparandTwo: "Close",
+        periodTwo: "today",
+        comparator: "<")
+        ],
+    amount: 10,
+    condType: 0,
+    amountType: 0)]
     
     
     @IBOutlet weak var showStockTrends: UIButton!
@@ -103,7 +123,30 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "condition",
             for: indexPath)//as! ConditionViewCell
-        cell.textLabel?.text = conditionList[indexPath.row]
+        
+        let cellCondition = conditionList[indexPath.row]
+        
+        var cond = ConditionView()
+        for subcondition in cellCondition.subconditions!{
+            cond.addSubcondition(sub: subcondition)
+        }
+        if cellCondition.condType == 0 { //Buy conditions
+            cond.backgroundColor = buyGreen
+            if cellCondition.amountType == 0 {
+                cond.amountLabel.text = String(cellCondition.amount) + "% of available cash"
+            } else {
+                cond.amountLabel.text = String(cellCondition.amount) + " shares of " + tickerForAlgorithm.text!
+            }
+        } else { //Sell conditions
+            cond.backgroundColor = sellRed
+            if cellCondition.amountType == 0 {
+                cond.amountLabel.text = String(cellCondition.amount) + "% of equity"
+            } else {
+                cond.amountLabel.text = String(cellCondition.amount) + " shares of " + tickerForAlgorithm.text!
+            }
+        }
+        //May need to set center, width, and height of cond in order to make it look ok in the cell
+        cell.addSubview(cond)
         return cell
     }
     
@@ -134,7 +177,18 @@ extension UIImage {
 }
 
 class ConditionViewCell : UITableViewCell {
+    var conditionView : ConditionView?
     
+    var subconditions : [Subcondition]?
+    //var pattern : Pattern? (Need to make a class for this)
+    var amount : Double? //Double will work for both percentage amounts and "number of shares" amounts
+    var condType : Int? // 0 - Buy condition, 1 - Sell condition
+    var amountType : Int? // 0 - Percentage of balance, 1 - Set number of stocks
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
 }
 
 class Condition {
@@ -164,12 +218,16 @@ class Condition {
 
 class Subcondition {
     var comparandOne : String
+    var periodOne : String
     var comparandTwo : String
+    var periodTwo : String
     var comparator : String
     
-    init(comparandOne : String, comparandTwo : String, comparator : String){
+    init(comparandOne : String, periodOne: String, comparandTwo : String, periodTwo : String, comparator : String){
         self.comparandOne = comparandOne
+        self.periodOne = periodOne
         self.comparandTwo = comparandTwo
+        self.periodTwo = periodTwo
         self.comparator = comparator
     }
 }

@@ -192,7 +192,7 @@ class StockTableViewCell : UITableViewCell{
     @IBOutlet weak var priceLabel: UILabel!
     
     //These lists make it easy for us to change initial attributes of different labels
-    var tickerAtts : [NSAttributedString.Key : Any] = [NSMutableAttributedString.Key.foregroundColor: UIColor.white]
+    var tickerAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white]
     var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
     var priceAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.black]
     
