@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:PythiaStoryboard.xcodeproj">
+      location = "group:/Users/stuart/Desktop/pythia_app/PythiaStoryboard/Custom Classes">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>

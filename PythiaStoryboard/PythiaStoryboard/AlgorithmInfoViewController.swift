@@ -133,11 +133,6 @@ extension UIImage {
     }
 }
 
-class ConditionView : UIView {
-    
-}
-
-
 class ConditionViewCell : UITableViewCell {
     
 }
