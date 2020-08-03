@@ -673,7 +673,7 @@
         <!--Sub Conditions View Controller-->
         <scene sceneID="aHg-PC-yw1">
             <objects>
-                <viewController modalTransitionStyle="partialCurl" modalPresentationStyle="fullScreen" id="LWy-So-46S" customClass="SubConditionsViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="LWy-So-46S" customClass="SubConditionsViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K07-dd-fPu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -681,21 +681,26 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8q-0P-9eC">
                                 <rect key="frame" x="0.0" y="44" width="414" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-u4-hke">
-                                        <rect key="frame" x="115.5" y="47" width="183" height="21"/>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-cz-Mie">
+                                        <rect key="frame" x="183.5" y="8" width="47.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="TIC1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BOn-cz-Mie">
-                                        <rect key="frame" x="183.5" y="8" width="47.5" height="37"/>
-                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFh-u4-hke">
+                                        <rect key="frame" x="115.5" y="45.5" width="183" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.2481402134" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="BOn-cz-Mie" firstAttribute="top" secondItem="O8q-0P-9eC" secondAttribute="top" constant="8" id="65Q-Mu-qlg"/>
+                                    <constraint firstAttribute="trailing" secondItem="BOn-cz-Mie" secondAttribute="trailing" constant="183" id="OaY-8X-wDO"/>
+                                    <constraint firstItem="gFh-u4-hke" firstAttribute="centerX" secondItem="O8q-0P-9eC" secondAttribute="centerX" id="T5U-Xg-omy"/>
+                                    <constraint firstItem="gFh-u4-hke" firstAttribute="top" secondItem="BOn-cz-Mie" secondAttribute="bottom" constant="12" id="cqR-cT-9x7"/>
+                                    <constraint firstItem="BOn-cz-Mie" firstAttribute="leading" secondItem="O8q-0P-9eC" secondAttribute="leading" constant="183.5" id="dbI-8E-7Xs"/>
                                     <constraint firstAttribute="height" constant="80" id="iN5-Co-cod"/>
                                     <constraint firstItem="gFh-u4-hke" firstAttribute="centerX" secondItem="O8q-0P-9eC" secondAttribute="centerX" id="kFe-r8-Stg"/>
                                     <constraint firstItem="BOn-cz-Mie" firstAttribute="centerX" secondItem="O8q-0P-9eC" secondAttribute="centerX" id="ksR-Ar-aDY"/>
@@ -707,17 +712,17 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlr-z7-W4y">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vlr-z7-W4y">
                                 <rect key="frame" x="188" y="149" width="206" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-lx-LpX" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
-                                <rect key="frame" x="130" y="228" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPP-Gx-s89" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
+                                <rect key="frame" x="244" y="233" width="30" height="30"/>
                                 <state key="normal" title="B"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qPP-Gx-s89" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
-                                <rect key="frame" x="244" y="232" width="30" height="18"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-lx-LpX" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
+                                <rect key="frame" x="130" y="233" width="30" height="30"/>
                                 <state key="normal" title="B"/>
                             </button>
                         </subviews>
@@ -733,7 +738,8 @@
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="trailing" secondItem="Fvs-yc-ebB" secondAttribute="trailing" id="dmx-8T-yXG"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="leading" secondItem="Fvs-yc-ebB" secondAttribute="leading" id="gn3-SV-dc6"/>
                             <constraint firstItem="O8q-0P-9eC" firstAttribute="top" secondItem="Fvs-yc-ebB" secondAttribute="top" id="hS1-Fd-MlY"/>
-                            <constraint firstItem="BOC-lx-LpX" firstAttribute="top" secondItem="39D-jQ-IZx" secondAttribute="bottom" constant="50" id="hYY-V0-Jdd"/>
+                            <constraint firstItem="BOC-lx-LpX" firstAttribute="top" secondItem="39D-jQ-IZx" secondAttribute="bottom" constant="55" id="hYY-V0-Jdd"/>
+                            <constraint firstItem="Vlr-z7-W4y" firstAttribute="top" secondItem="O8q-0P-9eC" secondAttribute="bottom" constant="25" id="rQc-kU-lVs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Fvs-yc-ebB"/>
                     </view>

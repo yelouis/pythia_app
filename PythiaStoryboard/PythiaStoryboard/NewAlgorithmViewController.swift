@@ -33,8 +33,14 @@ class NewAlgorithmViewController: UIViewController {
         algoTicLabel.text = ticker
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! SubConditionsViewController
+        vc.ticker = self.ticker
+    }
 
     @IBAction func addBuyCondition(_ sender: Any) {
+        performSegue(withIdentifier: "toSubConditions", sender: self)
     }
     @IBAction func addSellCondition(_ sender: Any) {
     }

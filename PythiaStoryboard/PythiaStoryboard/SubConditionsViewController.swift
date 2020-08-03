@@ -10,7 +10,7 @@ import UIKit
 
 class SubConditionsViewController: UIViewController {
     
-    
+    var ticker : String = ""
     var pctButton : RadioButton = RadioButton.init()
     var dollarsButton : RadioButton = RadioButton.init()
     
