@@ -573,6 +573,9 @@
                                 <state key="normal" title="Add Buy Condition">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addBuyCondition:" destination="ohA-j6-AFC" eventType="touchUpInside" id="s4b-Ta-CBr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLl-KE-9Wq">
                                 <rect key="frame" x="57" y="455" width="300" height="33"/>
@@ -584,6 +587,9 @@
                                 <state key="normal" title="Add Sell Condition">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addSellCondition:" destination="ohA-j6-AFC" eventType="touchUpInside" id="nsZ-2N-BNW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IbO-Pv-ucH">
                                 <rect key="frame" x="57" y="629" width="300" height="33"/>
@@ -595,6 +601,9 @@
                                 <state key="normal" title="Backtest Algorithm">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="backtestAlgorithm:" destination="ohA-j6-AFC" eventType="touchUpInside" id="iNx-PB-dsg"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sell Condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xzD-8Z-Ye6">
                                 <rect key="frame" x="20" y="376" width="157" height="29"/>
@@ -664,7 +673,7 @@
         <!--Sub Conditions View Controller-->
         <scene sceneID="aHg-PC-yw1">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="LWy-So-46S" customClass="SubConditionsViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="partialCurl" modalPresentationStyle="fullScreen" id="LWy-So-46S" customClass="SubConditionsViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K07-dd-fPu">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
