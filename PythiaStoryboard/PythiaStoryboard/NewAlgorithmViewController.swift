@@ -31,9 +31,15 @@ class NewAlgorithmViewController: UIViewController {
         }
         
         algoTicLabel.text = ticker
-        
-        
-        
+
     }
+
+    @IBAction func addBuyCondition(_ sender: Any) {
+    }
+    @IBAction func addSellCondition(_ sender: Any) {
+    }
+    @IBAction func backtestAlgorithm(_ sender: Any) {
+    }
+    
 
 }
