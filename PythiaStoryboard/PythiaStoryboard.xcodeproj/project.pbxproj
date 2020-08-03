@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		173BB0CB24D7945100585820 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 173BB0CA24D7945100585820 /* ConditionView.swift */; };
 		D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */; };
 		D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */; };
 		D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861243824D1227400324D93 /* ShareInfoViewController.swift */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		173BB0C924D7945100585820 /* View.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = View.xib; path = /Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/View.xib; sourceTree = "<absolute>"; };
+		173BB0CA24D7945100585820 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConditionView.swift; path = /Users/stuart/Desktop/pythia_app/PythiaStoryboard/PythiaStoryboard/ConditionView.swift; sourceTree = "<absolute>"; };
 		17EC97FD24D78CA500561298 /* Custom Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Custom Classes"; path = "/Users/stuart/Desktop/pythia_app/PythiaStoryboard/Custom Classes"; sourceTree = "<absolute>"; };
 		4FB7E32E780F430E1DB4ACD3 /* Pods_PythiaStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PythiaStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlgorithmViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +95,8 @@
 		D8F2A07A24C3C86400CFBB14 /* PythiaStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				173BB0CA24D7945100585820 /* ConditionView.swift */,
+				173BB0C924D7945100585820 /* View.xib */,
 				D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */,
 				D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */,
 				D8F2A07F24C3C86400CFBB14 /* ViewController.swift */,
@@ -224,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */,
+				173BB0CB24D7945100585820 /* ConditionView.swift in Sources */,
 				D8F2A08024C3C86400CFBB14 /* ViewController.swift in Sources */,
 				D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */,
 				D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */,
