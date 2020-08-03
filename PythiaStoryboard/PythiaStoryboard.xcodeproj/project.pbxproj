@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1796FD5824D78AB300580E64 /* ConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1796FD5724D78AB300580E64 /* ConditionView.swift */; };
 		D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */; };
 		D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */; };
 		D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861243824D1227400324D93 /* ShareInfoViewController.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1796FD5724D78AB300580E64 /* ConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConditionView.swift; path = "Custom Classes/ConditionView.swift"; sourceTree = SOURCE_ROOT; };
 		4FB7E32E780F430E1DB4ACD3 /* Pods_PythiaStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PythiaStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlgorithmViewController.swift; sourceTree = "<group>"; };
 		D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmInfoViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				D8F2A08424C3C86600CFBB14 /* Assets.xcassets */,
 				D8F2A08624C3C86600CFBB14 /* LaunchScreen.storyboard */,
 				D8F2A08924C3C86600CFBB14 /* Info.plist */,
+				1796FD5724D78AB300580E64 /* ConditionView.swift */,
 			);
 			path = PythiaStoryboard;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */,
+				1796FD5824D78AB300580E64 /* ConditionView.swift in Sources */,
 				D8F2A08024C3C86400CFBB14 /* ViewController.swift in Sources */,
 				D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */,
 				D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */,

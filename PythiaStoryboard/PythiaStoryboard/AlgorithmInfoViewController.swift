@@ -16,6 +16,7 @@ class AlgorithmInfoViewController: UIViewController {
     
     @IBOutlet weak var showStockTrends: UIButton!
     @IBOutlet weak var tickerForAlgorithm: UILabel!
+    
     //Conditions outlets
     @IBOutlet weak var buyDropButton: UIButton!
     @IBOutlet weak var buyConditions: UITableView!
@@ -131,17 +132,38 @@ extension UIImage {
         return self
     }
 }
-class ConditionViewCell : UITableViewCell {
+
+class ConditionView : UIView {
     
 }
 
+
+class ConditionViewCell : UITableViewCell {
+    
+}
 
 class Condition {
     //subconditions and pattern are optionals because a user could make a subcondition that is either a list of subconditions or use a pattern they draw
     var subconditions : [Subcondition]?
     //var pattern : Pattern? (Need to make a class for this)
     var amount : Double //Double will work for both percentage amounts and "number of shares" amounts
+    var condType : Int // 0 - Buy condition, 1 - Sell condition
+    var amountType : Int // 0 - Percentage of balance, 1 - Set number of stocks
     
+    init(subconditions : [Subcondition], amount : Double, condType : Int, amountType : Int){
+        self.subconditions = subconditions
+        self.amount = amount
+        self.condType = condType
+        self.amountType = amountType
+    }
+    
+    /* Will be needed once Pattern is created
+    init(pattern : Pattern, amount : Double, condType : Int, amountType : Int){
+        self.amount = amount
+        self.condType = condType
+        self.amountType = amountType
+    }
+    */
     
 }
 
@@ -150,5 +172,9 @@ class Subcondition {
     var comparandTwo : String
     var comparator : String
     
+    init(comparandOne : String, comparandTwo : String, comparator : String){
+        self.comparandOne = comparandOne
+        self.comparandTwo = comparandTwo
+        self.comparator = comparator
+    }
 }
-
