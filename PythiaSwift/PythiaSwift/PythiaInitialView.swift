@@ -16,7 +16,12 @@ struct PythiaInitialView: View {
                 .fontWeight(.bold)
                 .padding(.top, 150)
             Spacer()
-            
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 300, height: 55)
+                    .foregroundColor(.blue)
+                Text("Unlock").foregroundColor(.white)
+            }.padding(.bottom, 50)
         }
     }
 }
