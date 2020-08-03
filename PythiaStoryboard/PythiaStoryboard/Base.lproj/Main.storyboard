@@ -721,6 +721,9 @@
                                 <rect key="frame" x="244" y="233" width="30" height="39"/>
                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
                                 <state key="normal" title="O"/>
+                                <connections>
+                                    <action selector="buyWithNumShares:" destination="LWy-So-46S" eventType="touchUpInside" id="4Ys-aZ-Qka"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BOC-lx-LpX" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
                                 <rect key="frame" x="107" y="233" width="30" height="39"/>

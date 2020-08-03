@@ -10,6 +10,8 @@ import UIKit
 
 class SubConditionsViewController: UIViewController {
     
+    //buyWith = false means %, buyWith = true means # of shares
+    var buyWith : Bool = true
     var ticker : String = ""
     var pctButton : RadioButton = RadioButton.init()
     var dollarsButton : RadioButton = RadioButton.init()
@@ -27,6 +29,10 @@ class SubConditionsViewController: UIViewController {
         super.viewDidLoad()
         pctButton.alternateButton = [dollarsButton]
         dollarsButton.alternateButton = [pctButton]
+    }
+    
+    @IBAction func buyWithNumShares(_ sender: Any) {
+        buyWith = true
     }
     
     
