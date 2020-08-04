@@ -11,8 +11,10 @@ import SwiftUI
 struct PythiaHomeView: View {
     var body: some View {
         NavigationView{
-            Text("Hello, World!")
-
+            VStack{
+                Text("Hello, World!")
+                Spacer()
+            }
         }
         .hiddenNavigationBarStyle()
     }
