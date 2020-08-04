@@ -15,8 +15,8 @@ class ShareInfoViewController: UIViewController {
     
     var algoList = ["Algo One", "Algo Two"]
     
-    @IBOutlet weak var algorithmTableView: UITableView!
     
+    @IBOutlet weak var algoTableView: UITableView!
     @IBOutlet weak var currentPriceLabel: UILabel!
     
     @IBOutlet weak var tickerLabel: UILabel!
@@ -34,9 +34,6 @@ class ShareInfoViewController: UIViewController {
     @IBOutlet weak var tradeButton: UIButton!
     
     @IBOutlet weak var scroll: UIScrollView!
-    
-    @IBOutlet weak var algoTable: UITableView!
-    
     
     let transparentView = UIView()
     
@@ -126,8 +123,8 @@ class ShareInfoViewController: UIViewController {
         
         //in the future, we will get the string for the ticker from the previous view controller
         
-        algorithmTableView.delegate = self
-        algorithmTableView.dataSource = self
+        algoTableView.delegate = self
+        algoTableView.dataSource = self
         
         //let currentPrice : Double = getCurrentPrice(ticker:ticker)
         
@@ -149,13 +146,15 @@ class ShareInfoViewController: UIViewController {
         
         
         tradeButton.layer.cornerRadius = 18
+        algoTableView.reloadData()
     }
 }
 
 extension ShareInfoViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cellAlgoName = algoList[indexPath.row] //Sets the cellAlgoName equal to the name of the algorithm of the cell the user clicked on
-        performSegue(withIdentifier: "toAlgoInfo", sender: self)
+        
+        //performSegue(withIdentifier: "toAlgoInfo", sender: self)
     }
 }
 extension ShareInfoViewController : UITableViewDataSource {
@@ -164,9 +163,10 @@ extension ShareInfoViewController : UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "algorithm", for: indexPath)as! AlgoViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "algorithm", for: indexPath) as! AlgoViewCell
         let algoName = algoList[indexPath.row]
-        cell.setShit(algoName: algoName)
+        //cell.setShit(algoName: algoName)
+        cell.textLabel?.text = "Hello World"
         return cell
     }
 }
@@ -190,8 +190,8 @@ class AlgoViewCell : UITableViewCell {
         } else {
             performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
-        cellHorizontalStackView.addArrangedSubview(algoLabel)
-        cellHorizontalStackView.addArrangedSubview(performanceLabel)
+        cellHorizontalStackView.addArrangedSubview(algoLabel!)
+        cellHorizontalStackView.addArrangedSubview(performanceLabel!)
     }
     
     required init?(coder aDecoder: NSCoder) {

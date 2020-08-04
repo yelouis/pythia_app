@@ -37,7 +37,7 @@ class AlgorithmInfoViewController: UIViewController {
     condType: 0,
     amountType: 0)]
     
-    
+    //Need to make outlets for both table views and then set delegates to self
     
     @IBOutlet weak var showStockTrends: UIButton!
     @IBOutlet weak var tickerForAlgorithm: UILabel!
@@ -136,6 +136,7 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
         
         let cellCondition = conditionList[indexPath.row]
         
+        
         let cond = ConditionView()
         for subcondition in cellCondition.subconditions!{
             cond.addSubcondition(sub: subcondition)
@@ -155,6 +156,7 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
                 cond.amountLabel.text = String(cellCondition.amount) + " shares of " + tickerForAlgorithm.text!
             }
         }
+        
         //May need to set center, width, and height of cond in order to make it look ok in the cell
         cell.addSubview(cond)
         return cell
