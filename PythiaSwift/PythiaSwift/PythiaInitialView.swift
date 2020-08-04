@@ -12,15 +12,23 @@ struct PythiaInitialView: View {
     var body: some View {
         VStack{
             Text("Pythia")
-                .font(.largeTitle)
+                .font(Font.system(size: 50))
                 .fontWeight(.bold)
                 .padding(.top, 150)
             Spacer()
+            
             ZStack{
                 RoundedRectangle(cornerRadius: 10)
                     .frame(width: 300, height: 55)
-                    .foregroundColor(.blue)
+                    .foregroundColor(.green)
                 Text("Unlock").foregroundColor(.white)
+            }
+            
+            ZStack{
+                RoundedRectangle(cornerRadius: 10)
+                    .frame(width: 300, height: 55)
+                    .foregroundColor(.gray)
+                Text("Sign Out").foregroundColor(.white)
             }.padding(.bottom, 50)
         }
     }
