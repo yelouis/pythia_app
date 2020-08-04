@@ -431,24 +431,24 @@
                                                         <rect key="frame" x="0.0" y="686.5" width="414" height="166"/>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="algorithm" id="0vG-WG-QeZ" userLabel="AlgoCell" customClass="AlgoViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="28" width="414" height="21"/>
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="algorithm" id="0vG-WG-QeZ" customClass="AlgoViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="28" width="414" height="54"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0vG-WG-QeZ" id="U66-8Q-jiA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                                     <autoresizingMask key="autoresizingMask"/>
                                                                     <subviews>
                                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="J65-zt-j49">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="21"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="54"/>
                                                                             <subviews>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlgoName" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Cc-SKU">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="21"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSi-Cc-SKU">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="207" height="54"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
-                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Performance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhA-Nr-vJD">
-                                                                                    <rect key="frame" x="207" y="0.0" width="207" height="21"/>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhA-Nr-vJD">
+                                                                                    <rect key="frame" x="207" y="0.0" width="207" height="54"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <color key="textColor" red="0.0865727892" green="0.67374479249999997" blue="0.00064803938599999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                                     <nil key="highlightedColor"/>
