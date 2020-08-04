@@ -134,10 +134,7 @@ extension HomeScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)as! StockTableViewCell
         let cellStock = testingStockList[indexPath.row]
-        cell.ticker = cellStock.ticker
-        cell.numSharesOwned = cellStock.numSharesOwned
-        cell.currentSharePrice = cellStock.currentSharePrice
-        cell.setShit()
+        cell.setShit(ticker: cellStock.ticker, numSharesOwned: cellStock.numSharesOwned, currentSharePrice: cellStock.currentSharePrice)
         return cell
     }
 }
@@ -180,35 +177,31 @@ class StockTableViewCell : UITableViewCell{
     
     //This stack view holds the three parts of a Stock object (Consider replacing the three variables with a stock object??)
     @IBOutlet weak var cellHorizontalStackView: UIStackView!
-    
-    var ticker : String?
-    var numSharesOwned : Int?
-    var currentSharePrice : Double?
-    let indentAmount : Double = 10
-    
-    
     @IBOutlet weak var tickerLabel: UILabel!
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
-    
-    //These lists make it easy for us to change initial attributes of different labels
-    var tickerAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white]
-    var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
-    var priceAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.black]
-    
-    //The function name is pretty intuitive (In case it isn't: This function is called upon creation of any StockTableViewCell in order to make sure it has the right variables. Why isn't it just an init() function? I don't know but that didnt work when I tried this shit the first 3 hours of coding so we're sticking with this
-    func setShit(){
-        let nsTicker : NSAttributedString = NSMutableAttributedString(string: ticker!, attributes: tickerAtts)
+   
+    //The function name is pretty intuitive (In case it isn't: This function is called upon creation of any StockTableViewCell in order to make sure it has the right variables and formatting
+    func setShit(ticker : String, numSharesOwned : Int?, currentSharePrice : Double){
+        
+        //These lists make it easy for us to change initial attributes of different labels
+           
+        var tickerAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
+        var priceAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+        
+        let nsTicker : NSAttributedString = NSMutableAttributedString(string: "   " + ticker, attributes: tickerAtts)
         let nsShares : NSAttributedString = NSMutableAttributedString(string: "(" + String(numSharesOwned!) + " shares)", attributes: sharesAtts)
-        var nsPrice : NSAttributedString = NSMutableAttributedString(string: String(currentSharePrice!), attributes: priceAtts)
+        var nsPrice : NSAttributedString = NSMutableAttributedString(string: String(currentSharePrice) + "   ", attributes: priceAtts)
         
         let priceChange = Int.random(in: 0...1)
         
         //Temporary random setting of current price colors to simulate if our shit actually had access to realtime data
         if (priceChange == 0){
-            nsPrice = NSAttributedString(string: String(currentSharePrice!), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            nsPrice = NSAttributedString(string: String(currentSharePrice), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         } else {
-            nsPrice = NSAttributedString(string: String(currentSharePrice!), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+            nsPrice = NSAttributedString(string: String(currentSharePrice), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
         }
         //Setting the cell visuals
         tickerLabel.attributedText = nsTicker
@@ -222,11 +215,12 @@ class StockTableViewCell : UITableViewCell{
     
     //This will run alongside the price updating on our stock list in order to see if the label needs to be green or red
     func updatePriceLabel(newPrice : Double){
-        if (newPrice >= currentSharePrice!){
-            let nsPrice : NSAttributedString = NSMutableAttributedString(string: String(currentSharePrice!), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+        let prevPrice = (priceLabel.attributedText!.string as NSString).doubleValue
+        if (newPrice >= prevPrice){
+            let nsPrice : NSAttributedString = NSMutableAttributedString(string: String(prevPrice), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
             priceLabel.attributedText = nsPrice
         } else {
-            let nsPrice : NSAttributedString = NSMutableAttributedString(string: String(currentSharePrice!), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            let nsPrice : NSAttributedString = NSMutableAttributedString(string: String(prevPrice), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
             priceLabel.attributedText = nsPrice
         }
     }

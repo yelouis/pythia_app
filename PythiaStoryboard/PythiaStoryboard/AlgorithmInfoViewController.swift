@@ -9,6 +9,10 @@
 import UIKit
 
 class AlgorithmInfoViewController: UIViewController {
+    var ticker = ""
+    var currentPrice = 0.0
+    var algoName = ""
+    
     
     var buyGreen : UIColor = UIColor(red: CGFloat(62), green: CGFloat(79), blue: CGFloat(51), alpha: CGFloat(1))
     var sellRed : UIColor = UIColor(red: CGFloat(79), green: CGFloat(51), blue: CGFloat(51), alpha: CGFloat(1))
@@ -32,6 +36,7 @@ class AlgorithmInfoViewController: UIViewController {
     amount: 10,
     condType: 0,
     amountType: 0)]
+    
     
     
     @IBOutlet weak var showStockTrends: UIButton!
@@ -65,6 +70,11 @@ class AlgorithmInfoViewController: UIViewController {
         
         //ConditionTableView shit
         buyConditions.isHidden = true
+        
+        
+        tickerForAlgorithm.text! = ticker
+        algorithmName.text! = algoName
+        currentShareValueLabel.text! = String(currentPrice)
     }
     
     func makeImageSmaller(button : UIButton){
@@ -126,7 +136,7 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
         
         let cellCondition = conditionList[indexPath.row]
         
-        var cond = ConditionView()
+        let cond = ConditionView()
         for subcondition in cellCondition.subconditions!{
             cond.addSubcondition(sub: subcondition)
         }

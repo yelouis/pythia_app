@@ -53,7 +53,7 @@ class ConditionView: UIView {
             wrapIf(label: conditionLabel)
             extendView()
         } else {
-            let andLabel : UILabel
+            let andLabel : UILabel = UILabel()
             andLabel.attributedText =
                 NSAttributedString(string: "AND", attributes: andAtts)
             extendView()

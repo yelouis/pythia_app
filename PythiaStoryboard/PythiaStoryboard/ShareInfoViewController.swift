@@ -11,6 +11,12 @@ import UIKit
 class ShareInfoViewController: UIViewController {
     var ticker = ""
     var currentPrice = 0.0
+    var cellAlgoName = ""
+    
+    var algoList = ["Algo One", "Algo Two"]
+    
+    @IBOutlet weak var algorithmTableView: UITableView!
+    
     @IBOutlet weak var currentPriceLabel: UILabel!
     
     @IBOutlet weak var tickerLabel: UILabel!
@@ -53,8 +59,16 @@ class ShareInfoViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let vc = segue.destination as! NewAlgorithmViewController
-        vc.ticker = self.ticker
+        if segue.identifier == "toNewAlgo" {
+            let vc = segue.destination as! NewAlgorithmViewController
+            vc.ticker = self.ticker
+        } else if segue.identifier == "toAlgoInfo" {
+            let vc = segue.destination as! AlgorithmInfoViewController
+            vc.ticker = self.ticker
+            vc.currentPrice = self.currentPrice
+            vc.algoName = self.cellAlgoName
+            //Need to set algo name
+        }
     }
     
     @IBAction func tradeButton(_ sender: Any) {
@@ -112,6 +126,8 @@ class ShareInfoViewController: UIViewController {
         
         //in the future, we will get the string for the ticker from the previous view controller
         
+        algorithmTableView.delegate = self
+        algorithmTableView.dataSource = self
         
         //let currentPrice : Double = getCurrentPrice(ticker:ticker)
         
@@ -134,6 +150,51 @@ class ShareInfoViewController: UIViewController {
         
         tradeButton.layer.cornerRadius = 18
     }
+}
+
+extension ShareInfoViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        cellAlgoName = algoList[indexPath.row] //Sets the cellAlgoName equal to the name of the algorithm of the cell the user clicked on
+        performSegue(withIdentifier: "toAlgoInfo", sender: self)
+    }
+}
+extension ShareInfoViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return algoList.count //This is the number of algos we want to show at any given time
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "algorithm", for: indexPath)as! AlgoViewCell
+        let algoName = algoList[indexPath.row]
+        cell.setShit(algoName: algoName)
+        return cell
+    }
+}
+
+
+class AlgoViewCell : UITableViewCell {
+
+    @IBOutlet weak var cellHorizontalStackView: UIStackView!
+    @IBOutlet weak var algoLabel: UILabel!
+    @IBOutlet weak var performanceLabel: UILabel!
     
+    func setShit(algoName : String){
+        var algoAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        algoLabel.attributedText = NSAttributedString(string: algoName, attributes: algoAtts)
+        
+        let performance = Double.random(in: -8...8)
+        
+        if performance >= 0 {
+            performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+        } else {
+            performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        }
+        cellHorizontalStackView.addArrangedSubview(algoLabel)
+        cellHorizontalStackView.addArrangedSubview(performanceLabel)
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+       super.init(coder: aDecoder)
+    }
 }
