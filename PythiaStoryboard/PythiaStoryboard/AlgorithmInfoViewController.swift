@@ -59,6 +59,11 @@ class AlgorithmInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        buyConditions.delegate = self
+        buyConditions.dataSource = self
+        sellConditions.delegate = self
+        sellConditions.dataSource = self
+        
         makeImageSmaller(button: buyDropButton)
         makeImageSmaller(button: sellDropButton)
         
@@ -132,7 +137,7 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(
             withIdentifier: "condition",
-            for: indexPath)//as! ConditionViewCell
+            for: indexPath)as! ConditionViewCell
         
         let cellCondition = conditionList[indexPath.row]
         
@@ -189,9 +194,11 @@ extension UIImage {
 }
 
 class ConditionViewCell : UITableViewCell {
-    var conditionView : ConditionView?
     
-    var subconditions : [Subcondition]?
+    @IBOutlet weak var amountLabel: UILabel!
+    @IBOutlet weak var subconditions: UIStackView!
+    
+    var subconditionList : [Subcondition]?
     //var pattern : Pattern? (Need to make a class for this)
     var amount : Double? //Double will work for both percentage amounts and "number of shares" amounts
     var condType : Int? // 0 - Buy condition, 1 - Sell condition

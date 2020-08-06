@@ -153,8 +153,7 @@ class ShareInfoViewController: UIViewController {
 extension ShareInfoViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         cellAlgoName = algoList[indexPath.row] //Sets the cellAlgoName equal to the name of the algorithm of the cell the user clicked on
-        
-        //performSegue(withIdentifier: "toAlgoInfo", sender: self)
+        performSegue(withIdentifier: "toAlgoInfo", sender: self)
     }
 }
 extension ShareInfoViewController : UITableViewDataSource {
@@ -165,8 +164,8 @@ extension ShareInfoViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "algorithm", for: indexPath) as! AlgoViewCell
         let algoName = algoList[indexPath.row]
-        //cell.setShit(algoName: algoName)
-        cell.textLabel?.text = "Hello World"
+        cell.setShit(algoName: algoName)
+        //cell.textLabel?.text = "Hello World"
         return cell
     }
 }
