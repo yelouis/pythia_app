@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		173BB0D024D943C100585820 /* ConditionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 173BB0CD24D943C100585820 /* ConditionView.xib */; };
 		D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */; };
 		D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */; };
 		D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861243824D1227400324D93 /* ShareInfoViewController.swift */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		173BB0CD24D943C100585820 /* ConditionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConditionView.xib; sourceTree = "<group>"; };
 		17EC97FD24D78CA500561298 /* Custom Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Custom Classes"; path = "/Users/stuart/Desktop/pythia_app/PythiaStoryboard/Custom Classes"; sourceTree = "<absolute>"; };
 		4FB7E32E780F430E1DB4ACD3 /* Pods_PythiaStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PythiaStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlgorithmViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +98,6 @@
 				D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */,
 				D861243824D1227400324D93 /* ShareInfoViewController.swift */,
 				D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */,
-				173BB0CD24D943C100585820 /* ConditionView.xib */,
 				D87CC47F24D75325000D775B /* SubConditionsViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */,
@@ -171,7 +168,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				173BB0D024D943C100585820 /* ConditionView.xib in Resources */,
 				D8F2A08824C3C86600CFBB14 /* LaunchScreen.storyboard in Resources */,
 				D8F2A08524C3C86600CFBB14 /* Assets.xcassets in Resources */,
 				D8F2A08324C3C86400CFBB14 /* Main.storyboard in Resources */,
