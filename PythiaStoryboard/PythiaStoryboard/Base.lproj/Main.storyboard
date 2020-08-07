@@ -575,8 +575,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a56-CE-zF8">
                                 <rect key="frame" x="0.0" y="44" width="414" height="80"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjl-dN-f8g">
-                                        <rect key="frame" x="90" y="30" width="234.5" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Share Value: $25.67" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rjl-dN-f8g">
+                                        <rect key="frame" x="90" y="29.5" width="234.5" height="21"/>
                                         <fontDescription key="fontDescription" name="Kefa-Regular" family="Kefa" pointSize="18"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -585,6 +585,7 @@
                                 <color key="backgroundColor" white="0.2481402134242123" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="L08-5c-Q0s"/>
+                                    <constraint firstItem="Rjl-dN-f8g" firstAttribute="centerY" secondItem="a56-CE-zF8" secondAttribute="centerY" id="UPY-Ja-abS"/>
                                     <constraint firstItem="Rjl-dN-f8g" firstAttribute="centerX" secondItem="a56-CE-zF8" secondAttribute="centerX" id="bdb-be-bn0"/>
                                 </constraints>
                             </view>
@@ -1012,15 +1013,16 @@
                                             <constraint firstAttribute="bottom" secondItem="Hdu-gj-5Dx" secondAttribute="bottom" id="exW-Sy-rXr"/>
                                         </constraints>
                                     </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aX3-l6-Vdc" userLabel="List of buy conditions">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aX3-l6-Vdc" userLabel="List of buy conditions">
                                         <rect key="frame" x="0.0" y="50" width="414" height="365.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="separatorColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="condition" rowHeight="200" id="NER-9Z-wo1" customClass="ConditionViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="200"/>
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="condition" rowHeight="150" id="NER-9Z-wo1" customClass="ConditionViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NER-9Z-wo1" id="YGO-Ee-sIA">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BUY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w3r-at-90q">
@@ -1045,7 +1047,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yLT-P8-DTS" userLabel="Subconditions">
-                                                            <rect key="frame" x="20" y="58" width="212" height="70.5"/>
+                                                            <rect key="frame" x="20" y="58" width="212" height="71"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="212" id="DCZ-Ml-OCO"/>
                                                             </constraints>
@@ -1057,7 +1059,7 @@
                                                         <constraint firstItem="gd7-M4-1Cn" firstAttribute="centerX" secondItem="YGO-Ee-sIA" secondAttribute="centerX" constant="131.5" id="Rqt-4w-pCZ"/>
                                                         <constraint firstItem="So3-go-Phh" firstAttribute="leading" secondItem="YGO-Ee-sIA" secondAttribute="leadingMargin" id="WDK-KQ-BFe"/>
                                                         <constraint firstItem="gd7-M4-1Cn" firstAttribute="top" secondItem="w3r-at-90q" secondAttribute="bottom" constant="12" id="gyV-SZ-gIg"/>
-                                                        <constraint firstAttribute="bottomMargin" secondItem="yLT-P8-DTS" secondAttribute="bottom" constant="60.5" id="qXq-MU-Kie"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="yLT-P8-DTS" secondAttribute="bottom" constant="10" id="qXq-MU-Kie"/>
                                                         <constraint firstItem="yLT-P8-DTS" firstAttribute="top" secondItem="So3-go-Phh" secondAttribute="bottom" constant="8" id="uob-mi-5Ma"/>
                                                         <constraint firstItem="So3-go-Phh" firstAttribute="top" secondItem="YGO-Ee-sIA" secondAttribute="topMargin" constant="10" id="wUx-eP-kVw"/>
                                                         <constraint firstItem="w3r-at-90q" firstAttribute="top" secondItem="YGO-Ee-sIA" secondAttribute="topMargin" constant="11" id="zf3-y2-Vno"/>
@@ -1075,6 +1077,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="aX3-l6-Vdc" firstAttribute="top" secondItem="ra9-0J-g0r" secondAttribute="bottom" id="2LJ-6u-Jhb"/>
+                                    <constraint firstAttribute="height" constant="415.5" id="bvZ-Gb-glB"/>
                                     <constraint firstAttribute="bottom" secondItem="aX3-l6-Vdc" secondAttribute="bottom" id="fNa-7s-ifo"/>
                                 </constraints>
                             </stackView>
