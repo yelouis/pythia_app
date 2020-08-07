@@ -864,7 +864,7 @@
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="pWc-Mk-Pxf" customClass="AlgorithmInfoViewController" customModule="PythiaStoryboard" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NfZ-6c-Tfs">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hzQ-R8-Ehk">
@@ -973,24 +973,28 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Fc1-rR-VT4" userLabel="Buy Stack View">
-                                <rect key="frame" x="0.0" y="429" width="414" height="415.5"/>
+                                <rect key="frame" x="0.0" y="439" width="414" height="251"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra9-0J-g0r" userLabel="Buy Condition Combo">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Buy Conditions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qf-cD-TBg">
-                                                <rect key="frame" x="0.0" y="0.0" width="364" height="50"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="  Buy Conditions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qf-cD-TBg">
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="51"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="8Yk-NN-04z"/>
+                                                    <constraint firstAttribute="width" constant="364" id="FdI-WK-XwC"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdu-gj-5Dx" userLabel="Show Conditions">
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hdu-gj-5Dx" userLabel="Show Conditions">
                                                 <rect key="frame" x="364" y="0.0" width="50" height="50"/>
                                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="50" id="BIo-nj-PnB"/>
-                                                    <constraint firstAttribute="width" constant="50" id="dwa-Gd-VgA"/>
+                                                    <constraint firstAttribute="height" constant="51" id="BIo-nj-PnB"/>
+                                                    <constraint firstAttribute="width" constant="51" id="dwa-Gd-VgA"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                 <state key="normal" image="arrow">
@@ -1003,22 +1007,19 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="5qf-cD-TBg" secondAttribute="bottom" id="HzV-Wg-ynV"/>
-                                            <constraint firstItem="5qf-cD-TBg" firstAttribute="top" secondItem="ra9-0J-g0r" secondAttribute="top" id="LWb-S1-dVo"/>
-                                            <constraint firstItem="5qf-cD-TBg" firstAttribute="leading" secondItem="ra9-0J-g0r" secondAttribute="leading" id="LX6-hU-F7i"/>
-                                            <constraint firstAttribute="height" constant="50" id="OzW-s8-Rtb"/>
+                                            <constraint firstAttribute="height" constant="51" id="OzW-s8-Rtb"/>
                                             <constraint firstItem="Hdu-gj-5Dx" firstAttribute="leading" secondItem="5qf-cD-TBg" secondAttribute="trailing" id="Tlc-NZ-P2G"/>
-                                            <constraint firstAttribute="trailing" secondItem="Hdu-gj-5Dx" secondAttribute="trailing" id="Ubq-oE-zgj"/>
-                                            <constraint firstItem="Hdu-gj-5Dx" firstAttribute="top" secondItem="ra9-0J-g0r" secondAttribute="top" id="Zpl-FI-zUx"/>
-                                            <constraint firstAttribute="bottom" secondItem="Hdu-gj-5Dx" secondAttribute="bottom" id="exW-Sy-rXr"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aX3-l6-Vdc" userLabel="List of buy conditions">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="365.5"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="51" width="414" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="hC1-Dw-NUT"/>
+                                        </constraints>
                                         <color key="separatorColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="condition" rowHeight="150" id="NER-9Z-wo1" customClass="ConditionViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="buyCondition" rowHeight="150" id="NER-9Z-wo1" customClass="ConditionViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NER-9Z-wo1" id="YGO-Ee-sIA">
@@ -1077,48 +1078,155 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="aX3-l6-Vdc" firstAttribute="top" secondItem="ra9-0J-g0r" secondAttribute="bottom" id="2LJ-6u-Jhb"/>
-                                    <constraint firstAttribute="height" constant="415.5" id="bvZ-Gb-glB"/>
-                                    <constraint firstAttribute="bottom" secondItem="aX3-l6-Vdc" secondAttribute="bottom" id="fNa-7s-ifo"/>
+                                    <constraint firstAttribute="bottom" secondItem="aX3-l6-Vdc" secondAttribute="bottom" id="4t9-Kc-FR4"/>
+                                    <constraint firstAttribute="trailing" secondItem="aX3-l6-Vdc" secondAttribute="trailing" id="FLW-hs-mKI"/>
+                                    <constraint firstItem="aX3-l6-Vdc" firstAttribute="leading" secondItem="Fc1-rR-VT4" secondAttribute="leading" id="Ok7-ky-8vJ"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place holder for Sell Conditions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n75-J1-2lz">
-                                <rect key="frame" x="88" y="894.5" width="239" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jcd-fl-CPJ" userLabel="Sell Stack View">
+                                <rect key="frame" x="0.0" y="720" width="414" height="251"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="skO-Nj-hhc" userLabel="Sell Condition Combo">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="  Sell Conditions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lG8-bS-dMa" userLabel="Sell Conditions">
+                                                <rect key="frame" x="0.0" y="0.0" width="364" height="51"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="51" id="JAK-ww-lZa"/>
+                                                    <constraint firstAttribute="width" constant="364" id="R73-t6-dss"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZM-wd-Tbu" userLabel="Show Conditions">
+                                                <rect key="frame" x="364" y="0.0" width="50" height="50"/>
+                                                <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="51" id="M2e-Tl-Zwp"/>
+                                                    <constraint firstAttribute="height" constant="51" id="hDQ-R6-89z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <state key="normal" image="arrow">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="showSellConditions:" destination="pWc-Mk-Pxf" eventType="touchUpInside" id="W3F-uz-qm6"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="QZM-wd-Tbu" firstAttribute="leading" secondItem="lG8-bS-dMa" secondAttribute="trailing" id="Tev-xv-w05"/>
+                                            <constraint firstAttribute="height" constant="51" id="zHH-dp-EPw"/>
+                                        </constraints>
+                                    </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sRX-hK-h0s" userLabel="List of sell conditions">
+                                        <rect key="frame" x="0.0" y="51" width="414" height="200"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="200" id="pQm-dk-sLI"/>
+                                        </constraints>
+                                        <color key="separatorColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sellCondition" rowHeight="150" id="DwV-bY-qnF" customClass="ConditionViewCell" customModule="PythiaStoryboard" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="150"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DwV-bY-qnF" id="iMt-oI-BOy">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-pc-MBM">
+                                                            <rect key="frame" x="283" y="63" width="111" height="17"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="111" id="WJD-7v-tLW"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-3n-2q8">
+                                                            <rect key="frame" x="20" y="21" width="19" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <color key="textColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bWL-PW-x3i" userLabel="Subconditions">
+                                                            <rect key="frame" x="20" y="58" width="212" height="71"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="212" id="sat-Dh-C0M"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vQ-vj-C1e">
+                                                            <rect key="frame" x="283" y="22" width="54.5" height="29"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                            <color key="textColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="hqh-3n-2q8" firstAttribute="top" secondItem="iMt-oI-BOy" secondAttribute="topMargin" constant="10" id="Aio-U4-dNL"/>
+                                                        <constraint firstItem="bWL-PW-x3i" firstAttribute="leading" secondItem="iMt-oI-BOy" secondAttribute="leadingMargin" id="DVB-FW-Sii"/>
+                                                        <constraint firstItem="bm9-pc-MBM" firstAttribute="top" secondItem="8vQ-vj-C1e" secondAttribute="bottom" constant="12" id="I1q-bk-OD2"/>
+                                                        <constraint firstItem="8vQ-vj-C1e" firstAttribute="top" secondItem="iMt-oI-BOy" secondAttribute="topMargin" constant="11" id="Klc-Cn-NBk"/>
+                                                        <constraint firstItem="bm9-pc-MBM" firstAttribute="centerX" secondItem="iMt-oI-BOy" secondAttribute="centerX" constant="131.5" id="Y6z-TB-kMS"/>
+                                                        <constraint firstItem="8vQ-vj-C1e" firstAttribute="centerX" secondItem="iMt-oI-BOy" secondAttribute="centerX" constant="103.25" id="cy8-Em-QlG"/>
+                                                        <constraint firstItem="bWL-PW-x3i" firstAttribute="top" secondItem="hqh-3n-2q8" secondAttribute="bottom" constant="8" id="e7h-ct-Xst"/>
+                                                        <constraint firstAttribute="bottomMargin" secondItem="bWL-PW-x3i" secondAttribute="bottom" constant="10" id="rtq-4Q-T8P"/>
+                                                        <constraint firstItem="hqh-3n-2q8" firstAttribute="leading" secondItem="iMt-oI-BOy" secondAttribute="leadingMargin" id="wgs-GU-yEw"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.24313725489999999" green="0.30980392159999998" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <connections>
+                                                    <outlet property="amountLabel" destination="bm9-pc-MBM" id="ptK-Rf-RsQ"/>
+                                                    <outlet property="buyLabel" destination="8vQ-vj-C1e" id="fiV-71-wEL"/>
+                                                    <outlet property="subconditions" destination="bWL-PW-x3i" id="esN-3O-cUo"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="sRX-hK-h0s" firstAttribute="top" secondItem="skO-Nj-hhc" secondAttribute="bottom" id="9Jk-nc-jxN"/>
+                                    <constraint firstItem="sRX-hK-h0s" firstAttribute="leading" secondItem="Jcd-fl-CPJ" secondAttribute="leading" id="Dl4-Du-PvZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="sRX-hK-h0s" secondAttribute="trailing" id="WqP-vq-ZGT"/>
+                                    <constraint firstAttribute="bottom" secondItem="sRX-hK-h0s" secondAttribute="bottom" id="quf-7T-aRS"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="t9J-iZ-gdc" firstAttribute="top" secondItem="Fde-Tb-Mby" secondAttribute="bottom" id="1jT-s6-YOb"/>
                             <constraint firstItem="hzQ-R8-Ehk" firstAttribute="trailing" secondItem="EQK-he-kWw" secondAttribute="trailing" id="2Ap-Hv-bsd"/>
                             <constraint firstItem="Fde-Tb-Mby" firstAttribute="top" secondItem="hzQ-R8-Ehk" secondAttribute="bottom" id="73X-pm-PNS"/>
+                            <constraint firstItem="Jcd-fl-CPJ" firstAttribute="top" secondItem="Fc1-rR-VT4" secondAttribute="bottom" constant="30" id="A9E-iF-Woo"/>
                             <constraint firstItem="Fc1-rR-VT4" firstAttribute="leading" secondItem="EQK-he-kWw" secondAttribute="leading" id="G9y-oO-nQo"/>
                             <constraint firstItem="t9J-iZ-gdc" firstAttribute="leading" secondItem="EQK-he-kWw" secondAttribute="leading" constant="20" id="GIY-vI-c49"/>
-                            <constraint firstItem="Fc1-rR-VT4" firstAttribute="centerY" secondItem="NfZ-6c-Tfs" secondAttribute="centerY" constant="36.75" id="JLN-Rq-jif"/>
                             <constraint firstItem="EQK-he-kWw" firstAttribute="trailing" secondItem="Fc1-rR-VT4" secondAttribute="trailing" id="KV9-MK-Wgl"/>
                             <constraint firstItem="Fde-Tb-Mby" firstAttribute="top" secondItem="hzQ-R8-Ehk" secondAttribute="bottom" id="MeY-Hm-rrI"/>
                             <constraint firstItem="hzQ-R8-Ehk" firstAttribute="top" secondItem="EQK-he-kWw" secondAttribute="top" id="Nix-J5-vE2"/>
                             <constraint firstItem="Oh7-br-4U7" firstAttribute="top" secondItem="aZC-Re-JQc" secondAttribute="bottom" id="W5x-1k-nc1"/>
+                            <constraint firstItem="Fc1-rR-VT4" firstAttribute="top" secondItem="Oh7-br-4U7" secondAttribute="bottom" constant="10" id="Z5q-H5-HOT"/>
                             <constraint firstItem="o1A-VL-NaN" firstAttribute="top" secondItem="t9J-iZ-gdc" secondAttribute="bottom" id="ZFq-ik-Q6Y"/>
                             <constraint firstItem="aZC-Re-JQc" firstAttribute="top" secondItem="o1A-VL-NaN" secondAttribute="bottom" id="d02-rn-vft"/>
-                            <constraint firstItem="EQK-he-kWw" firstAttribute="trailing" secondItem="n75-J1-2lz" secondAttribute="trailing" constant="87" id="hwd-14-dZ6"/>
-                            <constraint firstItem="n75-J1-2lz" firstAttribute="leading" secondItem="EQK-he-kWw" secondAttribute="leading" constant="88" id="jpW-QU-elv"/>
+                            <constraint firstItem="Jcd-fl-CPJ" firstAttribute="trailing" secondItem="EQK-he-kWw" secondAttribute="trailing" id="g0s-tT-Pzz"/>
                             <constraint firstItem="Fde-Tb-Mby" firstAttribute="leading" secondItem="EQK-he-kWw" secondAttribute="leading" constant="20" id="lnb-J0-exi"/>
+                            <constraint firstItem="Jcd-fl-CPJ" firstAttribute="leading" secondItem="EQK-he-kWw" secondAttribute="leading" id="mQu-JS-b24"/>
                             <constraint firstItem="hzQ-R8-Ehk" firstAttribute="leading" secondItem="EQK-he-kWw" secondAttribute="leading" id="shx-n2-aOE"/>
-                            <constraint firstItem="EQK-he-kWw" firstAttribute="bottom" secondItem="n75-J1-2lz" secondAttribute="bottom" constant="251" id="vHg-i3-52u"/>
-                            <constraint firstItem="n75-J1-2lz" firstAttribute="top" secondItem="Fc1-rR-VT4" secondAttribute="bottom" constant="50" id="xjv-8q-zQ1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EQK-he-kWw"/>
                     </view>
                     <navigationItem key="navigationItem" id="EHa-3b-0Fa"/>
-                    <size key="freeformSize" width="414" height="1200"/>
+                    <size key="freeformSize" width="414" height="1000"/>
                     <connections>
                         <outlet property="algorithmName" destination="Fde-Tb-Mby" id="b81-78-W7p"/>
                         <outlet property="buyConditions" destination="aX3-l6-Vdc" id="aci-cA-9dT"/>
                         <outlet property="buyDropButton" destination="Hdu-gj-5Dx" id="gLX-af-CNh"/>
                         <outlet property="currentShareValueLabel" destination="VRI-5H-Lsb" id="HhW-S1-uVc"/>
                         <outlet property="dynamicAlgorithmPrice" destination="t9J-iZ-gdc" id="5NH-lE-HlL"/>
+                        <outlet property="sellConditions" destination="sRX-hK-h0s" id="QJM-Ws-3Vv"/>
+                        <outlet property="sellDropButton" destination="QZM-wd-Tbu" id="ESs-6a-KRg"/>
                         <outlet property="showStockTrends" destination="hxE-f6-xOR" id="uST-2X-rNs"/>
                         <outlet property="tickerForAlgorithm" destination="tec-Ua-wmD" id="ihz-QO-8OX"/>
                     </connections>

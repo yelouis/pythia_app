@@ -45,7 +45,7 @@ class SubConditionsViewController: UIViewController {
 }
 
 class SubConditionView: UIView {
-    var makePattern
+    //var makePattern
     
     override init(frame: CGRect) {
         super.init(frame: frame)

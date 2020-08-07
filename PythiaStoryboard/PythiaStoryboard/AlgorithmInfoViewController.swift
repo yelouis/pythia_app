@@ -18,7 +18,7 @@ class AlgorithmInfoViewController: UIViewController {
     
     
     //The conditions will need to be fed in here from a data source depending on what algo is selected
-    let conditionList : [Condition] = [Condition(
+    var buyConditionList : [Condition] = [Condition(
     subconditions: [
         Subcondition(
         comparandOne: "Open",
@@ -38,6 +38,26 @@ class AlgorithmInfoViewController: UIViewController {
     condType: 0,
     amountType: 0)]
     
+    var sellConditionList : [Condition] = [Condition(
+       subconditions: [
+           Subcondition(
+           comparandOne: "Close",
+           periodOne: "5 day prev",
+           comparandTwo: "Close",
+           periodTwo: "today",
+           comparator: "<"),
+           
+           Subcondition(
+           comparandOne: "80% of Close",
+           periodOne: "30 day prev",
+           comparandTwo: "Close",
+           periodTwo: "today",
+           comparator: ">")
+           ],
+       amount: 20,
+       condType: 1,
+       amountType: 1)]
+    
     //Need to make outlets for both table views and then set delegates to self
     
     @IBOutlet weak var showStockTrends: UIButton!
@@ -47,6 +67,10 @@ class AlgorithmInfoViewController: UIViewController {
     @IBOutlet weak var buyDropButton: UIButton!
     @IBOutlet weak var buyConditions: UITableView!
             
+    @IBOutlet weak var sellDropButton: UIButton!
+    @IBOutlet weak var sellConditions: UITableView!
+    
+    
     //Algo information outlets
     @IBOutlet weak var algorithmName: UILabel!
     @IBOutlet weak var dynamicAlgorithmPrice: UILabel!
@@ -59,21 +83,18 @@ class AlgorithmInfoViewController: UIViewController {
         
         buyConditions.delegate = self
         buyConditions.dataSource = self
+        buyConditions.isHidden = true
         
+        sellConditions.delegate = self
+        sellConditions.dataSource = self
+        sellConditions.isHidden = true
         //makeImageSmaller(button: buyDropButton)
         
         //transfer in from previous view controller
-        algorithmName.text = "myAlgo"
-        tickerForAlgorithm.text = "WORK"
+        algorithmName.text = algoName
+        tickerForAlgorithm.text = ticker
         dynamicAlgorithmPrice.text = "$1483.45"
         showStockTrends.titleLabel?.numberOfLines=3
-        
-        //ConditionTableView shit
-        //buyConditions.isHidden = true
-        
-        
-        tickerForAlgorithm.text! = ticker
-        algorithmName.text! = algoName
         currentShareValueLabel.text! = String(currentPrice)
     }
     
@@ -94,19 +115,26 @@ class AlgorithmInfoViewController: UIViewController {
         }
     }
     
+    @IBAction func showSellConditions(_ sender: Any) {
+        if sellConditions.isHidden {
+            animate(toggle: true, conditions: sellConditions, buttonPressed: sellDropButton)
+        } else {
+            animate(toggle: false, conditions: sellConditions, buttonPressed: sellDropButton)
+        }
+    }
     
     func animate(toggle: Bool, conditions : UITableView, buttonPressed : UIButton) {//Need to have button to change and table to show as arguments in this function
         if toggle {
             //Will need to have arrow change to be upwards facing
             UIView.animate(withDuration: 0.3) {
                 conditions.isHidden = false
-                buttonPressed.imageView?.image?.rotate(radians: .pi)
+               // buttonPressed.imageView?.image?.rotate(radians: .pi)
             }
         } else {
             //Will need to have arrow change to be downwards facing
             UIView.animate(withDuration: 0.3) {
                 conditions.isHidden = true
-                buttonPressed.imageView?.image?.rotate(radians: .pi)
+                //buttonPressed.imageView?.image?.rotate(radians: .pi)
             }
         }
     }
@@ -119,27 +147,34 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return conditionList.count
+        if tableView == buyConditions{
+            return buyConditionList.count
+        } else {
+            return sellConditionList.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(
-            withIdentifier: "condition",
-            for: indexPath)as! ConditionViewCell
-        
-        let cellCondition = conditionList[indexPath.row]
-
-        if cellCondition.condType == 0 { //Buy conditions
+        if tableView == buyConditions{
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "buyCondition",
+                for: indexPath)as! ConditionViewCell
+            
+            let cellCondition = buyConditionList[indexPath.row]
             cell.backgroundColor = UIColor.green
+            cell.setShit(cond: cellCondition)
+            return cell
         } else {
-            cell.backgroundColor = sellRed
+            let cell = tableView.dequeueReusableCell(
+                withIdentifier: "sellCondition",
+                for: indexPath)as! ConditionViewCell
+            
+            let cellCondition = sellConditionList[indexPath.row]
+            cell.backgroundColor = UIColor.red
+            cell.setShit(cond: cellCondition)
+            return cell
         }
-        
-        cell.setShit(cond: cellCondition)
-        return cell
     }
-    
-    
 }
 
 extension UIImage {
