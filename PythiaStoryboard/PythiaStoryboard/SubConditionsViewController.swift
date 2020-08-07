@@ -10,6 +10,8 @@ import UIKit
 
 class SubConditionsViewController: UIViewController {
     
+    var subConditionView: SubConditionView { return self.view as! SubConditionView }
+    
     //buyWith = false means %, buyWith = true means # of shares
     var buyWith : Bool = true
     var ticker : String = ""
@@ -31,9 +33,58 @@ class SubConditionsViewController: UIViewController {
         dollarsButton.alternateButton = [pctButton]
     }
     
+    override func loadView() {
+        //self.view =
+    }
+    
     @IBAction func buyWithNumShares(_ sender: Any) {
         buyWith = true
     }
+    
+    
+}
+
+class SubConditionView: UIView {
+    var makePattern
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor(red: 81, green: 165, blue: 186, alpha: 1)
+        setupViews()
+        //setupConstraints()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setupViews() {
+        self.addSubview(contentView)
+        self.addSubview(makePatternButton)
+    }
+    
+    /*
+    we may not need this function because we are going to put this view in a stack view
+    func setupConstraints() {
+        self.translatesAutoresizingMaskIntoConstraints = false
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 10).isActive = true
+        contentView.topAnchor.constraint(equalTo: self., constant: <#T##CGFloat#>)
+    }
+    */
+    
+    let contentView: UIView = {
+        
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        return view
+    }()
+    
+    let makePatternButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Make Pattern", for: .normal)
+        return button
+    }()
     
     
 }
