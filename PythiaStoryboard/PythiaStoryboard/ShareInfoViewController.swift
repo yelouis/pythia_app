@@ -11,6 +11,7 @@ import UIKit
 class ShareInfoViewController: UIViewController {
     var ticker = ""
     var currentPrice = 0.0
+    var sharesOwned : Int = 0
     var cellAlgoName = ""
     
     var algoList = ["Algo One", "Algo Two"]
@@ -24,6 +25,7 @@ class ShareInfoViewController: UIViewController {
     @IBOutlet weak var dynamicPriceLabel: UILabel!
     @IBOutlet weak var fixedBar: UIView!
     
+    @IBOutlet weak var runningAlgoLabel: UILabel!
     @IBOutlet weak var yourPositionLabel: UILabel!
     @IBOutlet weak var yourPositionView: UIView!
     @IBOutlet weak var sharesOwnedValueLabel: UILabel!
@@ -114,13 +116,28 @@ class ShareInfoViewController: UIViewController {
         if ticker == "CSCO" {
             return "Cisco"
         }
+        if ticker == "HEXO" {
+            return "Hexo"
+        }
         return "N/a" //Means the ticker wasn't "WORK"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if sharesOwned == 0 {
+            yourPositionLabel.isHidden = true
+            yourPositionView.isHidden = true
+            runningAlgoLabel.isHidden = true
+            algoTableView.isHidden = true
+            algoTableView.isUserInteractionEnabled = false
+        } else {
+            yourPositionLabel.isHidden = false
+            yourPositionView.isHidden = false
+            runningAlgoLabel.isHidden = false
+            algoTableView.isHidden = false
+            algoTableView.isUserInteractionEnabled = true
+        }
         //in the future, we will get the string for the ticker from the previous view controller
         
         algoTableView.delegate = self
@@ -128,7 +145,7 @@ class ShareInfoViewController: UIViewController {
         
         //let currentPrice : Double = getCurrentPrice(ticker:ticker)
         
-        let sharesOwned : Int = 10
+        //let sharesOwned : Int = 10
         let averageCost : Double = currentPrice - 1.52
         currentPriceLabel.text = "Current Share Value: $"
             + String(format: "%.2f", currentPrice)
@@ -138,15 +155,20 @@ class ShareInfoViewController: UIViewController {
         
         //round edges of view
         yourPositionView.layer.cornerRadius = 10
-        
-        sharesOwnedValueLabel.text = String(format: "%d", sharesOwned)
-        marketValueLabel.text = "$" + String(format: "%.2f", Double(sharesOwned) * currentPrice)
-        averageCostLabel.text = "$" + String(format: "%.2f", averageCost)
-        totalReturnLabel.text = "$" + String(format: "%.2f", (currentPrice - averageCost) * Double(sharesOwned))
-        
+        if sharesOwned > 0 {
+            sharesOwnedValueLabel.text = String(format: "%d", sharesOwned)
+            marketValueLabel.text = "$" + String(format: "%.2f", Double(sharesOwned) * currentPrice)
+            averageCostLabel.text = "$" + String(format: "%.2f", averageCost)
+            totalReturnLabel.text = "$" + String(format: "%.2f", (currentPrice - averageCost) * Double(sharesOwned))
+        } else {
+            sharesOwnedValueLabel.text = String(format: "%d", 0)
+            marketValueLabel.text = "$" + String(format: "%.2f", Double(sharesOwned) * currentPrice)
+            averageCostLabel.text = "$" + String(format: "%.2f", 0)
+            totalReturnLabel.text = "$" + String(format: "%.2f", (currentPrice - averageCost) * Double(sharesOwned))
+        }
         
         tradeButton.layer.cornerRadius = 18
-        algoTableView.reloadData()
+        //algoTableView.reloadData()
     }
 }
 
@@ -185,9 +207,9 @@ class AlgoViewCell : UITableViewCell {
         let performance = Double.random(in: -8...8)
         
         if performance >= 0 {
-            performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+            performanceLabel.attributedText = NSAttributedString(string: String(format: "%.2f", performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
         } else {
-            performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            performanceLabel.attributedText = NSAttributedString(string: String(format: "%.2f", performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
         cellHorizontalStackView.addArrangedSubview(algoLabel!)
         cellHorizontalStackView.addArrangedSubview(performanceLabel!)

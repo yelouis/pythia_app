@@ -13,9 +13,10 @@ class AlgorithmInfoViewController: UIViewController {
     var currentPrice = 0.0
     var algoName = ""
     
-    
     var buyGreen : UIColor = UIColor(red: CGFloat(62), green: CGFloat(79), blue: CGFloat(51), alpha: CGFloat(1))
     var sellRed : UIColor = UIColor(red: CGFloat(79), green: CGFloat(51), blue: CGFloat(51), alpha: CGFloat(1))
+    
+    
     //The conditions will need to be fed in here from a data source depending on what algo is selected
     let conditionList : [Condition] = [Condition(
     subconditions: [
@@ -45,10 +46,7 @@ class AlgorithmInfoViewController: UIViewController {
     //Conditions outlets
     @IBOutlet weak var buyDropButton: UIButton!
     @IBOutlet weak var buyConditions: UITableView!
-        
-    @IBOutlet weak var sellDropButton: UIButton!
-    @IBOutlet weak var sellConditions: UITableView!
-    
+            
     //Algo information outlets
     @IBOutlet weak var algorithmName: UILabel!
     @IBOutlet weak var dynamicAlgorithmPrice: UILabel!
@@ -61,11 +59,8 @@ class AlgorithmInfoViewController: UIViewController {
         
         buyConditions.delegate = self
         buyConditions.dataSource = self
-        sellConditions.delegate = self
-        sellConditions.dataSource = self
         
-        makeImageSmaller(button: buyDropButton)
-        makeImageSmaller(button: sellDropButton)
+        //makeImageSmaller(button: buyDropButton)
         
         //transfer in from previous view controller
         algorithmName.text = "myAlgo"
@@ -74,7 +69,7 @@ class AlgorithmInfoViewController: UIViewController {
         showStockTrends.titleLabel?.numberOfLines=3
         
         //ConditionTableView shit
-        buyConditions.isHidden = true
+        //buyConditions.isHidden = true
         
         
         tickerForAlgorithm.text! = ticker
@@ -99,13 +94,6 @@ class AlgorithmInfoViewController: UIViewController {
         }
     }
     
-    @IBAction func showSellConditions(_ sender: Any) {
-        if sellConditions.isHidden {
-            animate(toggle: true, conditions: sellConditions, buttonPressed: sellDropButton)
-        } else {
-            animate(toggle: false, conditions: sellConditions, buttonPressed: sellDropButton)
-        }
-    }
     
     func animate(toggle: Bool, conditions : UITableView, buttonPressed : UIButton) {//Need to have button to change and table to show as arguments in this function
         if toggle {
@@ -140,30 +128,14 @@ extension AlgorithmInfoViewController : UITableViewDelegate, UITableViewDataSour
             for: indexPath)as! ConditionViewCell
         
         let cellCondition = conditionList[indexPath.row]
-        
-        
-        let cond = ConditionView()
-        for subcondition in cellCondition.subconditions!{
-            cond.addSubcondition(sub: subcondition)
-        }
+
         if cellCondition.condType == 0 { //Buy conditions
-            cond.backgroundColor = buyGreen
-            if cellCondition.amountType == 0 {
-                cond.amountLabel.text = String(cellCondition.amount) + "% of available cash"
-            } else {
-                cond.amountLabel.text = String(cellCondition.amount) + " shares of " + tickerForAlgorithm.text!
-            }
-        } else { //Sell conditions
-            cond.backgroundColor = sellRed
-            if cellCondition.amountType == 0 {
-                cond.amountLabel.text = String(cellCondition.amount) + "% of equity"
-            } else {
-                cond.amountLabel.text = String(cellCondition.amount) + " shares of " + tickerForAlgorithm.text!
-            }
+            cell.backgroundColor = UIColor.green
+        } else {
+            cell.backgroundColor = sellRed
         }
         
-        //May need to set center, width, and height of cond in order to make it look ok in the cell
-        cell.addSubview(cond)
+        cell.setShit(cond: cellCondition)
         return cell
     }
     
@@ -195,15 +167,59 @@ extension UIImage {
 
 class ConditionViewCell : UITableViewCell {
     
+    @IBOutlet weak var buyLabel: UILabel!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var subconditions: UIStackView!
+        //var pattern : Pattern? (Need to make a class for this)    
+    var compAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Kefa", size: CGFloat(14))]
+       
+    var periodAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.systemGray4, NSAttributedString.Key.font: UIFont(name: "Kefa", size: CGFloat(14))]
+       
+    var andAtts :[NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.backgroundColor: UIColor.systemGray4, NSAttributedString.Key.font: UIFont(name: "Kefa", size: CGFloat(14))]
     
-    var subconditionList : [Subcondition]?
-    //var pattern : Pattern? (Need to make a class for this)
-    var amount : Double? //Double will work for both percentage amounts and "number of shares" amounts
-    var condType : Int? // 0 - Buy condition, 1 - Sell condition
-    var amountType : Int? // 0 - Percentage of balance, 1 - Set number of stocks
+    func setShit(cond : Condition){
+        for subcondition in cond.subconditions!{
+            addSubcondition(sub: subcondition)
+        }
+        
+        if cond.condType == 0 { //Buy conditions
+            if cond.amountType == 0 {
+                amountLabel.attributedText = NSAttributedString(string: String(cond.amount) + "% of available cash", attributes: compAtts)
+            } else {
+                amountLabel.attributedText = NSAttributedString(string: String(cond.amount) + " shares" , attributes: compAtts)
+            }
+        } else { //Sell conditions
+            if cond.amountType == 0 {
+                amountLabel.attributedText = NSAttributedString(string: String(cond.amount) + "% of equity", attributes: compAtts)
+            } else {
+                amountLabel.attributedText = NSAttributedString(string: String(cond.amount) + " shares of equity", attributes: compAtts)
+            }
+        }
+    }
     
+    func addSubcondition(sub : Subcondition){
+        let conditionLabel : UILabel =
+            UILabel()
+        conditionLabel.numberOfLines = 0
+        conditionLabel.attributedText = NSAttributedString(string: sub.comparandOne, attributes: compAtts) + NSAttributedString(string:" (" + sub.periodOne + ")", attributes: periodAtts) + NSAttributedString(string: " " + sub.comparator + " ", attributes: compAtts) + NSAttributedString(string: sub.comparandTwo, attributes: compAtts) + NSAttributedString(string:" (" + sub.periodTwo + ")", attributes: periodAtts)
+            
+        if (subconditions.subviews.count == 0){
+            subconditions.addArrangedSubview(conditionLabel)
+        } else {
+            let andLabel : UILabel = UILabel()
+                andLabel.attributedText =
+                NSAttributedString(string: "AND", attributes: andAtts)
+            //extendView()
+            subconditions.addArrangedSubview(andLabel)
+            subconditions.addArrangedSubview(conditionLabel)
+        }
+    }
+    /*
+    func addPattern(pat : Pattern){
+            
+    }
+    */
+        
     
     required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)

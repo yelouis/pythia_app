@@ -7,7 +7,7 @@
 
 import UIKit
 
-var testingStockList : [Stock] = [
+var investmentList : [Stock] = [
     Stock(ticker: "AAPL", numSharesOwned: 10, currentSharePrice: 10.00),
     Stock(ticker: "TSLA", numSharesOwned: 7, currentSharePrice: 20.11),
     Stock(ticker: "MMM", numSharesOwned: 1, currentSharePrice: 31.20),
@@ -17,12 +17,22 @@ var testingStockList : [Stock] = [
     Stock(ticker: "BP", numSharesOwned: 16, currentSharePrice: 2.87),
     Stock(ticker: "CSCO", numSharesOwned: 20, currentSharePrice: 51.22)]
 
+var interestList : [Stock] = [
+    Stock(ticker: "HEXO", currentSharePrice: 10.00),
+    Stock(ticker: "SUMR", currentSharePrice: 20.11),
+    Stock(ticker: "AXTA", currentSharePrice: 31.20),
+    Stock(ticker: "TEAM", currentSharePrice: 17.69),
+    Stock(ticker: "TCEHY", currentSharePrice: 11.34),
+    Stock(ticker: "SPYD", currentSharePrice: 4.56)]
+
 class HomeScreenViewController: UIViewController {
     
     var cellTicker : String = ""
     var cellPrice : Double = 0.0
+    var cellShares : Int = 0
     
     @IBOutlet weak var investmentsTableView: UITableView!
+    @IBOutlet weak var interestsTableView: UITableView!
     
     @IBOutlet weak var portfolioLabel: UILabel!
     @IBOutlet weak var buyingPowerLabel: UILabel!
@@ -36,6 +46,7 @@ class HomeScreenViewController: UIViewController {
     var buyingPower : Double = 0
     var portfolioValue : Double = 0
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -43,9 +54,12 @@ class HomeScreenViewController: UIViewController {
         //setting tableView stuff
         investmentsTableView.delegate = self
         investmentsTableView.dataSource = self
+        interestsTableView.delegate = self
+        interestsTableView.dataSource = self
         
         //creating accurate portfolioLabel
         portfolioValue = 10235.25
+        computePortfolioValue()
         portfolioLabel.text = "Portfolio Value: $"
             + String(format: "%.2f", portfolioValue)
 
@@ -72,6 +86,7 @@ class HomeScreenViewController: UIViewController {
             let vc = segue.destination as! ShareInfoViewController
             vc.ticker = self.cellTicker
             vc.currentPrice = self.cellPrice
+            vc.sharesOwned = self.cellShares
         }
     }
     
@@ -96,7 +111,7 @@ class HomeScreenViewController: UIViewController {
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
     func computePortfolioValue(){
         var updatedPortfolioValue : Double = 0
-        portfolioList.forEach { stock in
+        investmentList.forEach { stock in
             stock.updatePrice()
             //TODO NEED TO FIND A WAY TO RUN updatePriceLabel() from StockTableViewCell class
             updatedPortfolioValue +=  Double(stock.numSharesOwned) * stock.currentSharePrice
@@ -112,8 +127,15 @@ class HomeScreenViewController: UIViewController {
 
 extension HomeScreenViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        cellTicker = testingStockList[indexPath.row].ticker
-        cellPrice = testingStockList[indexPath.row].currentSharePrice
+        if tableView == investmentsTableView{
+            cellTicker = investmentList[indexPath.row].ticker
+            cellPrice = investmentList[indexPath.row].currentSharePrice
+            cellShares = investmentList[indexPath.row].numSharesOwned
+        } else {
+            cellTicker = interestList[indexPath.row].ticker
+            cellPrice = interestList[indexPath.row].currentSharePrice
+            cellShares = interestList[indexPath.row].numSharesOwned
+        }
         performSegue(withIdentifier: "toShareInfo", sender: self)
     }
 }
@@ -128,14 +150,28 @@ func + (left: NSAttributedString, right: NSAttributedString) -> NSAttributedStri
 
 extension HomeScreenViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return testingStockList.count //This is the number of tickers we want to show at any given time
+        if tableView == investmentsTableView{
+            return investmentList.count //This is the number of tickers we want to show at any given time
+        } else {
+            return interestList.count
+        }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)as! StockTableViewCell
-        let cellStock = testingStockList[indexPath.row]
-        cell.setShit(ticker: cellStock.ticker, numSharesOwned: cellStock.numSharesOwned, currentSharePrice: cellStock.currentSharePrice)
-        return cell
+        if tableView == investmentsTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "investment", for: indexPath)as! StockTableViewCell
+
+            let cellStock = investmentList[indexPath.row]
+            cell.setInvestmentCell(ticker: cellStock.ticker, numSharesOwned: cellStock.numSharesOwned, currentSharePrice: cellStock.currentSharePrice)
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "interest", for: indexPath)as! StockTableViewCell
+
+            let cellStock = interestList[indexPath.row]
+            cell.setInterestCell(ticker: cellStock.ticker, currentSharePrice: cellStock.currentSharePrice)
+            return cell
+        }
     }
 }
 
@@ -168,6 +204,14 @@ class Stock {
         //TODO code to get current share price and set it
     }
     
+    // TESTING Initializer for stock user is watching
+    init(ticker : String, currentSharePrice : Double){
+        self.ticker = ticker
+        self.numSharesOwned = 0
+        self.currentSharePrice = currentSharePrice
+        //TODO code to get current share price and set it
+    }
+    
     func updatePrice(){
         //TODO code to get current share price and set it
     }
@@ -180,17 +224,14 @@ class StockTableViewCell : UITableViewCell{
     @IBOutlet weak var tickerLabel: UILabel!
     @IBOutlet weak var shareLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
+    
+    var tickerAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white]
+    var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
+    var priceAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.black]
    
     //The function name is pretty intuitive (In case it isn't: This function is called upon creation of any StockTableViewCell in order to make sure it has the right variables and formatting
-    func setShit(ticker : String, numSharesOwned : Int?, currentSharePrice : Double){
-        
-        //These lists make it easy for us to change initial attributes of different labels
+    func setInvestmentCell(ticker : String, numSharesOwned : Int?, currentSharePrice : Double){
            
-        var tickerAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white]
-        var sharesAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.lightGray, NSAttributedString.Key.font: UIFont(name: "Kefa", size: 10.0)]
-        var priceAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.black]
-        
-        
         let nsTicker : NSAttributedString = NSMutableAttributedString(string: "   " + ticker, attributes: tickerAtts)
         let nsShares : NSAttributedString = NSMutableAttributedString(string: "(" + String(numSharesOwned!) + " shares)", attributes: sharesAtts)
         var nsPrice : NSAttributedString = NSMutableAttributedString(string: String(currentSharePrice) + "   ", attributes: priceAtts)
@@ -210,6 +251,28 @@ class StockTableViewCell : UITableViewCell{
         
         cellHorizontalStackView.addArrangedSubview(tickerLabel!)
         cellHorizontalStackView.addArrangedSubview(shareLabel!)
+        cellHorizontalStackView.addArrangedSubview(priceLabel!)
+    }
+    
+    func setInterestCell(ticker : String, currentSharePrice : Double){
+    
+        let nsTicker : NSAttributedString = NSMutableAttributedString(string: "   " + ticker, attributes: tickerAtts)
+        var nsPrice : NSAttributedString = NSMutableAttributedString(string: String(currentSharePrice) + "   ", attributes: priceAtts)
+        
+        let priceChange = Int.random(in: 0...1)
+        
+        //Temporary random setting of current price colors to simulate if our shit actually had access to realtime data
+        if (priceChange == 0){
+            nsPrice = NSAttributedString(string: String(currentSharePrice), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+        } else {
+            nsPrice = NSAttributedString(string: String(currentSharePrice), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+        }
+        //Setting the cell visuals
+        tickerLabel.attributedText = nsTicker
+        priceLabel.attributedText = nsPrice
+        
+        cellHorizontalStackView.addArrangedSubview(tickerLabel!)
+
         cellHorizontalStackView.addArrangedSubview(priceLabel!)
     }
     
