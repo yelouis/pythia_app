@@ -29,6 +29,7 @@ class HomeScreenViewController: UIViewController {
     
     var cellTicker : String = ""
     var cellPrice : Double = 0.0
+    var cellShares : Int = 0
     
     @IBOutlet weak var investmentsTableView: UITableView!
     @IBOutlet weak var interestsTableView: UITableView!
@@ -58,6 +59,7 @@ class HomeScreenViewController: UIViewController {
         
         //creating accurate portfolioLabel
         portfolioValue = 10235.25
+        computePortfolioValue()
         portfolioLabel.text = "Portfolio Value: $"
             + String(format: "%.2f", portfolioValue)
 
@@ -84,6 +86,7 @@ class HomeScreenViewController: UIViewController {
             let vc = segue.destination as! ShareInfoViewController
             vc.ticker = self.cellTicker
             vc.currentPrice = self.cellPrice
+            vc.sharesOwned = self.cellShares
         }
     }
     
@@ -108,7 +111,7 @@ class HomeScreenViewController: UIViewController {
     //Should be run every second or two seconds to make sure the user's portfolio value is constantly kept up to date
     func computePortfolioValue(){
         var updatedPortfolioValue : Double = 0
-        portfolioList.forEach { stock in
+        investmentList.forEach { stock in
             stock.updatePrice()
             //TODO NEED TO FIND A WAY TO RUN updatePriceLabel() from StockTableViewCell class
             updatedPortfolioValue +=  Double(stock.numSharesOwned) * stock.currentSharePrice
@@ -127,9 +130,11 @@ extension HomeScreenViewController: UITableViewDelegate {
         if tableView == investmentsTableView{
             cellTicker = investmentList[indexPath.row].ticker
             cellPrice = investmentList[indexPath.row].currentSharePrice
+            cellShares = investmentList[indexPath.row].numSharesOwned
         } else {
             cellTicker = interestList[indexPath.row].ticker
             cellPrice = interestList[indexPath.row].currentSharePrice
+            cellShares = interestList[indexPath.row].numSharesOwned
         }
         performSegue(withIdentifier: "toShareInfo", sender: self)
     }
