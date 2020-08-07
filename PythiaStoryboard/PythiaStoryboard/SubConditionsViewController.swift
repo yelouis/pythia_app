@@ -13,10 +13,15 @@ class SubConditionsViewController: UIViewController {
     var subConditionView: SubConditionView { return self.view as! SubConditionView }
     
     
+    var finalCondition : Condition? = nil //This will be passed back once a user has finished making their condition
     
     //buyWith = false means %, buyWith = true means # of shares
     var buyWith : Bool = true
     var ticker : String = ""
+    
+    var amount : Double = 0
+    var isBuyCondition : Bool = true
+    
     //var pctButton : RadioButton = RadioButton.init()
     //var dollarsButton : RadioButton = RadioButton.init()
     
@@ -43,6 +48,23 @@ class SubConditionsViewController: UIViewController {
         super.viewDidLoad()
         //pctButton.alternateButton = [dollarsButton]
         //dollarsButton.alternateButton = [pctButton]
+        
+        if finalCondition != nil{
+            if finalCondition!.condType == 0{
+                isBuyCondition = true
+            } else {
+                isBuyCondition = false
+            }
+            self.amount = finalCondition!.amount
+            if finalCondition!.amountType == 0 {
+                buyWith = false
+            } else {
+                buyWith = true
+            }
+            
+            //Need to unpack subconditions of finalCondition
+        }
+        //Check if finalCondition contains anything, if it does, set all the local variables equal to the ones stored in finalCondition
     }
     
     
@@ -50,7 +72,20 @@ class SubConditionsViewController: UIViewController {
         buyWith = true
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+           if segue.identifier == "saveCondition"{
+            let vc = segue.destination as! NewAlgorithmViewController
+            if isBuyCondition == true{
+                vc.buyConditionsList.append(finalCondition!)
+            } else {
+                vc.sellConditionsList.append(finalCondition!)
+            }
+           } else {
+            //Case that we cancel making a condition
+        }
+       }
     
+    //save condition button will need to save into finalCondition and set isBuyCondition
 }
 
 class SubConditionView: UIView {
