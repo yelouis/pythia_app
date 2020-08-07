@@ -10,18 +10,7 @@ import SwiftUI
 
 struct PythiaHomeView: View {
     var body: some View {
-        VStack{
-            HStack{
-                Text("Investing").font(.title)
-                Spacer()
-            }.padding()
-            
-            HStack{
-                Text("$777.93").font(.title)
-                Spacer()
-            }.padding()
-            Spacer()
-        }
+        Text("Hello World")
         //.hiddenNavigationBarStyle()
     }
 }

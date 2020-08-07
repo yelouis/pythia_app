@@ -11,32 +11,36 @@ import SwiftUI
 struct PythiaInitialView: View {
     var body: some View {
         NavigationView{
-            VStack{
-                Text("Pythia")
-                    .font(Font.system(size: 50))
-                    .fontWeight(.bold)
-                    .padding(.top, 150)
-                
-                Spacer()
-                
-                NavigationLink(destination: PythiaHomeView()){
-                    ZStack{
-                        RoundedRectangle(cornerRadius: 10)
-                            .frame(width: 300, height: 55)
-                            .foregroundColor(.green)
-                        Text("Unlock").foregroundColor(.white)
-                    }
-                }
-                
-                ZStack{
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width: 300, height: 55)
-                        .foregroundColor(.gray)
-                    Text("Sign Out").foregroundColor(.white)
-                }
-                    .padding(.bottom, 50)
-            }
+            Text("Hello World")
         }
+        
+//        NavigationView{
+//            VStack{
+//                Text("Pythia")
+//                    .font(Font.system(size: 50))
+//                    .fontWeight(.bold)
+//                    .padding(.top, 150)
+//
+//                Spacer()
+//
+//                NavigationLink(destination: PythiaHomeView()){
+//                    ZStack{
+//                        RoundedRectangle(cornerRadius: 10)
+//                            .frame(width: 300, height: 55)
+//                            .foregroundColor(.green)
+//                        Text("Unlock").foregroundColor(.white)
+//                    }
+//                }
+//
+//                ZStack{
+//                    RoundedRectangle(cornerRadius: 10)
+//                        .frame(width: 300, height: 55)
+//                        .foregroundColor(.gray)
+//                    Text("Sign Out").foregroundColor(.white)
+//                }
+//                    .padding(.bottom, 50)
+//            }
+//        }
 
     }
 }
