@@ -42,6 +42,7 @@ class NewAlgorithmViewController: UIViewController {
     @IBAction func addBuyCondition(_ sender: Any) {
         performSegue(withIdentifier: "toSubConditions", sender: self)
     }
+    
     @IBAction func addSellCondition(_ sender: Any) {
     }
     @IBAction func backtestAlgorithm(_ sender: Any) {

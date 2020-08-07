@@ -12,30 +12,39 @@ class SubConditionsViewController: UIViewController {
     
     var subConditionView: SubConditionView { return self.view as! SubConditionView }
     
+    
+    
     //buyWith = false means %, buyWith = true means # of shares
     var buyWith : Bool = true
     var ticker : String = ""
-    var pctButton : RadioButton = RadioButton.init()
-    var dollarsButton : RadioButton = RadioButton.init()
+    //var pctButton : RadioButton = RadioButton.init()
+    //var dollarsButton : RadioButton = RadioButton.init()
+    
+    @IBAction func pctButton(_ sender: Any) {
+        buyWith = false
+    }
+    
+    @IBAction func numSharesButton(_ sender: Any) {
+        buyWith = true
+    }
+    
+    
     
     
     override func awakeFromNib() {
         
         self.view.layoutIfNeeded()
 
-        pctButton.isSelected = true
-        dollarsButton.isSelected = false
+        //pctButton.isSelected = true
+        //dollarsButton.isSelected = false
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        pctButton.alternateButton = [dollarsButton]
-        dollarsButton.alternateButton = [pctButton]
+        //pctButton.alternateButton = [dollarsButton]
+        //dollarsButton.alternateButton = [pctButton]
     }
     
-    override func loadView() {
-        //self.view =
-    }
     
     @IBAction func buyWithNumShares(_ sender: Any) {
         buyWith = true
