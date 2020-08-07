@@ -613,6 +613,7 @@
                         <outlet property="dynamicPriceLabel" destination="eYW-1s-mPx" id="QK6-VJ-oXi"/>
                         <outlet property="fixedBar" destination="a56-CE-zF8" id="TXC-Ho-vcU"/>
                         <outlet property="marketValueLabel" destination="Snu-gL-B1N" id="JGP-df-TpX"/>
+                        <outlet property="runningAlgoLabel" destination="WTP-8u-9wV" id="uj1-m5-x00"/>
                         <outlet property="scroll" destination="JVT-tj-chR" id="rw7-2x-5FL"/>
                         <outlet property="shareNameLabel" destination="ag5-LU-TQi" id="Ym6-9h-BsQ"/>
                         <outlet property="sharesOwnedValueLabel" destination="kzN-sn-xkN" id="KlG-q8-S7m"/>
