@@ -185,9 +185,9 @@ class AlgoViewCell : UITableViewCell {
         let performance = Double.random(in: -8...8)
         
         if performance >= 0 {
-            performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
+            performanceLabel.attributedText = NSAttributedString(string: String(format: "%.2f", performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.green])
         } else {
-            performanceLabel.attributedText = NSAttributedString(string: String(performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+            performanceLabel.attributedText = NSAttributedString(string: String(format: "%.2f", performance), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
         }
         cellHorizontalStackView.addArrangedSubview(algoLabel!)
         cellHorizontalStackView.addArrangedSubview(performanceLabel!)
