@@ -689,7 +689,7 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="unsavedBuyCondition" rowHeight="150" id="QiE-qR-ENi" customClass="ConditionEditCell" customModule="PythiaStoryboard" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="394" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QiE-qR-ENi" id="1Nd-cS-0lC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QiE-qR-ENi" id="1Nd-cS-0lC">
                                             <rect key="frame" x="0.0" y="0.0" width="394" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -705,7 +705,6 @@
                                                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="modifyCondition:" destination="Tk7-a8-Umd" eventType="touchUpInside" id="NfG-i4-nQi"/>
                                                         <action selector="modifyCondition:" destination="ohA-j6-AFC" eventType="touchUpInside" id="Os7-Hj-7SF"/>
                                                     </connections>
                                                 </button>

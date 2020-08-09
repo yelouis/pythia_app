@@ -66,7 +66,7 @@ class NewAlgorithmViewController: UIViewController {
     
     
     @IBAction func modifyCondition(_ sender: Any) {
-        print("You clicked me!")
+        selectedCondition = buyConditionsList[0]
         performSegue(withIdentifier: "toSubConditions", sender: self)
     }
     
