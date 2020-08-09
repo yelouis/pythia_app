@@ -30,7 +30,25 @@ class NewAlgorithmViewController: UIViewController {
     amount: 10,
     condType: 0,
     amountType: 0)]
-    var sellConditionsList : [Condition] = []
+    var sellConditionsList : [Condition] = [Condition(
+    subconditions: [
+        Subcondition(
+        comparandOne: "Open",
+        periodOne: "5 day prev",
+        comparandTwo: "Open",
+        periodTwo: "today",
+        comparator: ">"),
+        
+        Subcondition(
+        comparandOne: "80% of Close",
+        periodOne: "30 day prev",
+        comparandTwo: "Close",
+        periodTwo: "today",
+        comparator: "<")
+        ],
+    amount: 8,
+    condType: 1,
+    amountType: 1)]
     
     var selectedCondition : Condition?
     
@@ -41,12 +59,16 @@ class NewAlgorithmViewController: UIViewController {
     
     
     @IBOutlet weak var unsavedBuyConditions: UITableView!
+    @IBOutlet weak var unsavedSellConditions: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         unsavedBuyConditions.delegate = self
         unsavedBuyConditions.dataSource = self
+        unsavedSellConditions.delegate = self
+        unsavedSellConditions.dataSource = self
+        
         
         let newAlgorithm : Bool = true
         let algorithmName = "MyAlgo"
@@ -66,7 +88,7 @@ class NewAlgorithmViewController: UIViewController {
     
     
     @IBAction func modifyCondition(_ sender: Any) {
-        print("You clicked me!")
+        selectedCondition = buyConditionsList[0]
         performSegue(withIdentifier: "toSubConditions", sender: self)
     }
     
@@ -92,9 +114,9 @@ class NewAlgorithmViewController: UIViewController {
         }
         
         if sellConditionsList.count == 0 {
-            //unsavedSellConditions.isHidden = true
+            unsavedSellConditions.isHidden = true
         } else {
-            //unsavedSellConditions.isHidden = false
+            unsavedSellConditions.isHidden = false
         }
     }
     
@@ -127,11 +149,15 @@ extension NewAlgorithmViewController : UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if tableView == unsavedBuyConditions {
+        if tableView == unsavedBuyConditions {
         let cell = tableView.dequeueReusableCell(withIdentifier: "unsavedBuyCondition", for: indexPath)as! ConditionEditCell
             cell.setShit(cond: buyConditionsList[indexPath.row])
         return cell
-        //}
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "unsavedSellCondition", for: indexPath)as! ConditionEditCell
+                cell.setShit(cond: sellConditionsList[indexPath.row])
+            return cell
+        }
     }
 }
 
@@ -139,9 +165,6 @@ class ConditionEditCell : UITableViewCell {
     
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var subconditions: UIStackView!
-    
-    var isClicked : Bool = false
-    
         //var pattern : Pattern? (Need to make a class for this)
     var compAtts : [NSAttributedString.Key : Any] = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont(name: "Kefa", size: CGFloat(14))]
        
@@ -175,7 +198,7 @@ class ConditionEditCell : UITableViewCell {
             UILabel()
         conditionLabel.numberOfLines = 0
         conditionLabel.attributedText = NSAttributedString(string: sub.comparandOne, attributes: compAtts) + NSAttributedString(string:" (" + sub.periodOne + ")", attributes: periodAtts) + NSAttributedString(string: " " + sub.comparator + " ", attributes: compAtts) + NSAttributedString(string: sub.comparandTwo, attributes: compAtts) + NSAttributedString(string:" (" + sub.periodTwo + ")", attributes: periodAtts)
-            
+        
         if (subconditions.subviews.count == 0){
             subconditions.addArrangedSubview(conditionLabel)
         } else {
