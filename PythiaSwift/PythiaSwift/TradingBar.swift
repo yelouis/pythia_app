@@ -15,18 +15,20 @@ struct TradingBar: View {
                 .frame(width: 400, height: 55)
                 .foregroundColor(.white)
             HStack{
-                VStack{
-                    Text("Today's Volume").font(Font.body.bold())
+                VStack(alignment: .leading){
+                    Text("Today's Volume").fontWeight(.bold)
                     Text("57,305,856")
-                }
+                }.padding(.leading)
+                
+                Spacer()
                 
                 ZStack{
-                    RoundedRectangle(cornerRadius: 20)
+                    RoundedRectangle(cornerRadius: 30)
                         .frame(width: 200, height: 55)
                         .foregroundColor(.green)
                     Text("Trade").foregroundColor(.white)
-                        .font(Font.body.bold())
-                }
+                        .fontWeight(.bold)
+                }.padding(.trailing)
                 
             }
         }
