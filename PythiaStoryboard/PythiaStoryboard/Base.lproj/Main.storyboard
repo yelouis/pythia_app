@@ -1278,6 +1278,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DKi-o2-N8k"/>
                     <connections>
+                        <outlet property="buyAmountField" destination="Vlr-z7-W4y" id="eQ5-vB-Vqd"/>
                         <outlet property="comparatorField" destination="uQt-Aa-BuY" id="g91-zm-eLd"/>
                         <outlet property="firstBuyConditionView" destination="nSg-10-Pnt" id="FVg-51-70K"/>
                         <outlet property="leftB" destination="aVu-ZI-WQK" id="mMl-bG-TPn"/>
@@ -1805,7 +1806,7 @@
         <!--Sub Conditions2 View Controller-->
         <scene sceneID="Ypd-S8-gXG">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="ffN-cv-VnX" customClass="SubConditions2ViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="fullScreen" id="ffN-cv-VnX" customClass="SubConditions2ViewController" customModule="PythiaStoryboard" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1rK-O5-CPU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1834,6 +1835,9 @@
                                         <state key="normal" title="cancel">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="ffN-cv-VnX" eventType="touchUpInside" id="foj-KA-K5n"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.2481402134" alpha="1" colorSpace="calibratedWhite"/>
@@ -1866,9 +1870,7 @@
                                 <fontDescription key="fontDescription" name="LaoSangamMN" family="Lao Sangam MN" pointSize="20"/>
                                 <state key="normal" title="O"/>
                                 <connections>
-                                    <action selector="buyWithNumShares:" destination="ffN-cv-VnX" eventType="touchUpInside" id="si0-vE-Owq"/>
                                     <action selector="numSharesButton:" destination="ffN-cv-VnX" eventType="touchUpInside" id="BdP-yf-IhT"/>
-                                    <action selector="pctButton:" destination="ffN-cv-VnX" eventType="touchUpInside" id="Xzh-lg-j1F"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piJ-VI-fOw" customClass="RadioButton" customModule="PythiaStoryboard" customModuleProvider="target">
@@ -2052,6 +2054,9 @@
                                 <state key="normal" title="Save Condition">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButton:" destination="ffN-cv-VnX" eventType="touchUpInside" id="hvD-ZD-slX"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy0-F4-rvB">
                                 <rect key="frame" x="82" y="729" width="250" height="50"/>
@@ -2103,12 +2108,16 @@
                     <connections>
                         <outlet property="botLeftB" destination="1tf-TM-lQM" id="h1d-eb-Nm8"/>
                         <outlet property="botRightB" destination="LBn-yK-6dM" id="Gbv-Pv-fmo"/>
+                        <outlet property="buyAmountField" destination="TSy-dC-fYk" id="NEB-Xe-U0X"/>
                         <outlet property="comparator1Field" destination="gMO-tD-cES" id="GWk-Ac-F4b"/>
                         <outlet property="comparator2Field" destination="p66-Nx-QXJ" id="98X-wu-BRA"/>
+                        <outlet property="numSharesOutlet" destination="tdZ-sn-T0b" id="FQB-Xf-goP"/>
+                        <outlet property="pctOutlet" destination="piJ-VI-fOw" id="gqa-Zy-gQK"/>
                         <outlet property="secondBuyConditionView" destination="iUw-7z-xnQ" id="54C-NK-3Nq"/>
                         <outlet property="topLeftB" destination="Qv5-hD-8KC" id="2N7-wT-FZB"/>
                         <outlet property="topRightB" destination="US3-Xt-kYr" id="gsC-x8-7dm"/>
                         <segue destination="giS-MD-rGu" kind="show" identifier="toVar" id="wAa-Oo-EJY"/>
+                        <segue destination="ohA-j6-AFC" kind="show" identifier="saveCondition" id="jCD-gd-C5J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="toF-Lx-e1u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2117,11 +2126,11 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0t5-Ge-08p"/>
+        <segue reference="wy4-qZ-wRv"/>
         <segue reference="NfE-ls-lpn"/>
-        <segue reference="2EC-bt-RwR"/>
+        <segue reference="wAa-Oo-EJY"/>
         <segue reference="Yku-Tx-Oo4"/>
-        <segue reference="pnU-9k-qiZ"/>
+        <segue reference="jCD-gd-C5J"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Screen Shot 2020-07-22 at 3.42.23 PM" width="1350" height="476"/>

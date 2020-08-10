@@ -9,7 +9,7 @@
 import UIKit
 
 class SubConditions2ViewController: UIViewController {
-    
+    var saveCondition : Bool = false
     var finalCondition : Condition? = nil //This will be passed back once a user has finished making their condition
     
     var comparator1String : String = ""
@@ -63,6 +63,24 @@ class SubConditions2ViewController: UIViewController {
         buyWith = true
     }
     
+    @IBOutlet weak var pctOutlet: RadioButton!
+    
+    @IBOutlet weak var numSharesOutlet: RadioButton!
+    
+
+    @IBAction func saveButton(_ sender: Any) {
+        saveCondition = true
+        performSegue(withIdentifier: "saveCondition", sender: self)
+    }
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        performSegue(withIdentifier:
+            "saveCondition", sender: self)
+    }
+    
+    
+    
+    @IBOutlet weak var buyAmountField: UITextField!
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toVar" {
@@ -76,6 +94,15 @@ class SubConditions2ViewController: UIViewController {
             vc.botRightCondition = self.botRightB.titleLabel!.text!
             vc.comparator1 = comparator1String
             vc.comparator2 = comparator2String
+            vc.amount = amount
+        }
+        if segue.identifier == "saveCondition" && saveCondition {
+            let vc = segue.destination as! NewAlgorithmViewController
+            if isBuyCondition == true {
+                vc.buyConditionsList.append(finalCondition!)
+            } else {
+                vc.sellConditionsList.append(finalCondition!)
+            }
         }
     }
     
@@ -84,10 +111,23 @@ class SubConditions2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if buyWith == true {
+            numSharesOutlet.isSelected = true
+            pctOutlet.isSelected = false
+        } else {
+            numSharesOutlet.isSelected = false
+            pctOutlet.isSelected = true
+        }
+        
         topLeftB.setTitle(topLeftButtonTitle, for: .normal)
         topRightB.setTitle(topRightButtonTitle, for: .normal)
         botLeftB.setTitle(botLeftButtonTitle, for: .normal)
         botRightB.setTitle(botRightButtonTitle, for: .normal)
+        
+        comparator1Field.text = comparator1String
+        comparator2Field.text = comparator2String
+        
+        buyAmountField.text = String(amount)
         
     }
     
