@@ -10,6 +10,7 @@ import UIKit
 
 class StockAttributeViewController: UIViewController {
     
+    var amount : Double = 0
     var comparator1 : String = "willBeSet"
     var comparator2 : String = "willBeSet"
     var clickedButton : String = "willBeSet"
@@ -43,35 +44,30 @@ class StockAttributeViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSingleSubCondition" {
             let vc = segue.destination as! SubConditionsViewController
+            vc.comparatorString = self.comparator1
+            vc.amount = amount
             if clickedButton == "left" {
                 print(subcondition)
                 vc.leftButtonTitle = subcondition
                 vc.rightButtonTitle = rightCondition
-                vc.comparatorString = self.comparator1
             } else if clickedButton == "right" {
                 vc.rightButtonTitle = subcondition
                 vc.leftButtonTitle = leftCondition
-                vc.comparatorString = self.comparator1
-                //vc.firstBuyConditionView.layer.backgroundColor = .init(srgbRed: 146, green: 167, blue: 175, alpha: 1)
             }
         } else if segue.identifier == "toDoubleSubCondition" {
             let vc = segue.destination as! SubConditions2ViewController
+            vc.amount = amount
+            //don't edit top conditions in doubleSubConditionsVC
+            vc.topRightButtonTitle = topRightCondition
+            vc.topLeftButtonTitle = topLeftCondition
+            vc.comparator1String = self.comparator1
+            vc.comparator2String = self.comparator2
             if clickedButton == "botLeft" {
                 vc.botLeftButtonTitle = subcondition
                 vc.botRightButtonTitle = botRightCondition
-                vc.topRightButtonTitle = topRightCondition
-                vc.topLeftButtonTitle = topLeftCondition
-                vc.comparator1String = self.comparator1
-                vc.comparator2String = self.comparator2
-
             } else if clickedButton == "botRight" {
                 vc.botRightButtonTitle = subcondition
                 vc.botLeftButtonTitle = botLeftCondition
-                vc.topRightButtonTitle = topRightCondition
-                vc.topLeftButtonTitle = topLeftCondition
-                vc.comparator1String = self.comparator1
-                vc.comparator2String = self.comparator2
-                //vc.secondBuyConditionView.layer.backgroundColor = .init(srgbRed: 146, green: 167, blue: 175, alpha: 1)
             }
         }
     }

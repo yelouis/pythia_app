@@ -32,6 +32,7 @@ class SubConditionsViewController: UIViewController {
     
     @IBOutlet weak var comparatorField: UITextField!
     
+    @IBOutlet weak var buyAmountField: UITextField!
     
     @IBOutlet weak var leftB: UIButton!
     
@@ -67,6 +68,7 @@ class SubConditionsViewController: UIViewController {
     
     @IBAction func addAnd(_ sender: Any) {
         comparatorString = comparatorField.text!
+        amount = Double(buyAmountField.text!) ?? 0
         performSegue(withIdentifier: "toDoubleSubCondition", sender: self)
     }
     
@@ -93,6 +95,7 @@ class SubConditionsViewController: UIViewController {
         //pctButton.alternateButton = [dollarsButton]
         //dollarsButton.alternateButton = [pctButton]
         
+        buyAmountField.text = String(amount)
         if finalCondition != nil{
             if finalCondition!.condType == 0{
                 isBuyCondition = true
@@ -124,6 +127,7 @@ class SubConditionsViewController: UIViewController {
         } else if segue.identifier == "toVar" {
             comparatorString = comparatorField.text!
             let vc = segue.destination as! StockAttributeViewController
+            vc.amount = amount
             
             vc.clickedButton = clickedButton
             vc.leftCondition = self.leftB.titleLabel!.text!
@@ -134,6 +138,7 @@ class SubConditionsViewController: UIViewController {
             vc.topLeftButtonTitle = self.leftB.titleLabel!.text!
             vc.topRightButtonTitle = self.rightB.titleLabel!.text!
             vc.comparator1String = self.comparatorString
+            vc.amount = self.amount
             //vc.topLef
         }
         

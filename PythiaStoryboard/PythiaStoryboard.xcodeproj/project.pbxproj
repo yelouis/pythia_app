@@ -96,7 +96,6 @@
 		D8F2A07A24C3C86400CFBB14 /* PythiaStoryboard */ = {
 			isa = PBXGroup;
 			children = (
-				D887EB6424E1DC6900A404F7 /* SubConditions2ViewController.swift */,
 				D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */,
 				D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */,
 				D8F2A07F24C3C86400CFBB14 /* ViewController.swift */,
@@ -104,6 +103,7 @@
 				D861243824D1227400324D93 /* ShareInfoViewController.swift */,
 				D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */,
 				D87CC47F24D75325000D775B /* SubConditionsViewController.swift */,
+				D887EB6424E1DC6900A404F7 /* SubConditions2ViewController.swift */,
 				D887EB6224E0FC7700A404F7 /* StockAttributeViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */,
