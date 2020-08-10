@@ -10,20 +10,37 @@ import UIKit
 
 class SubConditionsViewController: UIViewController {
     
-    var subConditionView: SubConditionView { return self.view as! SubConditionView }
+    //var subConditionView: SubConditionView { return self.view as! SubConditionView }
     
     
     var finalCondition : Condition? = nil //This will be passed back once a user has finished making their condition
     
+    
+    var leftButtonTitle : String = "Select Attribute"
+    var rightButtonTitle : String = "Select Attribute"
     //buyWith = false means %, buyWith = true means # of shares
     var buyWith : Bool = true
+    var clickedButton : String = "somethin"
     var ticker : String = ""
-    
+    var saveCondition : Bool = true
     var amount : Double = 0
     var isBuyCondition : Bool = true
     
     //var pctButton : RadioButton = RadioButton.init()
     //var dollarsButton : RadioButton = RadioButton.init()
+    
+    
+    @IBOutlet weak var leftB: UIButton!
+    
+    @IBOutlet weak var rightB: UIButton!
+    @IBOutlet weak var firstBuyConditionView: UIView!
+    
+    
+    
+    @IBAction func cancelButton(_ sender: Any) {
+        saveCondition = false
+        performSegue(withIdentifier: "saveCondition", sender: self)
+    }
     
     @IBAction func pctButton(_ sender: Any) {
         buyWith = false
@@ -33,9 +50,19 @@ class SubConditionsViewController: UIViewController {
         buyWith = true
     }
     
+    @IBAction func rightButton(_ sender: Any) {
+        clickedButton = "right"
+        performSegue(withIdentifier: "toVar", sender: self)
+    }
+    
+    @IBAction func leftButton(_ sender: Any) {
+        clickedButton = "left"
+        performSegue(withIdentifier: "toVar", sender: self)
+    }
     
     
     
+    /*
     override func awakeFromNib() {
         
         self.view.layoutIfNeeded()
@@ -43,9 +70,11 @@ class SubConditionsViewController: UIViewController {
         //pctButton.isSelected = true
         //dollarsButton.isSelected = false
     }
-
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
+        leftB.setTitle(leftButtonTitle, for: .normal)
+        rightB.setTitle(rightButtonTitle, for: .normal)
         //pctButton.alternateButton = [dollarsButton]
         //dollarsButton.alternateButton = [pctButton]
         
@@ -68,22 +97,30 @@ class SubConditionsViewController: UIViewController {
     }
     
     
-    @IBAction func buyWithNumShares(_ sender: Any) {
-        buyWith = true
-    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-           if segue.identifier == "saveCondition"{
+        if segue.identifier == "saveCondition" && saveCondition {
             let vc = segue.destination as! NewAlgorithmViewController
-            if isBuyCondition == true{
+            if isBuyCondition == true {
                 vc.buyConditionsList.append(finalCondition!)
             } else {
                 vc.sellConditionsList.append(finalCondition!)
             }
-           } else {
-            //Case that we cancel making a condition
+        } else if segue.identifier == "toVar" {
+            
+            let vc = segue.destination as! StockAttributeViewController
+            
+            vc.clickedButton = clickedButton
+            vc.leftCondition = self.leftB.titleLabel!.text!
+            vc.rightCondition = self.leftB.titleLabel!.text!
+        } else if segue.identifier == "toDoubleSubCondition" {
+            let vc = segue.destination as! SubConditions2ViewController
+            vc.topLeftButtonTitle = self.leftB.titleLabel!.text!
+            vc.topRightButtonTitle = self.rightB.titleLabel!.text!
+            //vc.topLef
         }
-       }
+        
+    }
     
     //save condition button will need to save into finalCondition and set isBuyCondition
 }
