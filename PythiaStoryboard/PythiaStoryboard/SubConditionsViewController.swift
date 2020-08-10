@@ -25,9 +25,12 @@ class SubConditionsViewController: UIViewController {
     var saveCondition : Bool = true
     var amount : Double = 0
     var isBuyCondition : Bool = true
+    var comparatorString : String = ""
     
     //var pctButton : RadioButton = RadioButton.init()
     //var dollarsButton : RadioButton = RadioButton.init()
+    
+    @IBOutlet weak var comparatorField: UITextField!
     
     
     @IBOutlet weak var leftB: UIButton!
@@ -52,16 +55,23 @@ class SubConditionsViewController: UIViewController {
     
     @IBAction func rightButton(_ sender: Any) {
         clickedButton = "right"
+        comparatorString = comparatorField.text!
         performSegue(withIdentifier: "toVar", sender: self)
     }
     
     @IBAction func leftButton(_ sender: Any) {
         clickedButton = "left"
+        comparatorString = comparatorField.text!
         performSegue(withIdentifier: "toVar", sender: self)
     }
     
     @IBAction func addAnd(_ sender: Any) {
+        comparatorString = comparatorField.text!
         performSegue(withIdentifier: "toDoubleSubCondition", sender: self)
+    }
+    
+    @IBAction func saveCondition(_ sender: Any) {
+        performSegue(withIdentifier: "saveCondition", sender: self)
     }
     
     
@@ -78,6 +88,8 @@ class SubConditionsViewController: UIViewController {
         super.viewDidLoad()
         leftB.setTitle(leftButtonTitle, for: .normal)
         rightB.setTitle(rightButtonTitle, for: .normal)
+        
+        comparatorField.text = comparatorString
         //pctButton.alternateButton = [dollarsButton]
         //dollarsButton.alternateButton = [pctButton]
         
@@ -110,16 +122,18 @@ class SubConditionsViewController: UIViewController {
                 vc.sellConditionsList.append(finalCondition!)
             }
         } else if segue.identifier == "toVar" {
-            
+            comparatorString = comparatorField.text!
             let vc = segue.destination as! StockAttributeViewController
             
             vc.clickedButton = clickedButton
             vc.leftCondition = self.leftB.titleLabel!.text!
             vc.rightCondition = self.leftB.titleLabel!.text!
+            vc.comparator1 = comparatorString
         } else if segue.identifier == "toDoubleSubCondition" {
             let vc = segue.destination as! SubConditions2ViewController
             vc.topLeftButtonTitle = self.leftB.titleLabel!.text!
             vc.topRightButtonTitle = self.rightB.titleLabel!.text!
+            vc.comparator1String = self.comparatorString
             //vc.topLef
         }
         
@@ -128,6 +142,7 @@ class SubConditionsViewController: UIViewController {
     //save condition button will need to save into finalCondition and set isBuyCondition
 }
 
+/*
 class SubConditionView: UIView {
     //var makePattern
     
@@ -172,7 +187,7 @@ class SubConditionView: UIView {
     
     
 }
-
+*/
 
 
 class RadioButton: UIButton {
@@ -215,3 +230,4 @@ class RadioButton: UIButton {
         }
     }
 }
+

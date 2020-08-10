@@ -1165,6 +1165,9 @@
                                 <state key="normal" title="Save Condition">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveCondition:" destination="LWy-So-46S" eventType="touchUpInside" id="Ml9-E5-QJn"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nSg-10-Pnt">
                                 <rect key="frame" x="20" y="306" width="374" height="128"/>
@@ -1275,6 +1278,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DKi-o2-N8k"/>
                     <connections>
+                        <outlet property="comparatorField" destination="uQt-Aa-BuY" id="g91-zm-eLd"/>
                         <outlet property="firstBuyConditionView" destination="nSg-10-Pnt" id="FVg-51-70K"/>
                         <outlet property="leftB" destination="aVu-ZI-WQK" id="mMl-bG-TPn"/>
                         <outlet property="rightB" destination="TaP-lo-5SZ" id="u3F-La-DwO"/>
@@ -2099,6 +2103,8 @@
                     <connections>
                         <outlet property="botLeftB" destination="1tf-TM-lQM" id="h1d-eb-Nm8"/>
                         <outlet property="botRightB" destination="LBn-yK-6dM" id="Gbv-Pv-fmo"/>
+                        <outlet property="comparator1Field" destination="gMO-tD-cES" id="GWk-Ac-F4b"/>
+                        <outlet property="comparator2Field" destination="p66-Nx-QXJ" id="98X-wu-BRA"/>
                         <outlet property="secondBuyConditionView" destination="iUw-7z-xnQ" id="54C-NK-3Nq"/>
                         <outlet property="topLeftB" destination="Qv5-hD-8KC" id="2N7-wT-FZB"/>
                         <outlet property="topRightB" destination="US3-Xt-kYr" id="gsC-x8-7dm"/>
@@ -2113,7 +2119,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="0t5-Ge-08p"/>
         <segue reference="NfE-ls-lpn"/>
-        <segue reference="wAa-Oo-EJY"/>
+        <segue reference="2EC-bt-RwR"/>
         <segue reference="Yku-Tx-Oo4"/>
         <segue reference="pnU-9k-qiZ"/>
     </inferredMetricsTieBreakers>

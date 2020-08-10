@@ -10,6 +10,8 @@ import UIKit
 
 class StockAttributeViewController: UIViewController {
     
+    var comparator1 : String = "willBeSet"
+    var comparator2 : String = "willBeSet"
     var clickedButton : String = "willBeSet"
     var leftCondition : String = "willBeSet"
     var rightCondition : String = "willBeSet"
@@ -45,10 +47,11 @@ class StockAttributeViewController: UIViewController {
                 print(subcondition)
                 vc.leftButtonTitle = subcondition
                 vc.rightButtonTitle = rightCondition
+                vc.comparatorString = self.comparator1
             } else if clickedButton == "right" {
                 vc.rightButtonTitle = subcondition
                 vc.leftButtonTitle = leftCondition
-                
+                vc.comparatorString = self.comparator1
                 //vc.firstBuyConditionView.layer.backgroundColor = .init(srgbRed: 146, green: 167, blue: 175, alpha: 1)
             }
         } else if segue.identifier == "toDoubleSubCondition" {
@@ -58,11 +61,16 @@ class StockAttributeViewController: UIViewController {
                 vc.botRightButtonTitle = botRightCondition
                 vc.topRightButtonTitle = topRightCondition
                 vc.topLeftButtonTitle = topLeftCondition
+                vc.comparator1String = self.comparator1
+                vc.comparator2String = self.comparator2
+
             } else if clickedButton == "botRight" {
                 vc.botRightButtonTitle = subcondition
                 vc.botLeftButtonTitle = botLeftCondition
                 vc.topRightButtonTitle = topRightCondition
                 vc.topLeftButtonTitle = topLeftCondition
+                vc.comparator1String = self.comparator1
+                vc.comparator2String = self.comparator2
                 //vc.secondBuyConditionView.layer.backgroundColor = .init(srgbRed: 146, green: 167, blue: 175, alpha: 1)
             }
         }

@@ -11,8 +11,8 @@
 		D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */; };
 		D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861243824D1227400324D93 /* ShareInfoViewController.swift */; };
 		D87CC48024D75326000D775B /* SubConditionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87CC47F24D75325000D775B /* SubConditionsViewController.swift */; };
-		D887EB6124E0F6B200A404F7 /* SubConditions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887EB6024E0F6B200A404F7 /* SubConditions2ViewController.swift */; };
 		D887EB6324E0FC7700A404F7 /* StockAttributeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887EB6224E0FC7700A404F7 /* StockAttributeViewController.swift */; };
+		D887EB6524E1DC6900A404F7 /* SubConditions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D887EB6424E1DC6900A404F7 /* SubConditions2ViewController.swift */; };
 		D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */; };
 		D8F2A07C24C3C86400CFBB14 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */; };
 		D8F2A07E24C3C86400CFBB14 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */; };
@@ -30,8 +30,8 @@
 		D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmInfoViewController.swift; sourceTree = "<group>"; };
 		D861243824D1227400324D93 /* ShareInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareInfoViewController.swift; sourceTree = "<group>"; };
 		D87CC47F24D75325000D775B /* SubConditionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubConditionsViewController.swift; sourceTree = "<group>"; };
-		D887EB6024E0F6B200A404F7 /* SubConditions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubConditions2ViewController.swift; sourceTree = "<group>"; };
 		D887EB6224E0FC7700A404F7 /* StockAttributeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockAttributeViewController.swift; sourceTree = "<group>"; };
+		D887EB6424E1DC6900A404F7 /* SubConditions2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SubConditions2ViewController.swift; path = /Users/veimaun/Documents/GitHub/pythia_app/PythiaStoryboard/PythiaStoryboard/SubConditions2ViewController.swift; sourceTree = "<absolute>"; };
 		D8D0021424C7294400B1B228 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		D8F2A07824C3C86400CFBB14 /* PythiaStoryboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PythiaStoryboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +96,7 @@
 		D8F2A07A24C3C86400CFBB14 /* PythiaStoryboard */ = {
 			isa = PBXGroup;
 			children = (
+				D887EB6424E1DC6900A404F7 /* SubConditions2ViewController.swift */,
 				D8F2A07B24C3C86400CFBB14 /* AppDelegate.swift */,
 				D8F2A07D24C3C86400CFBB14 /* SceneDelegate.swift */,
 				D8F2A07F24C3C86400CFBB14 /* ViewController.swift */,
@@ -104,7 +105,6 @@
 				D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */,
 				D87CC47F24D75325000D775B /* SubConditionsViewController.swift */,
 				D887EB6224E0FC7700A404F7 /* StockAttributeViewController.swift */,
-				D887EB6024E0F6B200A404F7 /* SubConditions2ViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */,
 				D8F2A08424C3C86600CFBB14 /* Assets.xcassets */,
@@ -229,7 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D887EB6124E0F6B200A404F7 /* SubConditions2ViewController.swift in Sources */,
+				D887EB6524E1DC6900A404F7 /* SubConditions2ViewController.swift in Sources */,
 				D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */,
 				D8F2A08024C3C86400CFBB14 /* ViewController.swift in Sources */,
 				D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */,
