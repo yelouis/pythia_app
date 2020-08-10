@@ -11,39 +11,36 @@ import SwiftUI
 struct PythiaInitialView: View {
     var body: some View {
         NavigationView{
-            Text("Hello World")
+            VStack{
+                Image("TopBar")
+                    .resizable()
+                    .frame(width: 400, height: 55)
+                ScrollView(.vertical){
+                    Image("ScrollData")
+                        .resizable()
+                        .frame(width: 400, height: 600)
+                    
+                    Text("Running Algorithms")
+                        .font(.title)
+                    
+                }
+                
+                Spacer()
+                TradingBar()
+                Image("BottomBar")
+                    .resizable()
+                    .frame(width: 400, height: 55)
+            }
+                .navigationBarTitle("")
+                .navigationBarHidden(true)
         }
-        
-//        NavigationView{
-//            VStack{
-//                Text("Pythia")
-//                    .font(Font.system(size: 50))
-//                    .fontWeight(.bold)
-//                    .padding(.top, 150)
-//
-//                Spacer()
-//
-//                NavigationLink(destination: PythiaHomeView()){
-//                    ZStack{
-//                        RoundedRectangle(cornerRadius: 10)
-//                            .frame(width: 300, height: 55)
-//                            .foregroundColor(.green)
-//                        Text("Unlock").foregroundColor(.white)
-//                    }
-//                }
-//
-//                ZStack{
-//                    RoundedRectangle(cornerRadius: 10)
-//                        .frame(width: 300, height: 55)
-//                        .foregroundColor(.gray)
-//                    Text("Sign Out").foregroundColor(.white)
-//                }
-//                    .padding(.bottom, 50)
-//            }
-//        }
 
     }
 }
+
+//struct RunningAlgorithms: view {
+//    //Make a view for the running algorhtms table
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -17,6 +17,7 @@
 		8E31D78324D90647006C2B15 /* PythiaHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78224D90647006C2B15 /* PythiaHomeView.swift */; };
 		8E31D78524D90882006C2B15 /* HiddenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */; };
 		8E31D78924E08FB2006C2B15 /* TradingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78824E08FB2006C2B15 /* TradingBar.swift */; };
+		8E31D78B24E0CC08006C2B15 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		8E31D78224D90647006C2B15 /* PythiaHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PythiaHomeView.swift; sourceTree = SOURCE_ROOT; };
 		8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNavigationBar.swift; sourceTree = "<group>"; };
 		8E31D78824E08FB2006C2B15 /* TradingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingBar.swift; sourceTree = "<group>"; };
+		8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				8E31D76B24D8B313006C2B15 /* AppDelegate.swift */,
 				8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */,
 				8E31D77224D8B313006C2B15 /* PythiaInitialView.swift */,
+				8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */,
 				8E31D78824E08FB2006C2B15 /* TradingBar.swift */,
 				8E31D78224D90647006C2B15 /* PythiaHomeView.swift */,
 				8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */,
@@ -163,6 +166,7 @@
 				8E31D77124D8B313006C2B15 /* PythiaSwift.xcdatamodeld in Sources */,
 				8E31D77324D8B313006C2B15 /* PythiaInitialView.swift in Sources */,
 				8E31D76E24D8B313006C2B15 /* SceneDelegate.swift in Sources */,
+				8E31D78B24E0CC08006C2B15 /* LoginScreen.swift in Sources */,
 				8E31D78924E08FB2006C2B15 /* TradingBar.swift in Sources */,
 				8E31D78324D90647006C2B15 /* PythiaHomeView.swift in Sources */,
 			);
