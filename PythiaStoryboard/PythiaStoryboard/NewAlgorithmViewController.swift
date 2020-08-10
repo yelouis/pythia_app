@@ -15,14 +15,14 @@ class NewAlgorithmViewController: UIViewController {
     subconditions: [
         Subcondition(
         comparandOne: "Open",
-        periodOne: "5 day prev",
+        periodOne: "5D prev",
         comparandTwo: "Open",
         periodTwo: "today",
         comparator: ">"),
         
         Subcondition(
         comparandOne: "80% of Close",
-        periodOne: "30 day prev",
+        periodOne: "20D prev",
         comparandTwo: "Close",
         periodTwo: "today",
         comparator: "<")
