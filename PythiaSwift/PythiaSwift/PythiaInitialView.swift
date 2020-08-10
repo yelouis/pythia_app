@@ -26,6 +26,7 @@ struct PythiaInitialView: View {
                 }
                 
                 Spacer()
+                
                 TradingBar()
                 Image("BottomBar")
                     .resizable()
