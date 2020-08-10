@@ -1151,6 +1151,9 @@
                                 <state key="normal" title="Add AND condition">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addAnd:" destination="LWy-So-46S" eventType="touchUpInside" id="jvB-Go-kpE"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MES-8X-OCK">
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>

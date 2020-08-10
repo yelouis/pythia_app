@@ -60,6 +60,9 @@ class SubConditionsViewController: UIViewController {
         performSegue(withIdentifier: "toVar", sender: self)
     }
     
+    @IBAction func addAnd(_ sender: Any) {
+        performSegue(withIdentifier: "toDoubleSubCondition", sender: self)
+    }
     
     
     /*
