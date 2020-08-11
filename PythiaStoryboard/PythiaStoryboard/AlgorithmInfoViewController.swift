@@ -45,15 +45,7 @@ class AlgorithmInfoViewController: UIViewController {
            periodOne: "5 day prev",
            comparandTwo: "Close",
            periodTwo: "today",
-           comparator: "<"),
-           
-           Subcondition(
-           comparandOne: "80% of Close",
-           periodOne: "30 day prev",
-           comparandTwo: "Close",
-           periodTwo: "today",
-           comparator: ">")
-           ],
+           comparator: "<")],
        amount: 20,
        condType: 1,
        amountType: 1)]
