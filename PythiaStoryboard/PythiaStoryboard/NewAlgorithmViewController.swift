@@ -89,12 +89,19 @@ class NewAlgorithmViewController: UIViewController {
     
     @IBAction func modifyCondition(_ sender: Any) {
         selectedCondition = buyConditionsList[0]
+        if selectedCondition.subconditions.count == 1{
         performSegue(withIdentifier: "toSubConditions", sender: self)
+        } else if selectedCondition.subconditions.count == 2{
+            performSegue(withIdentifier: "toModifyDoubleSub", sender: self)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toSubConditions"{
             let vc = segue.destination as! SubConditionsViewController
+            vc.finalCondition = selectedCondition!
+        } else if segue.identifier == "toModifyDoubleSub"{
+            let vc = segue.destination as! SubConditions2ViewController
             vc.finalCondition = selectedCondition!
         } else if segue.identifier == "newCondition"{
             let vc = segue.destination as! SubConditionsViewController

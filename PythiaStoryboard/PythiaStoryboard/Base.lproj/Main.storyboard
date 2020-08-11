@@ -1044,6 +1044,7 @@
                         <segue destination="LWy-So-46S" kind="show" identifier="toSubConditions" id="KX7-Bp-eLN"/>
                         <segue destination="pWc-Mk-Pxf" kind="show" identifier="saveAlgo" id="NfE-ls-lpn"/>
                         <segue destination="LWy-So-46S" kind="show" identifier="newCondition" id="ZPt-c9-Ipz"/>
+                        <segue destination="ffN-cv-VnX" kind="show" identifier="toModifyDoubleSub" id="Fov-Ms-YhD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oco-15-Lt8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2126,10 +2127,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="wy4-qZ-wRv"/>
+        <segue reference="Fov-Ms-YhD"/>
         <segue reference="NfE-ls-lpn"/>
         <segue reference="wAa-Oo-EJY"/>
-        <segue reference="Yku-Tx-Oo4"/>
+        <segue reference="KX7-Bp-eLN"/>
         <segue reference="jCD-gd-C5J"/>
     </inferredMetricsTieBreakers>
     <resources>

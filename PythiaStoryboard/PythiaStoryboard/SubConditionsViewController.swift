@@ -39,7 +39,39 @@ class SubConditionsViewController: UIViewController {
     @IBOutlet weak var rightB: UIButton!
     @IBOutlet weak var firstBuyConditionView: UIView!
     
-    
+    func saveSubcondition(){
+        var newCondType : Int
+        var newAmountType: Int
+        if isBuyCondition == true{
+            newCondType = 0
+        } else {
+            newCondType = 1
+        }
+        if buyWith == true {
+            newAmountType = 0
+        } else {
+            newAmountType = 1
+        }
+        
+        
+        var newCondition : Condition = Condition(
+            subconditions: [
+            Subcondition(
+            comparandOne: leftButtonTitle,
+            periodOne: "5 day prev",
+            comparandTwo: rightButtonTitle,
+            periodTwo: "today",
+            comparator: comparatorString
+            )],
+            amount: buyAmountField.text
+            condType: newCondType,
+            amountType: newAmountType
+            )
+        
+            
+        finalCondition = newCondition
+        
+    }
     
     @IBAction func cancelButton(_ sender: Any) {
         saveCondition = false
@@ -73,6 +105,7 @@ class SubConditionsViewController: UIViewController {
     }
     
     @IBAction func saveCondition(_ sender: Any) {
+        saveSubcondition()
         performSegue(withIdentifier: "saveCondition", sender: self)
     }
     
@@ -109,6 +142,10 @@ class SubConditionsViewController: UIViewController {
                 buyWith = true
             }
             
+            //Sets subconditon
+            topLeftButtonTitle = finalCondition.subconditions[0].comparandOne
+            topRightButtonTitle = finalCondition.subconditions[0].comparandTwo
+            comparatorString = finalCondition.subconditions[0].comparator
             //Need to unpack subconditions of finalCondition
         }
         //Check if finalCondition contains anything, if it does, set all the local variables equal to the ones stored in finalCondition

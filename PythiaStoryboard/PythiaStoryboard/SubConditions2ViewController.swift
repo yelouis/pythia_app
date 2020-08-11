@@ -11,7 +11,7 @@ import UIKit
 class SubConditions2ViewController: UIViewController {
     var saveCondition : Bool = false
     var finalCondition : Condition? = nil //This will be passed back once a user has finished making their condition
-    
+
     var comparator1String : String = ""
     var comparator2String : String = ""
     
@@ -37,6 +37,40 @@ class SubConditions2ViewController: UIViewController {
     @IBOutlet weak var comparator2Field: UITextField!
     
     @IBOutlet weak var secondBuyConditionView: UIView!
+    
+    func saveSubconditions(){
+        var newCondType : Int
+        var newAmountType: Int
+        if isBuyCondition == true{
+            newCondType = 0
+        } else {
+            newCondType = 1
+        }
+        if buyWith == true {
+            newAmountType = 0
+        } else {
+            newAmountType = 1
+        }
+        var newCondition : Condition = Condition(
+            subconditions: [
+        Subcondition(
+        comparandOne: topLeftButtonTitle,
+        periodOne: "5 day prev",
+        comparandTwo: topRightButtonTitle,
+        periodTwo: "today",
+        comparator: comparator1String
+        ),
+        Subcondition(
+        comparandOne: botLeftButtonTitle,
+        periodOne: "5 day prev",
+        comparandTwo: botRightButtonTitle,
+        periodTwo: "today",
+        comparator: comparator2String
+        )],
+        amount: buyAmountField.text
+        condType: newCondType,
+        amountType: newAmountType)
+    }
     
     @IBAction func topLeft(_ sender: Any) {
         clickedButton = "topLeft"
@@ -70,6 +104,7 @@ class SubConditions2ViewController: UIViewController {
 
     @IBAction func saveButton(_ sender: Any) {
         saveCondition = true
+        saveSubconditions()
         performSegue(withIdentifier: "saveCondition", sender: self)
     }
     
@@ -111,6 +146,30 @@ class SubConditions2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if finalCondition != nil{
+            if finalCondition!.condType == 0{
+                isBuyCondition = true
+            } else {
+                isBuyCondition = false
+            }
+            self.amount = finalCondition!.amount
+            if finalCondition!.amountType == 0 {
+                buyWith = false
+            } else {
+                buyWith = true
+            }
+            
+            //Sets subconditons
+            topLeftButtonTitle = finalCondition.subconditions[0].comparandOne
+            topRightButtonTitle = finalCondition.subconditions[0].comparandTwo
+            comparator1String = finalCondition.subconditions[0].comparator
+            
+            botLeftButtonTitle = finalCondition.subconditions[1].comparandOne
+            botRightButtonTitle = finalCondition.subconditions[1].comparandTwo
+            comparator2String = finalCondition.subconditions[1].comparator
+            //Need to unpack subconditions of finalCondition
+        }
         if buyWith == true {
             numSharesOutlet.isSelected = true
             pctOutlet.isSelected = false
@@ -130,7 +189,5 @@ class SubConditions2ViewController: UIViewController {
         buyAmountField.text = String(amount)
         
     }
-    
-    
 }
 
