@@ -32,8 +32,7 @@ struct PythiaInitialView: View {
                     .resizable()
                     .frame(width: 400, height: 55)
             }
-                .navigationBarTitle("")
-                .navigationBarHidden(true)
+                .hiddenNavigationBarStyle()
         }
 
     }

@@ -12,11 +12,11 @@ struct TradingBar: View {
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 0)
-                .frame(width: 400, height: 55)
+                .frame(width: 400, height: 50)
                 .foregroundColor(.white)
             HStack{
                 VStack(alignment: .leading){
-                    Text("Today's Volume").fontWeight(.bold)
+                    Text("Today's Volume").fontWeight(.semibold)
                     Text("57,305,856")
                 }.padding(.leading)
                 
@@ -24,7 +24,7 @@ struct TradingBar: View {
                 
                 ZStack{
                     RoundedRectangle(cornerRadius: 30)
-                        .frame(width: 200, height: 55)
+                        .frame(width: 200, height: 50)
                         .foregroundColor(.green)
                     Text("Trade").foregroundColor(.white)
                         .fontWeight(.bold)
