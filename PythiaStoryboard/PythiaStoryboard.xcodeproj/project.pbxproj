@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17FFF56624E21FCB00B25F20 /* SubConditions2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FFF56524E21FCB00B25F20 /* SubConditions2ViewController.swift */; };
 		D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */; };
 		D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */; };
 		D861243924D1227400324D93 /* ShareInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D861243824D1227400324D93 /* ShareInfoViewController.swift */; };
@@ -26,7 +25,6 @@
 
 /* Begin PBXFileReference section */
 		17EC97FD24D78CA500561298 /* Custom Classes */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Custom Classes"; path = "/Users/stuart/Desktop/pythia_app/PythiaStoryboard/Custom Classes"; sourceTree = "<absolute>"; };
-		17FFF56524E21FCB00B25F20 /* SubConditions2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubConditions2ViewController.swift; sourceTree = "<group>"; };
 		4FB7E32E780F430E1DB4ACD3 /* Pods_PythiaStoryboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PythiaStoryboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAlgorithmViewController.swift; sourceTree = "<group>"; };
 		D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgorithmInfoViewController.swift; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				D836A02D24D256B600C5407B /* NewAlgorithmViewController.swift */,
 				D87CC47F24D75325000D775B /* SubConditionsViewController.swift */,
 				D887EB6424E1DC6900A404F7 /* SubConditions2ViewController.swift */,
-				17FFF56524E21FCB00B25F20 /* SubConditions2ViewController.swift */,
 				D887EB6224E0FC7700A404F7 /* StockAttributeViewController.swift */,
 				D8F2A08124C3C86400CFBB14 /* Main.storyboard */,
 				D83B323624D3D723004D1703 /* AlgorithmInfoViewController.swift */,
@@ -238,7 +235,6 @@
 				D8D0021524C7294400B1B228 /* HomeScreenViewController.swift in Sources */,
 				D83B323724D3D723004D1703 /* AlgorithmInfoViewController.swift in Sources */,
 				D8F2A07C24C3C86400CFBB14 /* AppDelegate.swift in Sources */,
-				17FFF56624E21FCB00B25F20 /* SubConditions2ViewController.swift in Sources */,
 				D87CC48024D75326000D775B /* SubConditionsViewController.swift in Sources */,
 				D836A02E24D256B600C5407B /* NewAlgorithmViewController.swift in Sources */,
 				D887EB6324E0FC7700A404F7 /* StockAttributeViewController.swift in Sources */,

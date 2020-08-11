@@ -253,7 +253,21 @@ class ConditionViewCell : UITableViewCell {
     }
 }
 
-class Condition {
+class Condition: Equatable {
+    
+    static func == (left: Condition, right: Condition) -> Bool {
+        if left.subconditions!.count != right.subconditions!.count {
+            return false
+        }
+        for i in 0...left.subconditions!.count - 1 {
+            let l : Subcondition = left.subconditions![i]
+            let r : Subcondition = right.subconditions![i]
+            if (r == l) == false {
+                return false
+            }
+        }
+        return true
+    }
     //subconditions and pattern are optionals because a user could make a subcondition that is either a list of subconditions or use a pattern they draw
     var subconditions : [Subcondition]?
     //var pattern : Pattern? (Need to make a class for this)
@@ -278,12 +292,19 @@ class Condition {
     
 }
 
-class Subcondition {
+class Subcondition: Equatable {
     var comparandOne : String
     var periodOne : String
     var comparandTwo : String
     var periodTwo : String
     var comparator : String
+    
+    static func == (left: Subcondition, right: Subcondition) -> Bool {
+        if left.comparandOne != right.comparandOne || left.periodOne != right.periodOne || left.comparandTwo != right.comparandTwo || left.periodTwo != right.periodTwo || left.comparator != right.comparator {
+            return false
+        }
+        return true
+    }
     
     init(comparandOne : String, periodOne: String, comparandTwo : String, periodTwo : String, comparator : String){
         self.comparandOne = comparandOne

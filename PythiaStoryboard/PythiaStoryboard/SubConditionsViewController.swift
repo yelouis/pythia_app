@@ -14,8 +14,7 @@ class SubConditionsViewController: UIViewController {
     
     
     var finalCondition : Condition? = nil //This will be passed back once a user has finished making their condition
-    
-    
+        
     var leftButtonTitle : String = "Select Attribute"
     var rightButtonTitle : String = "Select Attribute"
     //buyWith = false means %, buyWith = true means # of shares
@@ -53,17 +52,21 @@ class SubConditionsViewController: UIViewController {
             newAmountType = 1
         }
         
+        var compOneName : String = leftButtonTitle.components(separatedBy: " ")[0]
+        var periodOneName : String = leftButtonTitle.components(separatedBy: " ").dropFirst().joined()
+        var compTwoName : String = rightButtonTitle.components(separatedBy: " ")[0]
+        var periodTwoName : String = rightButtonTitle.components(separatedBy: " ").dropFirst().joined()
         
         var newCondition : Condition = Condition(
             subconditions: [
             Subcondition(
-            comparandOne: leftButtonTitle,
-            periodOne: "5 day prev",
-            comparandTwo: rightButtonTitle,
-            periodTwo: "today",
+            comparandOne: compOneName,
+            periodOne: periodOneName,
+            comparandTwo: compTwoName,
+            periodTwo: periodTwoName,
             comparator: comparatorString
             )],
-            amount: buyAmountField.text
+            amount: (buyAmountField.text! as NSString).doubleValue,
             condType: newCondType,
             amountType: newAmountType
             )
@@ -143,9 +146,9 @@ class SubConditionsViewController: UIViewController {
             }
             
             //Sets subconditon
-            topLeftButtonTitle = finalCondition.subconditions[0].comparandOne
-            topRightButtonTitle = finalCondition.subconditions[0].comparandTwo
-            comparatorString = finalCondition.subconditions[0].comparator
+            leftButtonTitle = finalCondition!.subconditions![0].comparandOne
+            rightButtonTitle = finalCondition!.subconditions![0].comparandTwo
+            comparatorString = finalCondition!.subconditions![0].comparator
             //Need to unpack subconditions of finalCondition
         }
         //Check if finalCondition contains anything, if it does, set all the local variables equal to the ones stored in finalCondition

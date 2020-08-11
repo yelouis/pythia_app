@@ -51,25 +51,37 @@ class SubConditions2ViewController: UIViewController {
         } else {
             newAmountType = 1
         }
+        
+        var compOneName : String = topLeftButtonTitle.components(separatedBy: " ")[0]
+        var periodOneName : String = topLeftButtonTitle.components(separatedBy: " ").dropFirst().joined()
+        var compTwoName : String = topRightButtonTitle.components(separatedBy: " ")[0]
+        var periodTwoName : String = topRightButtonTitle.components(separatedBy: " ").dropFirst().joined()
+        
+        var comp2OneName : String = topLeftButtonTitle.components(separatedBy: " ")[0]
+        var period2OneName : String = topLeftButtonTitle.components(separatedBy: " ").dropFirst().joined()
+        var comp2TwoName : String = topRightButtonTitle.components(separatedBy: " ")[0]
+        var period2TwoName : String = topRightButtonTitle.components(separatedBy: " ").dropFirst().joined()
+        
         var newCondition : Condition = Condition(
             subconditions: [
         Subcondition(
-        comparandOne: topLeftButtonTitle,
-        periodOne: "5 day prev",
-        comparandTwo: topRightButtonTitle,
-        periodTwo: "today",
+        comparandOne: compOneName,
+        periodOne: periodOneName,
+        comparandTwo: compTwoName,
+        periodTwo: periodTwoName,
         comparator: comparator1String
         ),
         Subcondition(
-        comparandOne: botLeftButtonTitle,
-        periodOne: "5 day prev",
-        comparandTwo: botRightButtonTitle,
-        periodTwo: "today",
+        comparandOne: comp2OneName,
+        periodOne: period2OneName,
+        comparandTwo: comp2TwoName,
+        periodTwo: period2TwoName,
         comparator: comparator2String
         )],
-        amount: buyAmountField.text
+            amount: (buyAmountField.text! as NSString).doubleValue,
         condType: newCondType,
         amountType: newAmountType)
+        finalCondition = newCondition
     }
     
     @IBAction func topLeft(_ sender: Any) {
@@ -104,7 +116,6 @@ class SubConditions2ViewController: UIViewController {
 
     @IBAction func saveButton(_ sender: Any) {
         saveCondition = true
-        saveSubconditions()
         performSegue(withIdentifier: "saveCondition", sender: self)
     }
     
@@ -133,6 +144,7 @@ class SubConditions2ViewController: UIViewController {
         }
         if segue.identifier == "saveCondition" && saveCondition {
             let vc = segue.destination as! NewAlgorithmViewController
+            saveSubconditions()
             if isBuyCondition == true {
                 vc.buyConditionsList.append(finalCondition!)
             } else {
@@ -161,13 +173,13 @@ class SubConditions2ViewController: UIViewController {
             }
             
             //Sets subconditons
-            topLeftButtonTitle = finalCondition.subconditions[0].comparandOne
-            topRightButtonTitle = finalCondition.subconditions[0].comparandTwo
-            comparator1String = finalCondition.subconditions[0].comparator
+            topLeftButtonTitle = finalCondition!.subconditions![0].comparandOne
+            topRightButtonTitle = finalCondition!.subconditions![0].comparandTwo
+            comparator1String = finalCondition!.subconditions![0].comparator
             
-            botLeftButtonTitle = finalCondition.subconditions[1].comparandOne
-            botRightButtonTitle = finalCondition.subconditions[1].comparandTwo
-            comparator2String = finalCondition.subconditions[1].comparator
+            botLeftButtonTitle = finalCondition!.subconditions![1].comparandOne
+            botRightButtonTitle = finalCondition!.subconditions![1].comparandTwo
+            comparator2String = finalCondition!.subconditions![1].comparator
             //Need to unpack subconditions of finalCondition
         }
         if buyWith == true {

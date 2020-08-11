@@ -89,9 +89,9 @@ class NewAlgorithmViewController: UIViewController {
     
     @IBAction func modifyCondition(_ sender: Any) {
         selectedCondition = buyConditionsList[0]
-        if selectedCondition.subconditions.count == 1{
-        performSegue(withIdentifier: "toSubConditions", sender: self)
-        } else if selectedCondition.subconditions.count == 2{
+        if selectedCondition!.subconditions!.count == 1 {
+            performSegue(withIdentifier: "toSubConditions", sender: self)
+        } else if selectedCondition!.subconditions!.count == 2 {
             performSegue(withIdentifier: "toModifyDoubleSub", sender: self)
         }
     }
@@ -100,10 +100,29 @@ class NewAlgorithmViewController: UIViewController {
         if segue.identifier == "toSubConditions"{
             let vc = segue.destination as! SubConditionsViewController
             vc.finalCondition = selectedCondition!
+            if selectedCondition!.condType == 0 {
+                if let index = buyConditionsList.firstIndex(of: selectedCondition!) {
+                    buyConditionsList.remove(at: index)
+                }
+            } else {
+                if let index = sellConditionsList.firstIndex(of: selectedCondition!) {
+                    sellConditionsList.remove(at: index)
+                }
+            }
+            
         } else if segue.identifier == "toModifyDoubleSub"{
             let vc = segue.destination as! SubConditions2ViewController
             vc.finalCondition = selectedCondition!
-        } else if segue.identifier == "newCondition"{
+            if selectedCondition!.condType == 0 {
+                if let index = buyConditionsList.firstIndex(of: selectedCondition!) {
+                    buyConditionsList.remove(at: index)
+                }
+            } else {
+                if let index = sellConditionsList.firstIndex(of: selectedCondition!) {
+                    sellConditionsList.remove(at: index)
+                }
+            }
+        } else if segue.identifier == "newCondition" {
             let vc = segue.destination as! SubConditionsViewController
             vc.finalCondition = nil
         } else {
@@ -132,6 +151,7 @@ class NewAlgorithmViewController: UIViewController {
     }
     
     @IBAction func addSellCondition(_ sender: Any) {
+        performSegue(withIdentifier: "newCondition", sender: self)
     }
     @IBAction func backtestAlgorithm(_ sender: Any) {
     }
