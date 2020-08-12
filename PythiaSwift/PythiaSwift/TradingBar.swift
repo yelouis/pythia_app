@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct TradingBar: View {
+    @State private var showPaletteEditor = false
+    
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 0)
@@ -17,6 +19,7 @@ struct TradingBar: View {
             HStack{
                 VStack(alignment: .leading){
                     Text("Today's Volume").fontWeight(.semibold)
+                        .font(.system(size: 15))
                     Text("57,305,856")
                 }.padding(.leading)
                 
@@ -29,6 +32,9 @@ struct TradingBar: View {
                     Text("Trade").foregroundColor(.white)
                         .fontWeight(.bold)
                 }.padding(.trailing)
+                    .onTapGesture {
+                        self.showPaletteEditor = true
+                }
                 
             }
         }
