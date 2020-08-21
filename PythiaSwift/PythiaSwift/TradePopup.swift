@@ -9,6 +9,8 @@
 import SwiftUI
 
 struct TradePopup: View {
+    @Binding var closePopup: Bool
+    
     var body: some View {
         VStack{
             ZStack{
@@ -39,14 +41,21 @@ struct TradePopup: View {
                 Text("Algotrade").foregroundColor(.white)
                     .fontWeight(.bold)
             }
+            
+            ZStack{
+                RoundedRectangle(cornerRadius: 30)
+                    .stroke(lineWidth: 2)
+                    .foregroundColor(.green)
+                    .frame(width: 200, height: buttonHeight)
+                Text("X")
+                    .fontWeight(.bold)
+                    .foregroundColor(.green)
+            }.onTapGesture {
+                self.closePopup = true
+            }
+
         }
     }
     
     var buttonHeight: CGFloat = 50
-}
-
-struct TradePopup_Previews: PreviewProvider {
-    static var previews: some View {
-        TradePopup()
-    }
 }

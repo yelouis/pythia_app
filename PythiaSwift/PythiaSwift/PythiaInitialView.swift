@@ -15,19 +15,24 @@ struct PythiaInitialView: View {
                 Image("TopBar")
                     .resizable()
                     .frame(width: 400, height: 55)
-                ScrollView(.vertical){
-                    Image("ScrollData")
-                        .resizable()
-                        .frame(width: 400, height: 600)
+                
+                ZStack(alignment: .bottom) {
+                    ScrollView(.vertical){
+                        Image("ScrollData")
+                            .resizable()
+                            .frame(width: 400, height: 600)
+                        
+                        Text("Running Algorithms")
+                            .font(.title)
+                        
+                    }
                     
-                    Text("Running Algorithms")
-                        .font(.title)
+                    Spacer()
                     
+                    TradingBar()
+                    //ZStack causing problems with clicking?
                 }
                 
-                Spacer()
-                
-                TradingBar()
                 Image("BottomBar")
                     .resizable()
                     .frame(width: 400, height: 55)

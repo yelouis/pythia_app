@@ -19,7 +19,7 @@ struct LoginScreen: View {
 
                 Spacer()
 
-                NavigationLink(destination: PythiaHomeView()){
+                NavigationLink(destination: LoginScreen()){
                     ZStack{
                         RoundedRectangle(cornerRadius: 10)
                             .frame(width: 300, height: 55)
