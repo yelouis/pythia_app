@@ -18,7 +18,6 @@
 		8E31D78924E08FB2006C2B15 /* TradingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78824E08FB2006C2B15 /* TradingBar.swift */; };
 		8E31D78B24E0CC08006C2B15 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */; };
 		8E31D78D24E231CA006C2B15 /* TradePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78C24E231CA006C2B15 /* TradePopup.swift */; };
-		8E9FD01024EB754500B8373B /* Practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9FD00F24EB754500B8373B /* Practice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +34,6 @@
 		8E31D78824E08FB2006C2B15 /* TradingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingBar.swift; sourceTree = "<group>"; };
 		8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		8E31D78C24E231CA006C2B15 /* TradePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradePopup.swift; sourceTree = "<group>"; };
-		8E9FD00F24EB754500B8373B /* Practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Practice.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +72,6 @@
 				8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */,
 				8E31D78824E08FB2006C2B15 /* TradingBar.swift */,
 				8E31D78C24E231CA006C2B15 /* TradePopup.swift */,
-				8E9FD00F24EB754500B8373B /* Practice.swift */,
 				8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */,
 				8E31D77424D8B317006C2B15 /* Assets.xcassets */,
 				8E31D77924D8B317006C2B15 /* LaunchScreen.storyboard */,
@@ -164,7 +161,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E9FD01024EB754500B8373B /* Practice.swift in Sources */,
 				8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */,
 				8E31D78524D90882006C2B15 /* HiddenNavigationBar.swift in Sources */,
 				8E31D78D24E231CA006C2B15 /* TradePopup.swift in Sources */,
