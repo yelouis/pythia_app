@@ -44,8 +44,12 @@ struct TradePopup: View {
             
             ZStack{
                 RoundedRectangle(cornerRadius: 30)
-                    .stroke(lineWidth: 2)
-                    .foregroundColor(.green)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 30)
+                    .stroke(Color.green, lineWidth: 2)
+                    .frame(width: 200, height: buttonHeight)
+                )
+                    .foregroundColor(Color.white)
                     .frame(width: 200, height: buttonHeight)
                 Text("X")
                     .fontWeight(.bold)

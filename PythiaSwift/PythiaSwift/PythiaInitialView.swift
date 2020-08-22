@@ -30,7 +30,6 @@ struct PythiaInitialView: View {
                     Spacer()
                     
                     TradingBar()
-                    //ZStack causing problems with clicking?
                     // Also, what is causing that weird line?
                     // Weird line is caused by spacers in the trading bar file
                 }
