@@ -14,9 +14,13 @@ struct TradingBar: View {
     var body: some View {
         
         ZStack{
-            RoundedRectangle(cornerRadius: 0)
-                .frame(width: 400, height: 50)
-                .foregroundColor(.white)
+            VStack{
+                Spacer()
+                RoundedRectangle(cornerRadius: 0)
+                    .fill(Color.white)
+                    .frame(width: 420, height: 50)
+            }
+
             HStack{
                 VStack(alignment: .leading){
                     Spacer()
