@@ -18,7 +18,7 @@ struct TradingBar: View {
                 Spacer()
                 RoundedRectangle(cornerRadius: 0)
                     .fill(Color.white)
-                    .frame(width: 420, height: 50)
+                    .frame(width: 420, height: 60)
             }
 
             HStack{

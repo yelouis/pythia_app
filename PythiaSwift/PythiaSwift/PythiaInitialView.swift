@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct PythiaInitialView: View {
+    
     var body: some View {
         NavigationView{
             VStack{
@@ -22,9 +23,18 @@ struct PythiaInitialView: View {
                             .resizable()
                             .frame(width: 400, height: 600)
                         
-                        Text("Running Algorithms")
-                            .font(.title)
+                        HStack {
+                            Text("Running Algorithms")
+                                .font(.title)
+                                .padding(.top, 10)
+                                .padding(.leading, 38)
+                            Spacer()
+                            
+
+                        }
                         
+                        RunningAlgorithms()
+  
                     }
                     
                     Spacer()
@@ -43,9 +53,20 @@ struct PythiaInitialView: View {
     }
 }
 
-//struct RunningAlgorithms: view {
-//    //Make a view for the running algorhtms table
-//}
+struct RunningAlgorithms: View {
+    var body: some View {
+        VStack {
+            RunningAlgoRow(algoName: "MyAlgo1", graphString: "TWTRgraph", algoReturn: 10.43, numShares: 10)
+            Divider()
+            RunningAlgoRow(algoName: "MyAlgo2", graphString: "OPKgraph", algoReturn: 12.43, numShares: 420)
+            Divider()
+            RunningAlgoRow(algoName: "MyAlgo3", graphString: "BLDPgraph", algoReturn: 10.43, numShares: 69)
+            RoundedRectangle(cornerRadius: 0)
+            .fill(Color.white)
+            .frame(width: 420, height: 65)
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
