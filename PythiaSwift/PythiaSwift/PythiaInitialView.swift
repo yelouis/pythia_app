@@ -55,16 +55,19 @@ struct PythiaInitialView: View {
 
 struct RunningAlgorithms: View {
     var body: some View {
-        VStack {
-            RunningAlgoRow(algoName: "MyAlgo1", graphString: "TWTRgraph", algoReturn: 10.43, numShares: 10)
-            Divider()
-            RunningAlgoRow(algoName: "MyAlgo2", graphString: "OPKgraph", algoReturn: 12.43, numShares: 420)
-            Divider()
-            RunningAlgoRow(algoName: "MyAlgo3", graphString: "BLDPgraph", algoReturn: 10.43, numShares: 69)
-            RoundedRectangle(cornerRadius: 0)
-            .fill(Color.white)
-            .frame(width: 420, height: 65)
-        }
+            VStack {
+                //Change destination
+                NavigationLink(destination: LoginScreen()) {
+                    RunningAlgoRow(algoName: "MyAlgo1", graphString: "TWTRgraph", algoReturn: 10.43, numShares: 10)
+                }.buttonStyle(PlainButtonStyle())
+                Divider()
+                RunningAlgoRow(algoName: "MyAlgo2", graphString: "OPKgraph", algoReturn: 12.43, numShares: 420)
+                Divider()
+                RunningAlgoRow(algoName: "MyAlgo3", graphString: "BLDPgraph", algoReturn: 10.43, numShares: 69)
+                RoundedRectangle(cornerRadius: 0)
+                .fill(Color.white)
+                .frame(width: 420, height: 65)
+            }
     }
 }
 

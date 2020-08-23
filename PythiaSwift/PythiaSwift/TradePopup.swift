@@ -34,13 +34,17 @@ struct TradePopup: View {
                 Text("Buy").foregroundColor(.white)
                     .fontWeight(.bold)
             }
-            ZStack{
-                RoundedRectangle(cornerRadius: 30)
-                    .frame(width: 200, height: buttonHeight)
-                    .foregroundColor(.green)
-                Text("Algotrade").foregroundColor(.white)
-                    .fontWeight(.bold)
+            
+            NavigationLink(destination: LoginScreen()){
+                ZStack{
+                    RoundedRectangle(cornerRadius: 30)
+                        .frame(width: 200, height: buttonHeight)
+                        .foregroundColor(.green)
+                    Text("Algotrade").foregroundColor(.white)
+                        .fontWeight(.bold)
+                }
             }
+
             
             ZStack{
                 RoundedRectangle(cornerRadius: 30)
