@@ -9,37 +9,55 @@
 import SwiftUI
 
 struct PythiaInitialView: View {
-    
+    @State var popup: Bool = false
+
     var body: some View {
         NavigationView{
             VStack{
-                Image("TopBar")
-                    .resizable()
-                    .frame(width: 400, height: 55)
+                ZStack{
+                    Image("TopBar")
+                        .resizable()
+                        .frame(width: 400, height: 55)
+                    
+                    if popup == true{
+                        Rectangle()
+                            .fill(Color.white)
+                            .frame(width: 400, height: 55)
+                            .opacity(0.8)
+                    }
+                }
                 
                 ZStack(alignment: .bottom) {
-                    ScrollView(.vertical){
-                        Image("ScrollData")
-                            .resizable()
-                            .frame(width: 400, height: 600)
+                    ZStack{
+                          ScrollView(.vertical){
+                              Image("ScrollData")
+                                  .resizable()
+                                  .frame(width: 400, height: 600)
+                              
+                              HStack {
+                                  Text("Running Algorithms")
+                                      .font(.title)
+                                      .padding(.top, 10)
+                                      .padding(.leading, 38)
+                                  Spacer()
+                              }
+                              
+                              RunningAlgorithms()
+        
+                          }
                         
-                        HStack {
-                            Text("Running Algorithms")
-                                .font(.title)
-                                .padding(.top, 10)
-                                .padding(.leading, 38)
-                            Spacer()
-                            
-
+                        if popup == true{
+                            Rectangle()
+                                .fill(Color.white)
+                                .frame(width: 400, height: 690)
+                                .opacity(0.8)
                         }
-                        
-                        RunningAlgorithms()
-  
                     }
+
                     
                     Spacer()
                     
-                    TradingBar()
+                    TradingBar(popup: self.$popup)
                     
                 }
                 

@@ -59,7 +59,7 @@ struct TradePopup: View {
                     .fontWeight(.bold)
                     .foregroundColor(.green)
             }.onTapGesture {
-                self.closePopup = true
+                self.closePopup = false
             }
         }
     }

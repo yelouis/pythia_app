@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TradingBar: View {
-    @State var popup: Bool = true
+    @Binding var popup: Bool
     
     var body: some View {
         
@@ -33,7 +33,7 @@ struct TradingBar: View {
                 
                 VStack{
                     Spacer()
-                    if self.popup == true{
+                    if self.popup == false{
                         ZStack{
                             RoundedRectangle(cornerRadius: 30)
                                 .frame(width: 200, height: 50)
@@ -42,21 +42,16 @@ struct TradingBar: View {
                                 .fontWeight(.bold)
                         }.padding(.trailing)
                             .onTapGesture {
-                                self.popup = false
+                                self.popup = true
                         }
                     }else{
                         TradePopup(closePopup: self.$popup)
                             .padding(.trailing)
+                            
                     }
                 }
             }
         }
 
-    }
-}
-
-struct TradingBar_Previews: PreviewProvider {
-    static var previews: some View {
-        TradingBar()
     }
 }
