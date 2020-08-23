@@ -20,10 +20,7 @@ struct PythiaInitialView: View {
                         .frame(width: 400, height: 55)
                     
                     if popup == true{
-                        Rectangle()
-                            .fill(Color.white)
-                            .frame(width: 400, height: 55)
-                            .opacity(0.8)
+                        WhiteOutBackground(frameHeight: 55)
                     }
                 }
                 
@@ -47,10 +44,7 @@ struct PythiaInitialView: View {
                           }
                         
                         if popup == true{
-                            Rectangle()
-                                .fill(Color.white)
-                                .frame(width: 400, height: 690)
-                                .opacity(0.8)
+                            WhiteOutBackground(frameHeight: 690)
                         }
                     }
 
@@ -67,6 +61,18 @@ struct PythiaInitialView: View {
             }
                 .hiddenNavigationBarStyle()
         }
+
+    }
+}
+
+struct WhiteOutBackground: View{
+    let frameHeight: CGFloat
+    
+    var body: some View{
+        Rectangle()
+            .fill(Color.white)
+            .frame(width: 400, height: frameHeight)
+            .opacity(0.8)
 
     }
 }
