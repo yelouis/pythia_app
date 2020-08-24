@@ -18,6 +18,7 @@
 		8E31D78924E08FB2006C2B15 /* TradingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78824E08FB2006C2B15 /* TradingBar.swift */; };
 		8E31D78B24E0CC08006C2B15 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */; };
 		8E31D78D24E231CA006C2B15 /* TradePopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D78C24E231CA006C2B15 /* TradePopup.swift */; };
+		8EC0556124F33896005FC05E /* CurrentAlgoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0556024F33896005FC05E /* CurrentAlgoView.swift */; };
 		D8CB127124F1A83C00978396 /* RunningAlgoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */; };
 		D8CB127324F1AFC800978396 /* practiceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB127224F1AFC800978396 /* practiceFile.swift */; };
 /* End PBXBuildFile section */
@@ -36,6 +37,7 @@
 		8E31D78824E08FB2006C2B15 /* TradingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradingBar.swift; sourceTree = "<group>"; };
 		8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		8E31D78C24E231CA006C2B15 /* TradePopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TradePopup.swift; sourceTree = "<group>"; };
+		8EC0556024F33896005FC05E /* CurrentAlgoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlgoView.swift; sourceTree = "<group>"; };
 		D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAlgoRow.swift; sourceTree = "<group>"; };
 		D8CB127224F1AFC800978396 /* practiceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiceFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,6 +76,7 @@
 				8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */,
 				8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */,
 				8E31D77224D8B313006C2B15 /* PythiaInitialView.swift */,
+				8EC0556024F33896005FC05E /* CurrentAlgoView.swift */,
 				D8CB127224F1AFC800978396 /* practiceFile.swift */,
 				8E31D77424D8B317006C2B15 /* Assets.xcassets */,
 				8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */,
@@ -169,6 +172,7 @@
 			files = (
 				D8CB127324F1AFC800978396 /* practiceFile.swift in Sources */,
 				8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */,
+				8EC0556124F33896005FC05E /* CurrentAlgoView.swift in Sources */,
 				8E31D78524D90882006C2B15 /* HiddenNavigationBar.swift in Sources */,
 				8E31D78D24E231CA006C2B15 /* TradePopup.swift in Sources */,
 				D8CB127124F1A83C00978396 /* RunningAlgoRow.swift in Sources */,
