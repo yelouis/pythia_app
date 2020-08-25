@@ -81,7 +81,7 @@ struct RunningAlgorithms: View {
     var body: some View {
             VStack {
                 //Change destination
-                NavigationLink(destination: CurrentAlgoView()) {
+                NavigationLink(destination: CurrentAlgoView(algoName: "MyAlgo1", graphString: "TWTRgraph", algoReturn: 10.43, numShares: 10)) {
                     RunningAlgoRow(algoName: "MyAlgo1", graphString: "TWTRgraph", algoReturn: 10.43, numShares: 10)
                 }.buttonStyle(PlainButtonStyle())
                 Divider()
