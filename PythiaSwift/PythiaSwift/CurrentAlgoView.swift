@@ -27,6 +27,7 @@ struct CurrentAlgoView: View {
             
             
         }
+        .navigationBarTitle(Text("Names"))
     }
 }
 

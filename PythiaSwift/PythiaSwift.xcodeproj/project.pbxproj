@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E069D9724F6F65F0036264F /* algorithmData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E069D9624F6F65F0036264F /* algorithmData.json */; };
 		8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D76B24D8B313006C2B15 /* AppDelegate.swift */; };
 		8E31D76E24D8B313006C2B15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */; };
 		8E31D77124D8B313006C2B15 /* PythiaSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D76F24D8B313006C2B15 /* PythiaSwift.xcdatamodeld */; };
@@ -22,10 +23,10 @@
 		D8CB127124F1A83C00978396 /* RunningAlgoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */; };
 		D8CB127324F1AFC800978396 /* practiceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB127224F1AFC800978396 /* practiceFile.swift */; };
 		D8DC555224F48EB600A2A5B0 /* AlgoTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC555124F48EB600A2A5B0 /* AlgoTopBar.swift */; };
-		D8DC555424F4A5E300A2A5B0 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC555324F4A5E300A2A5B0 /* Triangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8E069D9624F6F65F0036264F /* algorithmData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = algorithmData.json; sourceTree = "<group>"; };
 		8E31D76824D8B313006C2B15 /* PythiaSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PythiaSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E31D76B24D8B313006C2B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAlgoRow.swift; sourceTree = "<group>"; };
 		D8CB127224F1AFC800978396 /* practiceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiceFile.swift; sourceTree = "<group>"; };
 		D8DC555124F48EB600A2A5B0 /* AlgoTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoTopBar.swift; sourceTree = "<group>"; };
-		D8DC555324F4A5E300A2A5B0 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +57,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E069D9524F6F61D0036264F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8E069D9624F6F65F0036264F /* algorithmData.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8E31D75F24D8B313006C2B15 = {
 			isa = PBXGroup;
 			children = (
@@ -82,7 +90,7 @@
 				8E31D77224D8B313006C2B15 /* PythiaInitialView.swift */,
 				8EC0556024F33896005FC05E /* CurrentAlgoView.swift */,
 				D8CB127224F1AFC800978396 /* practiceFile.swift */,
-				D8DC555324F4A5E300A2A5B0 /* Triangle.swift */,
+				8E069D9524F6F61D0036264F /* Resources */,
 				8E31D77424D8B317006C2B15 /* Assets.xcassets */,
 				8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */,
 				8E31D78824E08FB2006C2B15 /* TradingBar.swift */,
@@ -164,6 +172,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E31D77B24D8B317006C2B15 /* LaunchScreen.storyboard in Resources */,
+				8E069D9724F6F65F0036264F /* algorithmData.json in Resources */,
 				8E31D77824D8B317006C2B15 /* Preview Assets.xcassets in Resources */,
 				8E31D77524D8B317006C2B15 /* Assets.xcassets in Resources */,
 			);
@@ -177,7 +186,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CB127324F1AFC800978396 /* practiceFile.swift in Sources */,
-				D8DC555424F4A5E300A2A5B0 /* Triangle.swift in Sources */,
 				8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */,
 				D8DC555224F48EB600A2A5B0 /* AlgoTopBar.swift in Sources */,
 				8EC0556124F33896005FC05E /* CurrentAlgoView.swift in Sources */,
