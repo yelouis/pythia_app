@@ -50,6 +50,7 @@ struct TradingBar: View {
                             
                     }
                 }
+                .animation(.spring())
             }
         }
 

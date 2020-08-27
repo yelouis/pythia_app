@@ -7,7 +7,7 @@
                     {
                         "firstElement": { "timeFrame": "today", "element": "Open"},
                         "comparand": ">",
-                        "secondElement": { "timeFrame": "1 Day Prev","element": "Open" }
+                        "secondElement": { "timeFrame": "1 Day Prev", "element": "Open" }
                     },
                     
                     {

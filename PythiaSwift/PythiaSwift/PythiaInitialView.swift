@@ -23,6 +23,7 @@ struct PythiaInitialView: View {
                         WhiteOutBackground(frameHeight: 55)
                     }
                 }
+                .animation(.spring())
                 
                 ZStack(alignment: .bottom) {
                     ZStack{
@@ -47,6 +48,8 @@ struct PythiaInitialView: View {
                             WhiteOutBackground(frameHeight: 690)
                         }
                     }
+                    .animation(.spring())
+
 
                     
                     Spacer()
