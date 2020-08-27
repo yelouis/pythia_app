@@ -1,15 +1,61 @@
 [
     {
-        "name": "Turtle Rock",
-        "buyCondition": "Featured",
-        "sellCondition": "Twentynine Palms",
-        "state": "California",
-        "id": 1001,
-        "park": "Joshua Tree National Park",
-        "coordinates": {
-            "longitude": -116.166868,
-            "latitude": 34.011286
-        },
-        "imageName": "turtlerock"
+        "name": "First Algorithm",
+        "buyCondition": [
+            {
+                "subBuyCondition": [
+                    {
+                        "firstElement": { "timeFrame": "today", "element": "Open"},
+                        "comparand": ">",
+                        "secondElement": { "timeFrame": "1 Day Prev","element": "Open" }
+                    },
+                    
+                    {
+                        "firstElement": { "timeFrame": "null", "element": "Current Price"},
+                        "comparand": ">",
+                        "secondElement": { "timeFrame": "50 Day","element": "Moving Average" }
+                    }
+                ],
+                
+                "buyAmount": {"amount": "20", "type": "percent"}
+            },
+            
+            {
+                "subBuyCondition": [
+                    {
+                        "firstElement": { "timeFrame": "null", "element": "Current Price"},
+                        "comparand": ">",
+                        "secondElement": { "timeFrame": "5 Minute Prev","element": "Open" }
+                    }
+                ],
+                
+                "buyAmount": {"amount": "3", "type": "share"}
+            }
+        ],
+        
+        "sellCondition": [
+            {
+                "subSellCondition": [
+                    {
+                        "firstElement": {"timeFrame": "today", "element": "Open"},
+                        "comparand": "<",
+                        "secondElement": {"timeFrame": "1 Day Prev", "element": "Open"}
+                    },
+                    
+                    {
+                        "firstElement": {"timeFrame": "null", "element": "Current Price"},
+                        "comparand": "<",
+                        "secondElement": {"timeFrame": "1 Day", "element": "Moving Average"}
+                    }
+                ],
+                
+                "sellAmount": {"amount": "5", "type": "percent"}
+            }
+        ],
+        
+        "smallGraph": "TWTRgraph",
+        "bigGraph": "MyAlgo1graph",
+        "algoReturns": {"amount": "15.43", "type": "positive"}
     }
+
 ]

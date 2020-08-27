@@ -45,9 +45,9 @@ struct BuyConditionBar: View {
             
             Spacer()
             
-            Triangle()
-                .fill(Color.black)
-                .frame(width: 20, height: 20)
+//            Triangle()
+//                .fill(Color.black)
+//                .frame(width: 20, height: 20)
         }
         .padding()
         .foregroundColor(Color.black)
