@@ -3,7 +3,7 @@
         "name": "First Algorithm",
         "buyCondition": [
             {
-                "subBuyCondition": [
+                "subCondition": [
                     {
                         "firstElement": { "timeFrame": "today", "element": "Open"},
                         "comparand": ">",
@@ -17,11 +17,11 @@
                     }
                 ],
                 
-                "buyAmount": {"amount": "20", "type": "percent"}
+                "transactionAmount": {"amount": "20", "type": "percent"}
             },
             
             {
-                "subBuyCondition": [
+                "subCondition": [
                     {
                         "firstElement": { "timeFrame": "null", "element": "Current Price"},
                         "comparand": ">",
@@ -29,13 +29,13 @@
                     }
                 ],
                 
-                "buyAmount": {"amount": "3", "type": "share"}
+                "transactionAmount": {"amount": "3", "type": "share"}
             }
         ],
         
         "sellCondition": [
             {
-                "subSellCondition": [
+                "subCondition": [
                     {
                         "firstElement": {"timeFrame": "today", "element": "Open"},
                         "comparand": "<",
@@ -49,7 +49,7 @@
                     }
                 ],
                 
-                "sellAmount": {"amount": "5", "type": "percent"}
+                "transactionAmount": {"amount": "5", "type": "percent"}
             }
         ],
         
