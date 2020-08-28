@@ -15,8 +15,8 @@ struct ConditionDropDown: View {
     
     let condType : String
     let textColor : Color = .white
-    let buyColor : Color = Color(red: 141, green: 223, blue: 144)
-    let sellColor : Color = Color(red: 231, green: 110, blue: 100)
+    let buyColor : Color = Color(red: 141/255, green: 223/255, blue: 144/255)
+    let sellColor : Color = Color(red: 231/255, green: 110/255, blue: 100/255)
     
     var backgroundColor : Color {
         if condType == "Buy" {
