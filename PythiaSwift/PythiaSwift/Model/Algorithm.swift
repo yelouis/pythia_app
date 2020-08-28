@@ -15,9 +15,9 @@ import CoreLocation
 struct Algorithm: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-    var buyCondition: BuyCondition
-    var sellCondition: SellCondition
-    var algoReturns : AlgoReturns
+//    var buyCondition: BuyCondition
+//    var sellCondition: SellCondition
+//    var algoReturns : AlgoReturns
     fileprivate var smallGraph: String
     fileprivate var bigGraph: String
 
