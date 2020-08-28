@@ -12,10 +12,12 @@ struct ConditionDropDown: View {
     //initialization
     //let conditionList : [String] = ["Open (1D prev) < Open (today)"]
     @State var expand = false
+    
     let condType : String
     let textColor : Color = .white
     let buyColor : Color = Color(red: 141, green: 223, blue: 144)
     let sellColor : Color = Color(red: 231, green: 110, blue: 100)
+    
     var backgroundColor : Color {
         if condType == "Buy" {
             return buyColor
@@ -23,7 +25,6 @@ struct ConditionDropDown: View {
             return sellColor
         }
     }
-    
 
     
     var body: some View {
@@ -42,14 +43,14 @@ struct ConditionDropDown: View {
             
             if expand {
                 ConditionLayout()
+                ConditionLayout()
             }
             
         }.padding(10)
-            .background(LinearGradient(gradient: .init(colors: [.green,.green]), startPoint: .top, endPoint: .bottom))
+            .background(backgroundColor)
         .cornerRadius(10)
         .animation(.spring())
         .frame(width: 400, height: 10)
-
     }
 }
 
@@ -73,7 +74,6 @@ struct ConditionLayout: View {
                     .font(Font.largeTitle)
                 Text(buyAmount)
             }
-            
         }
         .foregroundColor(textColor)
         .padding()
