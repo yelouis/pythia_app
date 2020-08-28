@@ -46,14 +46,13 @@ struct DropDown: View {
                     Text("Select 1")
                 }
                     .foregroundColor(myColor)
-                
                 Button(action: {
                     //nothing
                 }) {
                     Text("Select 2")
                 }
                     .foregroundColor(myColor)
-                
+
                 Button(action: {
                     //nothing
                 }) {
