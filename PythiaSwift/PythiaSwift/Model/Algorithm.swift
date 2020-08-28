@@ -15,12 +15,40 @@ import CoreLocation
 struct Algorithm: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-//    var buyCondition: BuyCondition
-//    var sellCondition: SellCondition
-//    var algoReturns : AlgoReturns
+    var buyCondition: AlgoCondition
+    var sellCondition: AlgoCondition
+    var algoReturns : AlgoReturns
     fileprivate var smallGraph: String
     fileprivate var bigGraph: String
 
+}
+
+struct AlgoReturns: Hashable, Codable{
+    var amount: Float
+    var type: String
+}
+
+struct AlgoCondition: Hashable, Codable, Identifiable{
+    var id: Int
+    var subCondition: SubCondition
+    var transactionAmount: TransactionAmount
+}
+
+struct SubCondition: Hashable, Codable, Identifiable {
+    var id: Int
+    var comparand: String
+    var firstElement: AlgoElement
+    var secondElement: AlgoElement
+}
+
+struct AlgoElement: Hashable, Codable {
+    var timeFrame: String
+    var element: String
+}
+
+struct TransactionAmount: Hashable, Codable{
+    var amount: Int
+    var type: String
 }
 
 extension Algorithm {

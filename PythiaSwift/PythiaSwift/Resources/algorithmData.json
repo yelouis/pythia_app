@@ -1,62 +1,70 @@
 [
     {
-        "id": 1001,
+        "id": 1000,
         "name": "First Algorithm",
         "buyCondition": [
             {
+                "id": 1010,
                 "subCondition": [
                     {
+                        "id": 1011,
                         "firstElement": { "timeFrame": "today", "element": "Open"},
                         "comparand": ">",
                         "secondElement": { "timeFrame": "1 Day Prev", "element": "Open" }
                     },
                     
                     {
+                        "id": 1012,
                         "firstElement": { "timeFrame": "null", "element": "Current Price"},
                         "comparand": ">",
                         "secondElement": { "timeFrame": "50 Day","element": "Moving Average" }
                     }
                 ],
                 
-                "transactionAmount": {"amount": "20", "type": "percent"}
+                "transactionAmount": {"amount": 20, "type": "percent"}
             },
             
             {
+                "id": 1020,
                 "subCondition": [
                     {
+                        "id": 1021,
                         "firstElement": { "timeFrame": "null", "element": "Current Price"},
                         "comparand": ">",
                         "secondElement": { "timeFrame": "5 Minute Prev","element": "Open" }
                     }
                 ],
                 
-                "transactionAmount": {"amount": "3", "type": "share"}
+                "transactionAmount": {"amount": 3, "type": "share"}
             }
         ],
         
         "sellCondition": [
             {
+                "id": 1110,
                 "subCondition": [
                     {
+                        "id": 1111,
                         "firstElement": {"timeFrame": "today", "element": "Open"},
                         "comparand": "<",
                         "secondElement": {"timeFrame": "1 Day Prev", "element": "Open"}
                     },
                     
                     {
+                        "id": 1112,
                         "firstElement": {"timeFrame": "null", "element": "Current Price"},
                         "comparand": "<",
                         "secondElement": {"timeFrame": "1 Day", "element": "Moving Average"}
                     }
                 ],
                 
-                "transactionAmount": {"amount": "5", "type": "percent"}
+                "transactionAmount": {"amount": 5, "type": "percent"}
             }
         ],
         
         "smallGraph": "TWTRgraph",
         "bigGraph": "MyAlgo1graph",
-        "algoReturns": {"amount": "15.43", "type": "positive"}
+        "algoReturns": {"amount": 15.43, "type": "positive"}
     }
 
 ]
