@@ -1,5 +1,6 @@
 [
     {
+        "id": 1001,
         "name": "First Algorithm",
         "buyCondition": [
             {
