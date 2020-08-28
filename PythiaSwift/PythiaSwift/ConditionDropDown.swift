@@ -55,29 +55,34 @@ struct ConditionDropDown: View {
 }
 
 struct ConditionLayout: View {
-    let subconditionList : [String] = ["Open (1D prev) < Open (today)"]
+    let subconditionList : [String] = ["Open (1D prev) < Open (today)", "High(1W) < High(1D)"]
     let buyAmount : String = "10 shares"
-    let textColor : Color = .gray
+    let textColor : Color = Color(red: 240/255, green: 240/255, blue: 240/255)
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text("If")
-                    .font(Font.largeTitle)
-                ForEach(subconditionList, id: \.self) { condition in
-                    Text(condition)
-                        .foregroundColor(self.textColor)
+        
+        VStack {
+            HStack {
+                    VStack(alignment: .leading) {
+                        Text("If")
+                            .font(Font.largeTitle)
+                        ForEach(subconditionList, id: \.self) { condition in
+                            Text(condition)
+                                .foregroundColor(self.textColor)
+                        }
+                    }
+                    Spacer()
+                    VStack(alignment: .leading) {
+                        Text("Buy")
+                            .font(Font.largeTitle)
+                        Text(buyAmount)
+                    }
                 }
+                .foregroundColor(textColor)
+                .padding()
             }
-            Spacer()
-            VStack(alignment: .leading) {
-                Text("Buy")
-                    .font(Font.largeTitle)
-                Text(buyAmount)
-            }
+            
         }
-        .foregroundColor(textColor)
-        .padding()
-    }
+        
 }
 
 struct ConditionDropDown_Previews: PreviewProvider {

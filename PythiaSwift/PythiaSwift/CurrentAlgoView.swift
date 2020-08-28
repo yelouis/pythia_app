@@ -23,7 +23,9 @@ struct CurrentAlgoView: View {
                 .frame(width: 416, height:400)
             }
             
-            BuyConditionBar()
+            ConditionDropDown(condType: "Buy")
+            
+            ConditionDropDown(condType: "Sell")
             
             
         }
@@ -31,6 +33,7 @@ struct CurrentAlgoView: View {
     }
 }
 
+/*
 struct BuyConditionBar: View {
     //implementLater
     var buyConditionList : [Condition] = []
@@ -54,6 +57,7 @@ struct BuyConditionBar: View {
     }
     
 }
+*/
 
 struct Condition {
     //implement and move to diff file
