@@ -26,42 +26,9 @@ struct CurrentAlgoView: View {
 
             }
         }
-        .navigationBarTitle(Text("Names"))
+        .navigationBarTitle(Text(algorithm.name))
     }
 }
-
-/*
-struct BuyConditionBar: View {
-    //implementLater
-    var buyConditionList : [Condition] = []
-    var sellConditionList : [Condition] = []
-
-    var body: some View {
-
-        HStack {
-            Text("Buy Conditions")
-                .font(Font.largeTitle)
-                .foregroundColor(Color.black)
-            
-            Spacer()
-            
-//            Triangle()
-//                .fill(Color.black)
-//                .frame(width: 20, height: 20)
-        }
-        .padding()
-        .foregroundColor(Color.black)
-    }
-    
-}
-*/
-
-struct Condition {
-    //implement and move to diff file
-    var a: String
-}
-
-
 
 struct NavigationConfigurator: UIViewControllerRepresentable {
     var configure: (UINavigationController) -> Void = { _ in }
