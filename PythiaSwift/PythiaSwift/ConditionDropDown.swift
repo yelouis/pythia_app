@@ -46,11 +46,12 @@ struct ConditionDropDown: View {
                 ConditionLayout()
             }
             
+            
         }.padding(10)
-            .background(backgroundColor)
+        .background(backgroundColor)
         .cornerRadius(10)
         .animation(.spring())
-        .frame(width: 400, height: 10)
+        .alignmentGuide(VerticalAlignment.center) { $0[.top] }
     }
 }
 

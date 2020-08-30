@@ -21,13 +21,11 @@ struct CurrentAlgoView: View {
                 Image("MyAlgo1graph")
                 .resizable()
                 .frame(width: 416, height:400)
+                    .padding(.bottom)
+                
+                ConditionDropDown(condType: "Buy").padding()
+                ConditionDropDown(condType: "Sell").padding()
             }
-            
-            ConditionDropDown(condType: "Buy")
-            
-            ConditionDropDown(condType: "Sell")
-            
-            
         }
         .navigationBarTitle(Text("Names"))
     }

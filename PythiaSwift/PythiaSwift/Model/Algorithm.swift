@@ -20,7 +20,6 @@ struct Algorithm: Hashable, Codable, Identifiable {
     var algoReturns : AlgoReturns
     fileprivate var smallGraph: String
     fileprivate var bigGraph: String
-
 }
 
 struct AlgoReturns: Hashable, Codable{
