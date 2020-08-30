@@ -31,10 +31,12 @@ struct ConditionDropDown: View {
         VStack(alignment: .leading, spacing: 20) {
             HStack {
                 Text(condType + " Conditions")
+                    .font(.headline)
+                    .fontWeight(.semibold)
                 Spacer()
                 Image(systemName: expand ? "chevron.compact.up" : "chevron.compact.down")
                     .resizable()
-                    .frame(width: 12, height: 6)
+                    .frame(width: 17, height: 10)
             }
                 .foregroundColor(textColor)
                 .onTapGesture {

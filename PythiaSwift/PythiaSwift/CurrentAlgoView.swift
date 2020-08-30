@@ -23,8 +23,8 @@ struct CurrentAlgoView: View {
                 .frame(width: 416, height:400)
                     .padding(.bottom)
                 
-                ConditionDropDown(condType: "Buy").padding()
-                ConditionDropDown(condType: "Sell").padding()
+                ConditionDropDown(condType: "Buy").padding([.leading, .trailing])
+                ConditionDropDown(condType: "Sell").padding([.leading, .trailing])
             }
         }
         .navigationBarTitle(Text("Names"))
