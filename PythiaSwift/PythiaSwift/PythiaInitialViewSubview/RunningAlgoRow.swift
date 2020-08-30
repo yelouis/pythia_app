@@ -10,28 +10,23 @@ import SwiftUI
 
 struct RunningAlgoRow: View {
     
-    var algoName : String
-    var graphString : String
-    var algoReturn : Double
+    var algorithm: Algorithm
     
     var graphColor : Color {
-        if graphString == "OPKgraph" {
-            return Color.red
-        } else {
+        if algorithm.algoReturns.type == "positive" {
             return Color.green
+        } else {
+            return Color.red
         }
     }
-    
-    
-    var numShares : Int
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(algoName)
+                Text(algorithm.name)
                     .font(.system(size: 15))
                 
-                Text(String(numShares) + " shares")
+                Text(String(algorithm.currentShares) + " shares")
                     .font(.system(size: 12))
                     .fontWeight(.light)
                     
@@ -39,7 +34,7 @@ struct RunningAlgoRow: View {
             
             Spacer()
         
-            Image(graphString)
+            Image(algorithm.smallGraph)
                 .resizable()
                 .frame(width: 110, height: 50)
             
@@ -48,7 +43,7 @@ struct RunningAlgoRow: View {
                 RoundedRectangle(cornerRadius: 30)
                     .fill(graphColor)
                     .frame(width: 90, height: 35)
-                Text("$" + String(algoReturn))
+                Text("$" + String(algorithm.algoReturns.amount))
                     .foregroundColor(Color.white)
                 
             }
@@ -60,6 +55,6 @@ struct RunningAlgoRow: View {
 
 struct RunningAlgoRow_Previews: PreviewProvider {
     static var previews: some View {
-        RunningAlgoRow(algoName: "Best",graphString: "TWTRgraph", algoReturn: 15.43, numShares: 10)
+        RunningAlgoRow(algorithm: algorithmData[0])
     }
 }

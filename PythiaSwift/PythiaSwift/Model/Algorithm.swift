@@ -15,11 +15,12 @@ import CoreLocation
 struct Algorithm: Hashable, Codable, Identifiable {
     var id: Int
     var name: String
-    var buyCondition: AlgoCondition
-    var sellCondition: AlgoCondition
+    var buyCondition: [AlgoCondition]
+    var sellCondition: [AlgoCondition]
     var algoReturns : AlgoReturns
-    fileprivate var smallGraph: String
-    fileprivate var bigGraph: String
+    var currentShares : Int
+    var smallGraph: String
+    var bigGraph: String
 }
 
 struct AlgoReturns: Hashable, Codable{
@@ -29,7 +30,7 @@ struct AlgoReturns: Hashable, Codable{
 
 struct AlgoCondition: Hashable, Codable, Identifiable{
     var id: Int
-    var subCondition: SubCondition
+    var subCondition: [SubCondition]
     var transactionAmount: TransactionAmount
 }
 
@@ -48,14 +49,4 @@ struct AlgoElement: Hashable, Codable {
 struct TransactionAmount: Hashable, Codable{
     var amount: Int
     var type: String
-}
-
-extension Algorithm {
-    var smallImage: Image {
-        ImageStore.shared.image(name: smallGraph)
-    }
-    
-    var bigImage: Image {
-        ImageStore.shared.image(name: bigGraph)
-    }
 }

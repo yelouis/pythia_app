@@ -24,7 +24,6 @@
 		8EC0556124F33896005FC05E /* CurrentAlgoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EC0556024F33896005FC05E /* CurrentAlgoView.swift */; };
 		D8CB127124F1A83C00978396 /* RunningAlgoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */; };
 		D8CB127324F1AFC800978396 /* practiceFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CB127224F1AFC800978396 /* practiceFile.swift */; };
-		D8DC555224F48EB600A2A5B0 /* AlgoTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC555124F48EB600A2A5B0 /* AlgoTopBar.swift */; };
 		D8DC555824F8B62900A2A5B0 /* ConditionDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DC555724F8B62900A2A5B0 /* ConditionDropDown.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		8EC0556024F33896005FC05E /* CurrentAlgoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentAlgoView.swift; sourceTree = "<group>"; };
 		D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningAlgoRow.swift; sourceTree = "<group>"; };
 		D8CB127224F1AFC800978396 /* practiceFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiceFile.swift; sourceTree = "<group>"; };
-		D8DC555124F48EB600A2A5B0 /* AlgoTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoTopBar.swift; sourceTree = "<group>"; };
 		D8DC555724F8B62900A2A5B0 /* ConditionDropDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionDropDown.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,6 +78,24 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		8E069D9D24FC695F0036264F /* PythiaInitialViewSubview */ = {
+			isa = PBXGroup;
+			children = (
+				D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */,
+				8E31D78C24E231CA006C2B15 /* TradePopup.swift */,
+				8E31D78824E08FB2006C2B15 /* TradingBar.swift */,
+			);
+			path = PythiaInitialViewSubview;
+			sourceTree = "<group>";
+		};
+		8E069D9E24FC69F70036264F /* CurrentAlgoViewSubview */ = {
+			isa = PBXGroup;
+			children = (
+				D8DC555724F8B62900A2A5B0 /* ConditionDropDown.swift */,
+			);
+			path = CurrentAlgoViewSubview;
+			sourceTree = "<group>";
+		};
 		8E31D75F24D8B313006C2B15 = {
 			isa = PBXGroup;
 			children = (
@@ -102,18 +118,15 @@
 				8E31D76B24D8B313006C2B15 /* AppDelegate.swift */,
 				8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */,
 				8E31D78A24E0CC08006C2B15 /* LoginScreen.swift */,
-				D8DC555724F8B62900A2A5B0 /* ConditionDropDown.swift */,
 				8E31D77224D8B313006C2B15 /* PythiaInitialView.swift */,
 				8EC0556024F33896005FC05E /* CurrentAlgoView.swift */,
-				D8CB127224F1AFC800978396 /* practiceFile.swift */,
 				8E069D9824F8A1CC0036264F /* Model */,
 				8E069D9524F6F61D0036264F /* Resources */,
+				8E069D9E24FC69F70036264F /* CurrentAlgoViewSubview */,
+				8E069D9D24FC695F0036264F /* PythiaInitialViewSubview */,
 				8E31D77424D8B317006C2B15 /* Assets.xcassets */,
 				8E31D78424D90882006C2B15 /* HiddenNavigationBar.swift */,
-				8E31D78824E08FB2006C2B15 /* TradingBar.swift */,
-				8E31D78C24E231CA006C2B15 /* TradePopup.swift */,
-				D8CB127024F1A83C00978396 /* RunningAlgoRow.swift */,
-				D8DC555124F48EB600A2A5B0 /* AlgoTopBar.swift */,
+				D8CB127224F1AFC800978396 /* practiceFile.swift */,
 				8E31D77924D8B317006C2B15 /* LaunchScreen.storyboard */,
 				8E31D77C24D8B317006C2B15 /* Info.plist */,
 				8E31D76F24D8B313006C2B15 /* PythiaSwift.xcdatamodeld */,
@@ -204,7 +217,6 @@
 			files = (
 				D8CB127324F1AFC800978396 /* practiceFile.swift in Sources */,
 				8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */,
-				D8DC555224F48EB600A2A5B0 /* AlgoTopBar.swift in Sources */,
 				8EC0556124F33896005FC05E /* CurrentAlgoView.swift in Sources */,
 				8E31D78524D90882006C2B15 /* HiddenNavigationBar.swift in Sources */,
 				8E31D78D24E231CA006C2B15 /* TradePopup.swift in Sources */,

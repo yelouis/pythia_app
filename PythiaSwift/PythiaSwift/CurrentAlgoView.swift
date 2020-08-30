@@ -9,22 +9,21 @@
 import SwiftUI
 
 struct CurrentAlgoView: View {
-
-    var algoName: String
-    var graphString: String
-    var algoReturn: Double
-    var numShares: Int
+    
+    var algorithm: Algorithm
     
     var body: some View {
         VStack {
             ScrollView {
-                Image("MyAlgo1graph")
+                Image(algorithm.bigGraph)
                 .resizable()
                 .frame(width: 416, height:400)
                     .padding(.bottom)
                 
+                
                 ConditionDropDown(condType: "Buy").padding([.leading, .trailing])
                 ConditionDropDown(condType: "Sell").padding([.leading, .trailing])
+
             }
         }
         .navigationBarTitle(Text("Names"))
@@ -80,7 +79,7 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
 
 struct CurrentAlgoView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentAlgoView(algoName: "MyAlgo1", graphString: "TWTRgraph", algoReturn: 10.43, numShares: 10)
+        CurrentAlgoView(algorithm: algorithmData[0])
     }
 }
 
