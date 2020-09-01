@@ -43,6 +43,17 @@ struct SubCondition: Hashable, Codable, Identifiable {
     var toString: String {
         firstElement.toString + " " + comparand + secondElement.toString
     }
+    
+    //not using rn
+    var subConditionView: some View {
+        ZStack {
+            RoundedRectangle(cornerRadius: 10)
+                .stroke()
+                .foregroundColor(Color.white)
+            Text(toString)
+                .foregroundColor(Color(red: 240/255, green: 240/255, blue: 240/255))
+        }
+    }
 }
 
 struct AlgoElement: Hashable, Codable {

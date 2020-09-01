@@ -55,6 +55,7 @@ struct ConditionDropDown: View {
             if expand {
                 ForEach(conditionList) { condition in
                     ConditionLayout(condition: condition, transactionType: self.condType)
+                    Divider()
                 }
             }
             
@@ -98,7 +99,7 @@ struct ConditionLayout: View {
                         ForEach(condition.subCondition) { subCondition in
                             Text(subCondition.toString)
                                 .foregroundColor(self.textColor)
-                        
+
                         }
                     }
                     
@@ -112,7 +113,7 @@ struct ConditionLayout: View {
                     .foregroundColor(textColor)
                     .padding()
             
-                Divider()
+                //Divider()
             }
             
         }
