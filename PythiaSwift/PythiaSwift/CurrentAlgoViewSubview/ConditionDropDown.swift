@@ -67,6 +67,7 @@ struct ConditionDropDown: View {
     }
 }
 
+
 struct ConditionLayout: View {
     var condition : AlgoCondition
     var transactionType : String
@@ -77,7 +78,6 @@ struct ConditionLayout: View {
     // var subConditionList : [SubCondition]
     // var amount : TransactionAmount
     // var transactionType : String
-    // var fullConditionText : String
     
     /*
     init(condition: AlgoCondition, transactionType: String) {
@@ -90,15 +90,13 @@ struct ConditionLayout: View {
      */
     
     var body: some View {
-        
         VStack {
             HStack {
-                    
                     VStack(alignment: .leading) {
                         Text("If")
                             .font(Font.largeTitle)
                         ForEach(condition.subCondition) { subCondition in
-                            Text(subCondition.firstElement.toString + " " + subCondition.comparand + " " + subCondition.secondElement.toString)
+                            Text(subCondition.toString)
                                 .foregroundColor(self.textColor)
                         }
                     }

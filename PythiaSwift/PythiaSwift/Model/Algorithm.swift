@@ -39,6 +39,10 @@ struct SubCondition: Hashable, Codable, Identifiable {
     var comparand: String
     var firstElement: AlgoElement
     var secondElement: AlgoElement
+    
+    var toString: String {
+        firstElement.toString + " " + comparand + secondElement.toString
+    }
 }
 
 struct AlgoElement: Hashable, Codable {
