@@ -19,6 +19,8 @@ struct ConditionDropDown: View {
     let buyColor : Color = Color(red: 141/255, green: 223/255, blue: 144/255)
     let sellColor : Color = Color(red: 231/255, green: 110/255, blue: 100/255)
     
+    
+    
     var conditionList : [AlgoCondition] {
         if condType == "Buy" {
             return algorithm.buyCondition
@@ -56,6 +58,18 @@ struct ConditionDropDown: View {
                 ForEach(conditionList) { condition in
                     ConditionLayout(condition: condition, transactionType: self.condType)
                     Divider()
+                }
+            }
+            
+            
+            NavigationLink(destination: LoginScreen()) {
+                ZStack {
+                    //MARK: maybe make it a lighter blue
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke()
+                        .frame(height:30)
+                    Text("Edit Conditions")
+
                 }
             }
             

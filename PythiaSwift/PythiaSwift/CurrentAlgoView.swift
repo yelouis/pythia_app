@@ -23,8 +23,40 @@ struct CurrentAlgoView: View {
                 
                 ConditionDropDown(algorithm: algorithm, condType: "Buy").padding([.leading, .trailing])
                 ConditionDropDown(algorithm: algorithm, condType: "Sell").padding([.leading, .trailing])
+                
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color(red: 220/255, green: 220/255, blue: 220/255))
+                    HStack {
+                        //MARK: give this more thought this looks dumb (try without 4 spacers)
+                        Spacer()
+                        Text("Deposit")
+                        Spacer()
+                        Divider()
+                        Spacer()
+                        Text("Withdraw")
+                        Spacer()
 
+                    }
+                        .foregroundColor(Color.white)
+                }
+                    .frame(height: 45)
+                    .padding()
+                ZStack {
+                    RoundedRectangle(cornerRadius: 10)
+                        .foregroundColor(Color.red)
+                        .frame(height: 50)
+                    Text("Liquidate and Halt Algorithm")
+                        .foregroundColor(Color.white)
+                }
+                .padding([.leading, .trailing])
             }
+            
+            
+            
+            Image("BottomBar")
+                .resizable()
+                .frame(width: 400, height: 55)
         }
         .navigationBarTitle(Text(algorithm.name))
     }
