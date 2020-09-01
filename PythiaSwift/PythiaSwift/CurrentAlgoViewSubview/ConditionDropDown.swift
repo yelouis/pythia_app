@@ -98,6 +98,7 @@ struct ConditionLayout: View {
                         ForEach(condition.subCondition) { subCondition in
                             Text(subCondition.toString)
                                 .foregroundColor(self.textColor)
+                        
                         }
                     }
                     
@@ -108,8 +109,10 @@ struct ConditionLayout: View {
                         Text(condition.transactionAmount.toString())
                     }
                 }
-                .foregroundColor(textColor)
-                .padding()
+                    .foregroundColor(textColor)
+                    .padding()
+            
+                Divider()
             }
             
         }
