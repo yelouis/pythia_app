@@ -45,8 +45,8 @@ struct AlgoElement: Hashable, Codable {
     var timeFrame: String
     var element: String
     
-    func toString() -> String {
-        return element + " (" + timeFrame + ")"
+    var toString: String {
+        element + " (" + timeFrame + ")"
     }
 }
 
