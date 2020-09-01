@@ -12,11 +12,20 @@ struct ConditionDropDown: View {
     //initialization
     //let conditionList : [String] = ["Open (1D prev) < Open (today)"]
     @State var expand = false
+    var algorithm: Algorithm
     
     let condType : String
     let textColor : Color = .white
     let buyColor : Color = Color(red: 141/255, green: 223/255, blue: 144/255)
     let sellColor : Color = Color(red: 231/255, green: 110/255, blue: 100/255)
+    
+    var conditionList : [AlgoCondition] {
+        if condType == "Buy" {
+            return algorithm.buyCondition
+        } else {
+            return algorithm.sellCondition
+        }
+    }
     
     var backgroundColor : Color {
         if condType == "Buy" {
@@ -44,8 +53,9 @@ struct ConditionDropDown: View {
                 }
             
             if expand {
-                ConditionLayout()
-                ConditionLayout()
+                ForEach(conditionList) { condition in
+                    ConditionLayout(condition: condition, transactionType: self.condType)
+                }
             }
             
             
@@ -58,26 +68,41 @@ struct ConditionDropDown: View {
 }
 
 struct ConditionLayout: View {
-    let subconditionList : [String] = ["Open (1D prev) < Open (today)", "High(1W) < High(1D)"]
-    let buyAmount : String = "10 shares"
+    var condition : AlgoCondition
+    var subConditionList : [SubCondition]
+    var amount : TransactionAmount
     let textColor : Color = Color(red: 240/255, green: 240/255, blue: 240/255)
+    var transactionType : String
+    var fullConditionText : String
+    /*
+    init(condition: AlgoCondition, transactionType: String) {
+        self.condition = condition
+        self.subConditionList = condition.subCondition
+        self.amount = condition.transactionAmount
+        self.transactionType = transactionType
+        self.fullConditionText = ""
+    }
+     */
+    
     var body: some View {
         
         VStack {
             HStack {
+                    
                     VStack(alignment: .leading) {
                         Text("If")
                             .font(Font.largeTitle)
-                        ForEach(subconditionList, id: \.self) { condition in
-                            Text(condition)
+                        ForEach(subConditionList) { subCondition in
+                            Text(subCondition.firstElement.toString() + " " + subCondition.comparand + " " + subCondition.secondElement.toString())
                                 .foregroundColor(self.textColor)
                         }
                     }
+                    
                     Spacer()
                     VStack(alignment: .leading) {
-                        Text("Buy")
+                        Text(transactionType)
                             .font(Font.largeTitle)
-                        Text(buyAmount)
+                        Text(amount.toString())
                     }
                 }
                 .foregroundColor(textColor)
@@ -90,6 +115,6 @@ struct ConditionLayout: View {
 
 struct ConditionDropDown_Previews: PreviewProvider {
     static var previews: some View {
-        ConditionDropDown(condType: "Buy")
+        ConditionDropDown(algorithm: algorithmData[0], condType: "Buy")
     }
 }

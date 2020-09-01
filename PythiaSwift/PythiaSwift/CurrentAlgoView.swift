@@ -21,8 +21,8 @@ struct CurrentAlgoView: View {
                     .padding(.bottom)
                 
                 
-                ConditionDropDown(condType: "Buy").padding([.leading, .trailing])
-                ConditionDropDown(condType: "Sell").padding([.leading, .trailing])
+                ConditionDropDown(algorithm: algorithm, condType: "Buy").padding([.leading, .trailing])
+                ConditionDropDown(algorithm: algorithm, condType: "Sell").padding([.leading, .trailing])
 
             }
         }

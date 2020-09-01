@@ -44,9 +44,21 @@ struct SubCondition: Hashable, Codable, Identifiable {
 struct AlgoElement: Hashable, Codable {
     var timeFrame: String
     var element: String
+    
+    func toString() -> String {
+        return element + " (" + timeFrame + ")"
+    }
 }
 
 struct TransactionAmount: Hashable, Codable{
     var amount: Int
     var type: String
+    
+    func toString() -> String {
+        if type == "percent" {
+            return String(amount) + "% equity"
+        } else {
+            return String(amount) + " shares"
+        }
+    }
 }
