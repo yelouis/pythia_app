@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PythiaInitialView: View {
     @State var popup: Bool = false
+    @EnvironmentObject private var userData: UserData
 
     var body: some View {
         NavigationView{
