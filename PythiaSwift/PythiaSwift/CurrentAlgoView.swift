@@ -20,17 +20,15 @@ struct CurrentAlgoView: View {
     
     
     var body: some View {
-
-        
         
         VStack {
 //            Text(userData.algorithms[algorithmIndex].buyCondition[0].subCondition[0].toString)
 //            TextField("Type something here", text: $tempString)
 //
 //            Rectangle().onTapGesture {
-//                userData.algorithms[algorithmIndex].buyCondition[0].subCondition[0].toString = tempString
+//                self.userData.algorithms[self.algorithmIndex].buyCondition[0].subCondition[0].firstElement.element = self.tempString
 //            }
-//
+
             
             ScrollView {
                 Image(algorithm.bigGraph)
