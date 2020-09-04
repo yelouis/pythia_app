@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct CurrentAlgoView: View {
-    
     @EnvironmentObject var userData: UserData
     var algorithm: Algorithm
     
