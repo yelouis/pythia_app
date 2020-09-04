@@ -10,6 +10,7 @@ import SwiftUI
 
 struct PythiaInitialView: View {
     @State var popup: Bool = false
+    @EnvironmentObject var userData: UserData
 
 
     var body: some View {
@@ -82,9 +83,11 @@ struct WhiteOutBackground: View{
 }
 
 struct RunningAlgorithms: View {
+    @EnvironmentObject var userData: UserData
+
     var body: some View {
         VStack {
-            ForEach (algorithmData){ algorithm in
+            ForEach (userData.algorithms){ algorithm in
                 NavigationLink(destination: CurrentAlgoView(algorithm: algorithm)) {
                     RunningAlgoRow(algorithm: algorithm)
                 }.buttonStyle(PlainButtonStyle())

@@ -10,10 +10,19 @@ import SwiftUI
 
 struct CurrentAlgoView: View {
     
+    @EnvironmentObject var userData: UserData
     var algorithm: Algorithm
     
+    var algorithmIndex: Int {
+        userData.algorithms.firstIndex(where: { $0.id == algorithm.id })!
+    }
+    
+    
     var body: some View {
+//        TextField("Type something here", text: $userData.algorithms[algorithmIndex].buyCondition[0].subCondition[0].toString)
+        
         VStack {
+            
             ScrollView {
                 Image(algorithm.bigGraph)
                 .resizable()

@@ -9,7 +9,9 @@
 import SwiftUI
 import Combine
 
-final class UserData: ObservableObject{
+class UserData: ObservableObject{
     @Published var algorithms = algorithmData
 }
+
+
 

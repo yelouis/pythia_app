@@ -41,7 +41,7 @@ struct SubCondition: Hashable, Codable, Identifiable {
     var secondElement: AlgoElement
     
     var toString: String {
-        firstElement.toString + " " + comparand + secondElement.toString
+        firstElement.toString + " " + comparand + secondElement.toString        
     }
     
     //not using rn
