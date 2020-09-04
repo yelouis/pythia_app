@@ -16,11 +16,21 @@ struct CurrentAlgoView: View {
         userData.algorithms.firstIndex(where: { $0.id == algorithm.id })!
     }
     
+//    @State var tempString: String = ""
+    
     
     var body: some View {
-//        TextField("Type something here", text: $userData.algorithms[algorithmIndex].buyCondition[0].subCondition[0].toString)
+
+        
         
         VStack {
+//            Text(userData.algorithms[algorithmIndex].buyCondition[0].subCondition[0].toString)
+//            TextField("Type something here", text: $tempString)
+//
+//            Rectangle().onTapGesture {
+//                userData.algorithms[algorithmIndex].buyCondition[0].subCondition[0].toString = tempString
+//            }
+//
             
             ScrollView {
                 Image(algorithm.bigGraph)
@@ -87,7 +97,7 @@ struct NavigationConfigurator: UIViewControllerRepresentable {
 
 struct CurrentAlgoView_Previews: PreviewProvider {
     static var previews: some View {
-        CurrentAlgoView(algorithm: algorithmData[0])
+        CurrentAlgoView(algorithm: algorithmData[0]).environmentObject(UserData())
     }
 }
 
