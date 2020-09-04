@@ -10,6 +10,7 @@
 		8E069D9724F6F65F0036264F /* algorithmData.json in Resources */ = {isa = PBXBuildFile; fileRef = 8E069D9624F6F65F0036264F /* algorithmData.json */; };
 		8E069D9A24F8A4750036264F /* Algorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E069D9924F8A4750036264F /* Algorithm.swift */; };
 		8E069D9C24F8A9CB0036264F /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E069D9B24F8A9CB0036264F /* Data.swift */; };
+		8E069DA0250046600036264F /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E069D9F2500465F0036264F /* UserData.swift */; };
 		8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D76B24D8B313006C2B15 /* AppDelegate.swift */; };
 		8E31D76E24D8B313006C2B15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */; };
 		8E31D77124D8B313006C2B15 /* PythiaSwift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E31D76F24D8B313006C2B15 /* PythiaSwift.xcdatamodeld */; };
@@ -33,6 +34,7 @@
 		8E069D9624F6F65F0036264F /* algorithmData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = algorithmData.json; sourceTree = "<group>"; };
 		8E069D9924F8A4750036264F /* Algorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algorithm.swift; sourceTree = "<group>"; };
 		8E069D9B24F8A9CB0036264F /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		8E069D9F2500465F0036264F /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserData.swift; path = PythiaSwift/UserData.swift; sourceTree = SOURCE_ROOT; };
 		8E31D76824D8B313006C2B15 /* PythiaSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PythiaSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E31D76B24D8B313006C2B15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8E31D76D24D8B313006C2B15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 		8E069D9824F8A1CC0036264F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8E069D9F2500465F0036264F /* UserData.swift */,
 				8E069D9B24F8A9CB0036264F /* Data.swift */,
 				8E069D9924F8A4750036264F /* Algorithm.swift */,
 			);
@@ -233,6 +236,7 @@
 				D85C4B3424FF0AF500F57248 /* ConditionsTableView.swift in Sources */,
 				8E31D76C24D8B313006C2B15 /* AppDelegate.swift in Sources */,
 				8EC0556124F33896005FC05E /* CurrentAlgoView.swift in Sources */,
+				8E069DA0250046600036264F /* UserData.swift in Sources */,
 				8E31D78524D90882006C2B15 /* HiddenNavigationBar.swift in Sources */,
 				8E31D78D24E231CA006C2B15 /* TradePopup.swift in Sources */,
 				D8CB127124F1A83C00978396 /* RunningAlgoRow.swift in Sources */,

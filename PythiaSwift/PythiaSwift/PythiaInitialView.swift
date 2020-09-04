@@ -10,8 +10,8 @@ import SwiftUI
 
 struct PythiaInitialView: View {
     @State var popup: Bool = false
-    
-    
+
+
     var body: some View {
         NavigationView{
             VStack {
@@ -19,20 +19,20 @@ struct PythiaInitialView: View {
                     Image("TopBar")
                         .resizable()
                         .frame(width: 400, height: 55)
-                    
+
                     if popup == true{
                         WhiteOutBackground(frameHeight: 55)
                     }
                 }
                 .animation(.spring())
-                
+
                 ZStack(alignment: .bottom) {
                     ZStack{
                           ScrollView(.vertical){
                               Image("ScrollData")
                                   .resizable()
                                   .frame(width: 400, height: 600)
-                              
+
                               HStack {
                                   Text("Running Algorithms")
                                       .font(.title)
@@ -40,11 +40,11 @@ struct PythiaInitialView: View {
                                       .padding(.leading, 38)
                                   Spacer()
                               }
-                              
+
                               RunningAlgorithms()
-        
+
                           }
-                        
+
                         if popup == true{
                             WhiteOutBackground(frameHeight: 690)
                         }
@@ -52,13 +52,13 @@ struct PythiaInitialView: View {
                     .animation(.spring())
 
 
-                    
+
                     Spacer()
-                    
+
                     TradingBar(popup: self.$popup)
-                    
+
                 }
-                
+
                 Image("BottomBar")
                     .resizable()
                     .frame(width: 400, height: 55)
@@ -71,7 +71,7 @@ struct PythiaInitialView: View {
 
 struct WhiteOutBackground: View{
     let frameHeight: CGFloat
-    
+
     var body: some View{
         Rectangle()
             .fill(Color.white)
