@@ -1,7 +1,7 @@
 [
     {
         "id": 1000,
-        "name": "First Algorithm",
+        "name": "Stuart likes pp",
         "smallGraph": "TWTRgraph",
         "bigGraph": "MyAlgo1graph",
         "algoReturns": {"amount": 15.43, "type": "positive"},

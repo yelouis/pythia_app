@@ -61,19 +61,16 @@ struct ConditionDropDown: View {
                 }
             }
             
-            
-            NavigationLink(destination: LoginScreen()) {
+            NavigationLink(destination: EditConditionsView(algorithm: algorithm, condType: condType)) {
                 ZStack {
                     //MARK: maybe make it a lighter blue
                     RoundedRectangle(cornerRadius: 10)
                         .stroke()
                         .frame(height:30)
-                    Text("Edit Conditions")
+                    Text("Edit " + condType + " Conditions")
 
-                }
+                }.foregroundColor(Color(red: 130/255, green: 130/255, blue: 245/255))
             }
-            
-            
         }.padding(10)
         .background(backgroundColor)
         .cornerRadius(10)
@@ -82,14 +79,11 @@ struct ConditionDropDown: View {
     }
 }
 
-
 struct ConditionLayout: View {
     var condition : AlgoCondition
     var transactionType : String
 
     let textColor : Color = Color(red: 240/255, green: 240/255, blue: 240/255)
-
-    
     // var subConditionList : [SubCondition]
     // var amount : TransactionAmount
     // var transactionType : String

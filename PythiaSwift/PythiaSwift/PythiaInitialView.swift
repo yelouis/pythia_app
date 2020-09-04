@@ -10,10 +10,11 @@ import SwiftUI
 
 struct PythiaInitialView: View {
     @State var popup: Bool = false
-
+    
+    
     var body: some View {
         NavigationView{
-            VStack{
+            VStack {
                 ZStack{
                     Image("TopBar")
                         .resizable()

@@ -51,6 +51,7 @@ struct CurrentAlgoView: View {
                 }
                 .padding([.leading, .trailing])
             }
+            .animation(.spring())
             
             
             
