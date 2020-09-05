@@ -12,9 +12,12 @@ struct ConditionDropDown: View {
     //initialization
     //let conditionList : [String] = ["Open (1D prev) < Open (today)"]
     @State var expand = false
-    var algorithm: Algorithm
+    @EnvironmentObject var userData: UserData
     
+    var algorithm: Algorithm
     let condType : String
+    var algorithmIndex: Int
+
     let textColor : Color = .white
     let buyColor : Color = Color(red: 141/255, green: 223/255, blue: 144/255)
     let sellColor : Color = Color(red: 231/255, green: 110/255, blue: 100/255)
@@ -56,12 +59,12 @@ struct ConditionDropDown: View {
             
             if expand {
                 ForEach(conditionList) { condition in
-                    ConditionLayout(condition: condition, transactionType: self.condType)
+                    ConditionLayout(condition: condition, transactionType: self.condType, algorithmIndex: self.algorithmIndex)
                     Divider()
                 }
             }
             
-            NavigationLink(destination: EditConditionsView(algorithm: algorithm, condType: condType)) {
+            NavigationLink(destination: EditConditionsView(algorithm: algorithm, condType: condType, algorithmIndex: algorithmIndex)) {
                 ZStack {
                     //MARK: maybe make it a lighter blue
                     RoundedRectangle(cornerRadius: 10)
@@ -80,10 +83,23 @@ struct ConditionDropDown: View {
 }
 
 struct ConditionLayout: View {
+    @EnvironmentObject var userData: UserData
+    
     var condition : AlgoCondition
     var transactionType : String
+    var algorithmIndex: Int
 
     let textColor : Color = Color(red: 240/255, green: 240/255, blue: 240/255)
+
+    var conditionIndex: Int {
+        if transactionType == "Buy"{
+            return userData.algorithms[algorithmIndex].buyCondition.firstIndex(where: { $0.id == condition.id }) ?? -1
+        }else{
+            return userData.algorithms[algorithmIndex].sellCondition.firstIndex(where: { $0.id == condition.id }) ?? -1
+        }
+    }
+    
+
     // var subConditionList : [SubCondition]
     // var amount : TransactionAmount
     // var transactionType : String
@@ -104,7 +120,7 @@ struct ConditionLayout: View {
                     VStack(alignment: .leading) {
                         Text("If")
                             .font(Font.largeTitle)
-                        ForEach(condition.subCondition) { subCondition in
+                        ForEach(userData.algorithms[algorithmIndex].buyCondition[conditionIndex].subCondition) { subCondition in
                             Text(subCondition.toString)
                                 .foregroundColor(self.textColor)
 
@@ -115,7 +131,11 @@ struct ConditionLayout: View {
                     VStack(alignment: .leading) {
                         Text(transactionType)
                             .font(Font.largeTitle)
-                        Text(condition.transactionAmount.toString())
+                        if transactionType == "Buy"{
+                            Text(userData.algorithms[algorithmIndex].buyCondition[conditionIndex].transactionAmount.toString())
+                        }else{
+                            Text(userData.algorithms[algorithmIndex].sellCondition[conditionIndex].transactionAmount.toString())
+                        }
                     }
                 }
                     .foregroundColor(textColor)
@@ -130,6 +150,6 @@ struct ConditionLayout: View {
 
 struct ConditionDropDown_Previews: PreviewProvider {
     static var previews: some View {
-        ConditionDropDown(algorithm: algorithmData[0], condType: "Buy")
+        ConditionDropDown(algorithm: algorithmData[0], condType: "Buy", algorithmIndex: 0)
     }
 }

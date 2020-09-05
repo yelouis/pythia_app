@@ -37,8 +37,8 @@ struct CurrentAlgoView: View {
                     .padding(.bottom)
                 
                 
-                ConditionDropDown(algorithm: algorithm, condType: "Buy").padding([.leading, .trailing])
-                ConditionDropDown(algorithm: algorithm, condType: "Sell").padding([.leading, .trailing])
+                ConditionDropDown(algorithm: algorithm, condType: "Buy", algorithmIndex: algorithmIndex).padding([.leading, .trailing])
+                ConditionDropDown(algorithm: algorithm, condType: "Sell", algorithmIndex: algorithmIndex).padding([.leading, .trailing])
                 
                 ZStack {
                     RoundedRectangle(cornerRadius: 10)
