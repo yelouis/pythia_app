@@ -13,7 +13,7 @@ While discussing Pythia’s frontend with my dad, I found myself explaining the 
 Pythia is an iOS app which aims to introduce young investors to algorithmic trading and provide a user focused interface for anyone interested in algorithmic trading, without requiring coding experience. This is done through holding the product to intuitive technical terms, implementing easily readable buy/sell conditions, allowing quick algorithm backtesting to measure performance, and simplifying pattern recognition to hand-drawn diagrams rather than code.
 
 ## Why We Need Pythia
-Pythia’s mission is to enable investors to start algorithmic trading . We believe that everyone should have the ability to apply quantitative analysis to their investing strategy without having to learn to code or build their own database. We’ve designed Pythia to make algorithmic trading friendly, approachable, and understandable for investors of all backgrounds.
+Pythia’s mission is to enable investors to start algorithmic trading. We believe that everyone should have the ability to apply quantitative analysis to their investing strategy without having to learn to code or build their own database. We’ve designed Pythia to make algorithmic trading friendly, approachable, and understandable for investors of all backgrounds.
 
 As more young people begin to invest, managing one’s own portfolio is becoming more popular. On top of this, more young investors have adopted an active investing strategy, attributed to the introduction of commission free trading. Trading apps such as Robinhood show how individual, active trading is stepping into the spotlight, with people trading from their mobile devices instead of through a broker or more established company. 
 
